@@ -6,12 +6,9 @@ body {
   width: 350px;
   margin: 0;
   /* Default font for non-Farsi languages */
-  font-family: 'Roboto', sans-serif; 
-  background-color: #f4f4f4;
-  /* The background image will be placed here */
-  background-image: url('images/background.jpg');
-  background-size: cover;
-  background-position: center;
+  font-family: 'Roboto', sans-serif;
+  /* New solid background color */
+  background-color: #f0f2f5;
   color: #333;
 }
 
@@ -22,10 +19,11 @@ body {
 
 .container {
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.92); /* Semi-transparent white */
+  /* New solid white background for the container */
+  background-color: #ffffff;
   border-radius: 12px;
   margin: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .top-bar {
@@ -58,13 +56,12 @@ body {
 .logo {
   width: 32px;
   height: 32px;
-  margin-right: 10px; /* Adjusted for LTR */
+  margin-right: 10px; /* For LTR */
 }
 :dir(rtl) .logo {
     margin-right: 0;
     margin-left: 10px;
 }
-
 
 .header h1 {
   font-size: 20px;
