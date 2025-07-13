@@ -1,0 +1,27 @@
+{
+  "404": {
+    "title": "Error 404: Not Found",
+    "description": "The browser was able to communicate with the server, but the page you were looking for was not found at that address. This is one of the most common web errors.",
+    "solution": "1. Check the URL for any typos.\n2. Try again in a few minutes; the page may have been moved temporarily.\n3. Try to find the content by navigating from the website's homepage."
+  },
+  "500": {
+    "title": "Error 500: Internal Server Error",
+    "description": "An issue has occurred on the website's server that prevented the page from loading. This problem is not on your end but is related to the website administrators.",
+    "solution": "1. Refresh the page after a few minutes (F5).\n2. Visit the site again later. Website administrators usually fix this issue quickly.\n3. If the problem persists, you can contact the site's support."
+  },
+  "503": {
+    "title": "Error 503: Service Unavailable",
+    "description": "The server is currently unable to handle the request. This is usually due to very high traffic or server maintenance.",
+    "solution": null
+  },
+  "net::ERR_INTERNET_DISCONNECTED": {
+    "title": "Error: Internet Disconnected",
+    "description": "You are not connected to the internet. The browser cannot load any websites.",
+    "solution": "1. Check your Wi-Fi or network cable connection.\n2. Turn your modem or router off and on again.\n3. Review your computer's network settings."
+  },
+  "net::ERR_CONNECTION_TIMED_OUT": {
+    "title": "Error: Connection Timed Out",
+    "description": "The website's server took too long to respond. This is usually due to a heavy load on the server or a slow network.",
+    "solution": "1. Check your internet connection.\n2. Try again in a few minutes.\n3. Temporarily disable your firewall or antivirus to ensure they are not blocking the connection."
+  }
+}
