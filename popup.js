@@ -1,69 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const languageSelect = document.getElementById('language-select');
+    const languageSelect = document.getElementById('language-select');
+    let errorDatabase = {};
+    let currentLang = 'en'; // Default base language
+    let lastErrorCode = null; // To store the current error code
 
-  // Function to translate the static UI elements
-  function translateUI(lang) {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
+    // 1. Load the error database once
+    fetch(chrome.runtime.getURL('errors.json'))
+        .then(response => response.json())
+        .then(data => {
+            errorDatabase = data;
+            // After loading the DB, initialize the popup
+            initializePopup();
+        })
+        .catch(error => console.error("Error365: Could not load errors.json", error));
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (key) {
-        el.textContent = chrome.i18n.getMessage(key);
-      }
-    });
-  }
+    // 2. Function to translate the static UI elements
+    function translateUI(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            el.textContent = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+        });
+    }
 
-  // Function to load the last detected error and display it
-  function loadAndDisplayError() {
-    const titleEl = document.getElementById('error-title');
-    const descriptionEl = document.getElementById('error-description');
-    const solutionEl = document.getElementById('error-solution');
-    const detailsEl = document.getElementById('solution-details');
+    // 3. Main function to display error details based on language
+    function displayErrorDetails(errorCode, lang) {
+        const titleEl = document.getElementById('error-title');
+        const descriptionEl = document.getElementById('error-description');
+        const solutionEl = document.getElementById('error-solution');
+        const detailsEl = document.getElementById('solution-details');
 
-    // Reset to default state first
-    const defaultTitleKey = titleEl.getAttribute('data-i18n-default');
-    const defaultDescKey = descriptionEl.getAttribute('data-i18n-default');
-    titleEl.textContent = chrome.i18n.getMessage(defaultTitleKey);
-    descriptionEl.textContent = chrome.i18n.getMessage(defaultDescKey);
-    detailsEl.classList.add('hidden');
+        const errorData = errorCode ? errorDatabase[errorCode] : null;
 
-    chrome.storage.local.get(['lastError'], (result) => {
-      if (result.lastError) {
-        titleEl.textContent = result.lastError.title;
-        descriptionEl.textContent = result.lastError.description;
-        
-        // Only show solution section if solution is not null
-        if (result.lastError.solution) { 
-          solutionEl.innerText = result.lastError.solution;
-          detailsEl.classList.remove('hidden');
+        if (errorData && errorData[lang]) {
+            const localizedError = errorData[lang];
+            titleEl.textContent = localizedError.title;
+            descriptionEl.textContent = localizedError.description;
+
+            if (localizedError.solution) {
+                solutionEl.innerText = localizedError.solution;
+                detailsEl.classList.remove('hidden');
+            } else {
+                detailsEl.classList.add('hidden');
+            }
+        } else {
+            // Display default "No error" message
+            titleEl.textContent = chrome.i18n.getMessage('errorDetected');
+            descriptionEl.textContent = chrome.i18n.getMessage('errorDescriptionDefault');
+            detailsEl.classList.add('hidden');
         }
-        
-        // Clear the error after displaying it
-        chrome.storage.local.remove('lastError');
-      }
+    }
+    
+    // 4. Initialization function
+    async function initializePopup() {
+        const langResult = await chrome.storage.sync.get(['selectedLanguage']);
+        currentLang = langResult.selectedLanguage || 'en';
+        languageSelect.value = currentLang;
+        translateUI(currentLang);
+
+        const errorResult = await chrome.storage.local.get(['lastErrorCode']);
+        lastErrorCode = errorResult.lastErrorCode || null;
+        if (lastErrorCode) {
+            displayErrorDetails(lastErrorCode, currentLang);
+            // Clear the error code after it has been displayed
+            chrome.storage.local.remove('lastErrorCode');
+        } else {
+            displayErrorDetails(null, currentLang); // Display default state
+        }
+    }
+
+    // 5. Language change event listener
+    languageSelect.addEventListener('change', (event) => {
+        const newLang = event.target.value;
+        chrome.storage.sync.set({ selectedLanguage: newLang }, () => {
+            currentLang = newLang;
+            translateUI(newLang);
+            // Re-display the currently stored error (if any) with the new language
+            displayErrorDetails(lastErrorCode, currentLang);
+        });
     });
-  }
-
-  // Load saved language and apply it
-  chrome.storage.sync.get(['selectedLanguage'], (result) => {
-    const lang = result.selectedLanguage || 'en'; // Default to English
-    languageSelect.value = lang;
-    translateUI(lang);
-    loadAndDisplayError();
-  });
-
-  // Save language preference when changed
-  languageSelect.addEventListener('change', (event) => {
-    const newLang = event.target.value;
-    chrome.storage.sync.set({ selectedLanguage: newLang }, () => {
-      translateUI(newLang);
+    
+    // Event listener for the "View All Errors" button
+    document.getElementById('view-all-btn').addEventListener('click', () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL('all_errors.html') });
     });
-  });
-
-  // Event listener for the "View All Errors" button
-  const viewAllBtn = document.getElementById('view-all-btn');
-  viewAllBtn.addEventListener('click', () => {
-    chrome.tabs.create({ url: chrome.runtime.getURL('all_errors.html') });
-  });
 });
