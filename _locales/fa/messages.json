@@ -1,0 +1,8 @@
+{
+  "appName": { "message": "Error365" },
+  "errorDetected": { "message": "خطایی شناسایی نشد" },
+  "errorDescriptionDefault": { "message": "در صفحه فعلی خطای قابل شناسایی وجود ندارد." },
+  "solutionTitle": { "message": "راه حل پیشنهادی" },
+  "viewAllButton": { "message": "مشاهده فهرست کامل خطاها" },
+  "footerText": { "message": "Created with ❤️ by GeekNeuron" }
+}
