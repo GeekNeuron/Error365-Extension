@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Error365</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="language-selector">
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="fa">فارسی</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>
+          <option value="zh">中文</option>
+          </select>
+      </div>
+    </div>
+
+    <header class="header">
+      <img src="icons/logo48.png" alt="Logo" class="logo">
+      <h1 data-i18n="appName">Error365</h1>
+    </header>
+
+    <main id="error-display">
+      <h2 id="error-title" data-i18n-default="errorDetected">No Error Detected</h2>
+      <p id="error-description" data-i18n-default="errorDescriptionDefault">There are no detectable errors on the current page.</p>
+      
+      <details id="solution-details" class="hidden">
+        <summary data-i18n="solutionTitle">Suggested Solution</summary>
+        <p id="error-solution"></p>
+      </details>
+    </main>
+
+    <div class="actions">
+        <button id="view-all-btn" data-i18n="viewAllButton">View Full Error List</button>
+    </div>
+
+    <footer class="footer">
+      <p data-i18n="footerText">Created with ❤️ by GeekNeuron</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
