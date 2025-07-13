@@ -1,27 +1,38 @@
 {
   "404": {
-    "title": "Error 404: Not Found",
-    "description": "The browser was able to communicate with the server, but the page you were looking for was not found at that address. This is one of the most common web errors.",
-    "solution": "1. Check the URL for any typos.\n2. Try again in a few minutes; the page may have been moved temporarily.\n3. Try to find the content by navigating from the website's homepage."
+    "en": {
+      "title": "Error 404: Not Found",
+      "description": "The page you were looking for was not found at that address.",
+      "solution": "1. Check the URL for typos.\n2. Try again in a few minutes."
+    },
+    "fa": {
+      "title": "خطای ۴۰۴: یافت نشد",
+      "description": "صفحه‌ای که به دنبال آن بودید در آن آدرس پیدا نشد.",
+      "solution": "۱. آدرس URL را برای اشتباهات تایپی بررسی کنید.\n۲. چند دقیقه بعد دوباره امتحان کنید."
+    }
   },
   "500": {
-    "title": "Error 500: Internal Server Error",
-    "description": "An issue has occurred on the website's server that prevented the page from loading. This problem is not on your end but is related to the website administrators.",
-    "solution": "1. Refresh the page after a few minutes (F5).\n2. Visit the site again later. Website administrators usually fix this issue quickly.\n3. If the problem persists, you can contact the site's support."
-  },
-  "503": {
-    "title": "Error 503: Service Unavailable",
-    "description": "The server is currently unable to handle the request. This is usually due to very high traffic or server maintenance.",
-    "solution": null
+    "en": {
+      "title": "Error 500: Internal Server Error",
+      "description": "An issue has occurred on the website's server that prevented the page from loading.",
+      "solution": "1. Refresh the page after a few minutes (F5).\n2. Visit the site again later."
+    },
+    "fa": {
+      "title": "خطای ۵۰۰: خطای داخلی سرور",
+      "description": "مشکلی در سرور وب‌سایت رخ داده که مانع از بارگذاری صفحه شده است.",
+      "solution": "۱. صفحه را پس از چند دقیقه رفرش کنید (F5).\n۲. بعداً دوباره به سایت سر بزنید."
+    }
   },
   "net::ERR_INTERNET_DISCONNECTED": {
-    "title": "Error: Internet Disconnected",
-    "description": "You are not connected to the internet. The browser cannot load any websites.",
-    "solution": "1. Check your Wi-Fi or network cable connection.\n2. Turn your modem or router off and on again.\n3. Review your computer's network settings."
-  },
-  "net::ERR_CONNECTION_TIMED_OUT": {
-    "title": "Error: Connection Timed Out",
-    "description": "The website's server took too long to respond. This is usually due to a heavy load on the server or a slow network.",
-    "solution": "1. Check your internet connection.\n2. Try again in a few minutes.\n3. Temporarily disable your firewall or antivirus to ensure they are not blocking the connection."
+    "en": {
+      "title": "Error: Internet Disconnected",
+      "description": "You are not connected to the internet.",
+      "solution": "1. Check your Wi-Fi or network cable connection.\n2. Restart your modem or router."
+    },
+    "fa": {
+      "title": "خطا: اتصال اینترنت قطع است",
+      "description": "شما به اینترنت متصل نیستید.",
+      "solution": "۱. اتصال Wi-Fi یا کابل شبکه خود را بررسی کنید.\n۲. مودم یا روتر خود را یک‌بار خاموش و روشن کنید."
+    }
   }
 }
