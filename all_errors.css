@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ecf0f1;
+  color: #34495e;
+  margin: 0;
+  padding: 20px;
+}
+
+:lang(fa) {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+.category h2 {
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.error-tile {
+  background-color: #ffffff;
+  border: 2px dashed #bdc3c7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.error-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.error-tile h3 {
+  margin-top: 0;
+  color: #2980b9;
+}
