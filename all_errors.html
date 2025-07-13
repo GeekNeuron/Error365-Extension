@@ -12,35 +12,24 @@
     <div class="container">
         <section class="category">
             <h2>Client-Side Errors (4xx Series)</h2>
-            <div class="error-tile">
-                <h3>404 Not Found</h3>
-                <p>The requested page could not be found on the server.</p>
-            </div>
-            <div class="error-tile">
-                <h3>403 Forbidden</h3>
-                <p>You do not have permission to access this page.</p>
-            </div>
-             </section>
+            <div id="category-4xx"></div>
+        </section>
 
         <section class="category">
             <h2>Server-Side Errors (5xx Series)</h2>
-            <div class="error-tile">
-                <h3>500 Internal Server Error</h3>
-                <p>A generic error message, given when an unexpected condition was encountered on the server.</p>
-            </div>
-            <div class="error-tile">
-                <h3>503 Service Unavailable</h3>
-                <p>The server is not ready to handle the request, often due to maintenance or overload.</p>
-            </div>
-             </section>
+            <div id="category-5xx"></div>
+        </section>
         
         <section class="category">
             <h2>Network Errors</h2>
-            <div class="error-tile">
-                <h3>net::ERR_INTERNET_DISCONNECTED</h3>
-                <p>Your device is not connected to the internet.</p>
-            </div>
-             </section>
+            <div id="category-network"></div>
+        </section>
+
+        <section class="category">
+            <h2>Other Errors</h2>
+            <div id="category-other"></div>
+        </section>
     </div>
+    <script src="all_errors.js"></script>
 </body>
 </html>
