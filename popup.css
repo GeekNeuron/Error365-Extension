@@ -1,0 +1,130 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+  width: 350px;
+  margin: 0;
+  /* Default font for non-Farsi languages */
+  font-family: 'Roboto', sans-serif; 
+  background-color: #f4f4f4;
+  /* The background image will be placed here */
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #333;
+}
+
+/* Apply Vazirmatn font specifically for Persian UI */
+:lang(fa) {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.container {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.92); /* Semi-transparent white */
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.top-bar {
+  display: flex;
+  margin-bottom: 10px;
+}
+/* Adjust selector position based on text direction */
+:dir(rtl) .top-bar { justify-content: flex-start; }
+:dir(ltr) .top-bar { justify-content: flex-end; }
+
+.language-selector select {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px; /* Adjusted for LTR */
+}
+:dir(rtl) .logo {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #2c3e50;
+}
+
+#error-display h2 {
+  font-size: 18px;
+  color: #c0392b;
+}
+
+#error-display p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #f9f9f9;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#view-all-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+#view-all-btn:hover {
+  background-color: #2980b9;
+}
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+  color: #7f8c8d;
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
