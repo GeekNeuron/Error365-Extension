@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Function to fetch and set the language file
     async function loadLanguage(lang) {
         try {
-            const langResponse = await fetch(`i18n/${lang}.json`);
+            const langResponse = await fetch(`lang/${lang}.json`);
             translations = await langResponse.json();
             currentLang = lang;
         } catch (error) {
