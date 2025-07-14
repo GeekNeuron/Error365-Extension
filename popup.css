@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
-/* --- START: بخش متغیرهای رنگی --- */
-/* متغیرهای تم روشن (پیش‌فرض) */
+/* CSS Variables for theming */
 :root {
   --bg-color: #f0f2f5;
   --container-bg: #ffffff;
@@ -15,18 +14,16 @@
   --code-color: #555;
 }
 
-/* متغیرهای تم تاریک (با رنگ‌های جدید شما) */
 body.dark-theme {
-  --bg-color: #0d1117;          /* پس‌زمینه اصلی صفحه */
-  --container-bg: #161b22;      /* پس‌زمینه کانتینر */
-  --text-color: #c9d1d9;        /* رنگ متن اصلی */
-  --header-color: #c9d1d9;      /* رنگ عنوان اصلی برای کنتراست */
-  --error-color: #e94560;       /* رنگ خطای برجسته */
-  --border-color: #30363d;      /* رنگ جداکننده‌ها و حاشیه‌ها */
-  --code-bg: #2c3a47;           /* پس‌زمینه کد خطا */
-  --code-color: #c9d1d9;        /* رنگ متن کد خطا */
+  --bg-color: #0d1117;
+  --container-bg: #161b22;
+  --text-color: #c9d1d9;
+  --header-color: #c9d1d9;
+  --error-color: #e94560;
+  --border-color: #30363d;
+  --code-bg: #2c3a47;
+  --code-color: #c9d1d9;
 }
-/* --- END: بخش متغیرهای رنگی --- */
 
 body {
   width: 350px;
@@ -37,7 +34,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Animated Noise Background */
+/* Stable Animated Noise Background */
 body::before {
   content: "";
   position: fixed;
