@@ -2,30 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
-/* CSS Variables for theming */
+/* --- START: بخش متغیرهای رنگی --- */
+/* متغیرهای تم روشن (پیش‌فرض) */
 :root {
   --bg-color: #f0f2f5;
   --container-bg: #ffffff;
   --text-color: #34495e;
   --header-color: #2c3e50;
   --error-color: #c0392b;
-  --link-color: #3498db;
   --border-color: #ddd;
   --code-bg: #e8e8e8;
   --code-color: #555;
 }
 
+/* متغیرهای تم تاریک (با رنگ‌های جدید شما) */
 body.dark-theme {
-  --bg-color: #1a1a2e;
-  --container-bg: #16213e;
-  --text-color: #e0e1dd;
-  --header-color: #ffffff;
-  --error-color: #e94560;
-  --link-color: #0f3460;
-  --border-color: #4a4a5e;
-  --code-bg: #4a4a5e;
-  --code-color: #e0e1dd;
+  --bg-color: #0d1117;          /* پس‌زمینه اصلی صفحه */
+  --container-bg: #161b22;      /* پس‌زمینه کانتینر */
+  --text-color: #c9d1d9;        /* رنگ متن اصلی */
+  --header-color: #c9d1d9;      /* رنگ عنوان اصلی برای کنتراست */
+  --error-color: #e94560;       /* رنگ خطای برجسته */
+  --border-color: #30363d;      /* رنگ جداکننده‌ها و حاشیه‌ها */
+  --code-bg: #2c3a47;           /* پس‌زمینه کد خطا */
+  --code-color: #c9d1d9;        /* رنگ متن کد خطا */
 }
+/* --- END: بخش متغیرهای رنگی --- */
 
 body {
   width: 350px;
@@ -33,37 +34,35 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  position: relative;
-  overflow: hidden;
   transition: background-color 0.3s ease;
 }
 
 /* Animated Noise Background */
 body::before {
   content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiGAAABnl randomize(self);int main() {return 0;}AAAAAElFTkSuQmCC);
-  background-repeat: repeat;
-  animation: noise 0.2s steps(2) infinite;
+  animation: noise 0.3s steps(3) infinite;
   opacity: 0.05;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes noise {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -5%); }
-  20% { transform: translate(-10%, 5%); }
-  30% { transform: translate(5%, -10%); }
-  40% { transform: translate(-5%, 15%); }
-  50% { transform: translate(-10%, 5%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 10%); }
-  80% { transform: translate(-15%, 0%); }
-  90% { transform: translate(10%, 5%); }
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -5% -10%; }
+  20% { background-position: 10% 5%; }
+  30% { background-position: 5% -5%; }
+  40% { background-position: -5% 15%; }
+  50% { background-position: -10% 5%; }
+  60% { background-position: 15% 0; }
+  70% { background-position: 0 10%; }
+  80% { background-position: -15% 5%; }
+  90% { background-position: 10% -5%; }
 }
 
 /* Apply Vazirmatn font specifically for Persian UI */
@@ -97,10 +96,10 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
 }
 .theme-btn svg {
   stroke: var(--header-color);
+  transition: stroke 0.3s ease;
 }
 
 .language-selector select {
@@ -112,6 +111,7 @@ body::before {
   font-size: 12px;
   outline: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .header {
@@ -121,6 +121,7 @@ body::before {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 10px;
+  transition: border-color 0.3s ease;
 }
 
 .logo {
@@ -134,6 +135,7 @@ body::before {
   font-size: 20px;
   margin: 0;
   color: var(--header-color);
+  transition: color 0.3s ease;
 }
 
 .title-wrapper {
@@ -147,6 +149,7 @@ body::before {
   font-size: 18px;
   color: var(--error-color);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 #error-code {
@@ -157,6 +160,7 @@ body::before {
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 #error-display p {
@@ -170,6 +174,7 @@ details {
   padding: 10px;
   margin-top: 15px;
   background-color: var(--bg-color);
+  transition: all 0.3s ease;
 }
 
 summary {
@@ -189,4 +194,5 @@ summary {
   margin-top: 15px;
   border-top: 1px solid var(--border-color);
   padding-top: 10px;
+  transition: border-color 0.3s ease;
 }
