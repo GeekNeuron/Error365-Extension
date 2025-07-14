@@ -3,7 +3,6 @@
   "name": "Error365",
   "version": "1.2",
   "description": "Identifies and explains browser errors in simple language.",
-  "default_locale": "en",
   "permissions": [
     "webNavigation",
     "storage",
