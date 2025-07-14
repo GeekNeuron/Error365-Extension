@@ -2,14 +2,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
+/* CSS Variables for theming */
+:root {
+  --bg-color: #f0f2f5;
+  --container-bg: #ffffff;
+  --text-color: #34495e;
+  --header-color: #2c3e50;
+  --error-color: #c0392b;
+  --link-color: #3498db;
+  --border-color: #ddd;
+  --code-bg: #e8e8e8;
+  --code-color: #555;
+}
+
+body.dark-theme {
+  --bg-color: #1a1a2e;
+  --container-bg: #16213e;
+  --text-color: #e0e1dd;
+  --header-color: #ffffff;
+  --error-color: #e94560;
+  --link-color: #0f3460;
+  --border-color: #4a4a5e;
+  --code-bg: #4a4a5e;
+  --code-color: #e0e1dd;
+}
+
 body {
   width: 350px;
   margin: 0;
-  /* Default font for non-Farsi languages */
   font-family: 'Roboto', sans-serif;
-  /* New solid background color */
-  background-color: #f0f2f5;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Animated Noise Background */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiGAAABnl randomize(self);int main() {return 0;}AAAAAElFTkSuQmCC);
+  background-repeat: repeat;
+  animation: noise 0.2s steps(2) infinite;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+@keyframes noise {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(-10%, 5%); }
+  30% { transform: translate(5%, -10%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-10%, 5%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 10%); }
+  80% { transform: translate(-15%, 0%); }
+  90% { transform: translate(10%, 5%); }
 }
 
 /* Apply Vazirmatn font specifically for Persian UI */
@@ -19,26 +73,42 @@ body {
 
 .container {
   padding: 15px;
-  /* New solid white background for the container */
-  background-color: #ffffff;
+  background-color: var(--container-bg);
   border-radius: 12px;
   margin: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
 .top-bar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
-/* Adjust selector position based on text direction */
-:dir(rtl) .top-bar { justify-content: flex-start; }
-:dir(ltr) .top-bar { justify-content: flex-end; }
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+.theme-btn svg {
+  stroke: var(--header-color);
+}
 
 .language-selector select {
   padding: 5px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--container-bg);
+  color: var(--text-color);
   font-size: 12px;
   outline: none;
   cursor: pointer;
@@ -48,7 +118,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -56,22 +126,37 @@ body {
 .logo {
   width: 32px;
   height: 32px;
-  margin-right: 10px; /* For LTR */
 }
-:dir(rtl) .logo {
-    margin-right: 0;
-    margin-left: 10px;
-}
+:dir(rtl) .logo { margin-left: 10px; }
+:dir(ltr) .logo { margin-right: 10px; }
 
 .header h1 {
   font-size: 20px;
   margin: 0;
-  color: #2c3e50;
+  color: var(--header-color);
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 #error-display h2 {
   font-size: 18px;
-  color: #c0392b;
+  color: var(--error-color);
+  margin: 0;
+}
+
+#error-code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #error-display p {
@@ -80,11 +165,11 @@ body {
 }
 
 details {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 10px;
   margin-top: 15px;
-  background-color: #f9f9f9;
+  background-color: var(--bg-color);
 }
 
 summary {
@@ -97,31 +182,11 @@ summary {
   display: none;
 }
 
-.actions {
-    text-align: center;
-    margin-top: 15px;
-}
-
-#view-all-btn {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-#view-all-btn:hover {
-  background-color: #2980b9;
-}
-
 .footer {
   text-align: center;
   font-size: 10px;
   color: #7f8c8d;
   margin-top: 15px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
   padding-top: 10px;
 }
