@@ -1,0 +1,13 @@
+{
+  "appName": { "message": "Error365" },
+  "errorDetected": { "message": "No Error Detected" },
+  "errorDescriptionDefault": { "message": "There are no detectable errors on the current page." },
+  "solutionTitle": { "message": "Suggested Solution" },
+  "viewAllButton": { "message": "View Full Error List" },
+  "footerText": { "message": "Created with ❤️ by GeekNeuron" },
+  "allErrorsTitle": { "message": "Error365 Full Error List" },
+  "category4xx": { "message": "Client-Side Errors (4xx Series)" },
+  "category5xx": { "message": "Server-Side Errors (5xx Series)" },
+  "categoryNetwork": { "message": "Network Errors" },
+  "categoryOther": { "message": "Other Errors" }
+}
