@@ -78,43 +78,35 @@ body::before {
   transition: background-color 0.3s ease;
 }
 
+/* --- START: بخش اصلاح‌شده برای چیدمان ثابت --- */
 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative; /* ایجاد یک مبدأ برای موقعیت‌دهی فرزندان */
+  height: 30px;      /* ارتفاع ثابت برای جلوگیری از فروریختن */
   margin-bottom: 10px;
 }
 
 .theme-btn {
+  position: absolute;
+  left: 0; /* همیشه در چپ */
+  top: 0;
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.theme-btn svg {
-  stroke: var(--header-color);
-  transition: stroke 0.3s ease;
 }
 
-.language-selector select {
-  padding: 5px 8px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background-color: var(--container-bg);
-  color: var(--text-color);
-  font-size: 12px;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.language-selector {
+  position: absolute;
+  right: 0; /* همیشه در راست */
+  top: 0;
 }
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* همیشه در مرکز */
+  /* direction: ltr; این خط برای ثابت نگه داشتن لوگو در سمت چپ متن است */
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 10px;
