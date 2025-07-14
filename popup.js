@@ -1,20 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    
     let errorDatabase = {};
-    let currentLang = 'en'; // Default base language
-    let lastErrorCode = null; // To store the current error code
+    let currentLang = 'en';
+    let currentTheme = 'light';
+    let lastErrorCode = null;
 
-    // 1. Load the error database once
+    // 1. Load the error database
     fetch(chrome.runtime.getURL('errors.json'))
         .then(response => response.json())
         .then(data => {
             errorDatabase = data;
-            // After loading the DB, initialize the popup
             initializePopup();
         })
         .catch(error => console.error("Error365: Could not load errors.json", error));
 
-    // 2. Function to translate the static UI elements
+    // 2. Function to translate the static UI
     function translateUI(lang) {
         document.documentElement.lang = lang;
         document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
@@ -23,12 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Main function to display error details based on language
+    // 3. Function to apply the selected theme
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        } else {
+            document.body.classList.remove('dark-theme');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+        currentTheme = theme;
+    }
+
+    // 4. Main function to display error details
     function displayErrorDetails(errorCode, lang) {
         const titleEl = document.getElementById('error-title');
         const descriptionEl = document.getElementById('error-description');
         const solutionEl = document.getElementById('error-solution');
         const detailsEl = document.getElementById('solution-details');
+        const errorCodeEl = document.getElementById('error-code');
+
+        errorCodeEl.textContent = '';
+        errorCodeEl.style.display = 'none';
+        detailsEl.classList.add('hidden');
 
         const errorData = errorCode ? errorDatabase[errorCode] : null;
 
@@ -36,52 +59,51 @@ document.addEventListener('DOMContentLoaded', () => {
             const localizedError = errorData[lang];
             titleEl.textContent = localizedError.title;
             descriptionEl.textContent = localizedError.description;
+            errorCodeEl.textContent = errorCode;
+            errorCodeEl.style.display = 'inline-block';
 
             if (localizedError.solution) {
                 solutionEl.innerText = localizedError.solution;
                 detailsEl.classList.remove('hidden');
-            } else {
-                detailsEl.classList.add('hidden');
             }
         } else {
-            // Display default "No error" message
             titleEl.textContent = chrome.i18n.getMessage('errorDetected');
             descriptionEl.textContent = chrome.i18n.getMessage('errorDescriptionDefault');
-            detailsEl.classList.add('hidden');
         }
     }
     
-    // 4. Initialization function
+    // 5. Initialization function
     async function initializePopup() {
-        const langResult = await chrome.storage.sync.get(['selectedLanguage']);
-        currentLang = langResult.selectedLanguage || 'en';
+        const settings = await chrome.storage.sync.get(['selectedLanguage', 'selectedTheme']);
+        
+        currentLang = settings.selectedLanguage || 'en';
         languageSelect.value = currentLang;
         translateUI(currentLang);
+
+        applyTheme(settings.selectedTheme || 'light');
 
         const errorResult = await chrome.storage.local.get(['lastErrorCode']);
         lastErrorCode = errorResult.lastErrorCode || null;
         if (lastErrorCode) {
             displayErrorDetails(lastErrorCode, currentLang);
-            // Clear the error code after it has been displayed
             chrome.storage.local.remove('lastErrorCode');
         } else {
-            displayErrorDetails(null, currentLang); // Display default state
+            displayErrorDetails(null, currentLang);
         }
     }
 
-    // 5. Language change event listener
+    // 6. Event Listeners
     languageSelect.addEventListener('change', (event) => {
         const newLang = event.target.value;
-        chrome.storage.sync.set({ selectedLanguage: newLang }, () => {
-            currentLang = newLang;
-            translateUI(newLang);
-            // Re-display the currently stored error (if any) with the new language
-            displayErrorDetails(lastErrorCode, currentLang);
-        });
+        chrome.storage.sync.set({ selectedLanguage: newLang });
+        currentLang = newLang;
+        translateUI(newLang);
+        displayErrorDetails(lastErrorCode, currentLang);
     });
-    
-    // Event listener for the "View All Errors" button
-    document.getElementById('view-all-btn').addEventListener('click', () => {
-      chrome.tabs.create({ url: chrome.runtime.getURL('all_errors.html') });
+
+    themeToggle.addEventListener('click', () => {
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        chrome.storage.sync.set({ selectedTheme: newTheme });
+        applyTheme(newTheme);
     });
 });
