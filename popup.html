@@ -12,7 +12,6 @@
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         <svg id="moon-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
-      
       <div class="language-selector">
         <select id="language-select">
           <option value="en">English</option>
@@ -23,24 +22,24 @@
 
     <header class="header">
       <img src="icons/logo48.png" alt="Logo" class="logo">
-      <h1 data-i18n="appName">Error365</h1>
+      <h1 id="app-title">Error365</h1>
     </header>
 
     <main id="error-display">
       <div class="title-wrapper">
-        <h2 id="error-title" data-i18n-default="errorDetected"></h2>
+        <h2 id="error-title"></h2>
         <span id="error-code"></span>
       </div>
-      <p id="error-description" data-i18n-default="errorDescriptionDefault"></p>
+      <p id="error-description"></p>
       
       <details id="solution-details" class="hidden">
-        <summary data-i18n="solutionTitle"></summary>
+        <summary id="solution-title"></summary>
         <p id="error-solution"></p>
       </details>
     </main>
 
     <footer class="footer">
-      <p data-i18n="footerText"></p>
+      <p>Created with ❤️ by GeekNeuron</p>
     </footer>
   </div>
   <script src="popup.js"></script>
