@@ -1,38 +1,3482 @@
 {
+  "400": {
+    "en": {
+      "title": "Error 400: Bad Request",
+      "description": "The server could not understand the request due to invalid syntax.",
+      "solution": "This is usually a developer-side error. Check the request formation if you are developing. As a user, there is little you can do."
+    },
+    "fa": {
+      "title": "خطای ۴۰۰: درخواست نادرست",
+      "description": "سرور به دلیل ساختار (سینتکس) نامعتبر، نتوانست درخواست را درک کند.",
+      "solution": "این خطا معمولاً مربوط به توسعه‌دهندگان است. اگر کاربر هستید، کار زیادی نمی‌توانید انجام دهید."
+    }
+  },
+  "401": {
+    "en": {
+      "title": "Error 401: Unauthorized",
+      "description": "The client must authenticate itself to get the requested response.",
+      "solution": "You need to log in with a valid username and password to access this page."
+    },
+    "fa": {
+      "title": "خطای ۴۰۱: عدم مجوز دسترسی",
+      "description": "کلاینت برای دریافت پاسخ درخواستی باید هویت خود را تأیید کند.",
+      "solution": "برای دسترسی به این صفحه باید با نام کاربری و رمز عبور معتبر وارد شوید."
+    }
+  },
+  "403": {
+    "en": {
+      "title": "Error 403: Forbidden",
+      "description": "The client does not have access rights to the content; that is, it is unauthorized.",
+      "solution": "You do not have permission to view this page. Contact the site administrator if you believe this is an error."
+    },
+    "fa": {
+      "title": "خطای ۴۰۳: دسترسی ممنوع",
+      "description": "شما اجازه دسترسی به این محتوا را ندارید و احراز هویت نیز کمکی نخواهد کرد.",
+      "solution": "شما مجوز مشاهده این صفحه را ندارید. اگر فکر می‌کنید این یک اشتباه است، با مدیر سایت تماس بگیرید."
+    }
+  },
   "404": {
     "en": {
       "title": "Error 404: Not Found",
-      "description": "The page you were looking for was not found at that address.",
-      "solution": "1. Check the URL for typos.\n2. Try again in a few minutes."
+      "description": "The server can't find the requested resource. This is the most common error on the web.",
+      "solution": "1. Check the URL for typos.\n2. Go back to the previous page and try a different link.\n3. Use the website's search bar."
     },
     "fa": {
       "title": "خطای ۴۰۴: یافت نشد",
-      "description": "صفحه‌ای که به دنبال آن بودید در آن آدرس پیدا نشد.",
-      "solution": "۱. آدرس URL را برای اشتباهات تایپی بررسی کنید.\n۲. چند دقیقه بعد دوباره امتحان کنید."
+      "description": "سرور نمی‌تواند منبع درخواستی را پیدا کند. این رایج‌ترین خطای وب است.",
+      "solution": "۱. آدرس URL را برای اشتباهات تایپی بررسی کنید.\n۲. به صفحه قبل بازگشته و لینک دیگری را امتحان کنید.\n۳. از نوار جستجوی وب‌سایت استفاده کنید."
+    }
+  },
+  "405": {
+    "en": {
+      "title": "Error 405: Method Not Allowed",
+      "description": "The request method is known by the server but is not supported by the target resource.",
+      "solution": "This is a developer-side error. The API or website is not configured to accept the specific type of request (e.g., POST, GET) being made."
+    },
+    "fa": {
+      "title": "خطای ۴۰۵: متد غیرمجاز",
+      "description": "متد درخواست توسط سرور شناخته شده است اما منبع مورد نظر از آن پشتیبانی نمی‌کند.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. وب‌سایت یا API برای پذیرش این نوع درخواست (مثلاً POST یا GET) پیکربندی نشده است."
+    }
+  },
+  "406": {
+    "en": {
+      "title": "Error 406: Not Acceptable",
+      "description": "The server cannot produce a response matching the list of acceptable values defined in the request's proactive content negotiation headers.",
+      "solution": "This is a technical error, usually indicating a misconfiguration between the client and server regarding acceptable data formats (e.g., JSON, XML)."
+    },
+    "fa": {
+      "title": "خطای ۴۰۶: غیرقابل قبول",
+      "description": "سرور نمی‌تواند پاسخی تولید کند که با لیست مقادیر قابل قبول تعریف شده در هدرهای درخواست مطابقت داشته باشد.",
+      "solution": "این یک خطای فنی است که معمولاً به دلیل پیکربندی نادرست بین کلاینت و سرور در مورد فرمت‌های داده قابل قبول (مانند JSON، XML) رخ می‌دهد."
+    }
+  },
+  "408": {
+    "en": {
+      "title": "Error 408: Request Timeout",
+      "description": "The server would like to shut down this unused connection. It was idle for longer than the server's configured timeout.",
+      "solution": "Your internet connection may be slow or the server might be overloaded. Try refreshing the page or attempting the request again later."
+    },
+    "fa": {
+      "title": "خطای ۴۰۸: اتمام زمان درخواست",
+      "description": "سرور می‌خواهد این اتصال بدون استفاده را ببندد. اتصال برای مدتی طولانی‌تر از زمان تعیین‌شده سرور، بیکار بوده است.",
+      "solution": "ممکن است اتصال اینترنت شما کند باشد یا سرور تحت بار زیاد باشد. صفحه را رفرش کرده یا بعداً دوباره تلاش کنید."
+    }
+  },
+  "409": {
+    "en": {
+      "title": "Error 409: Conflict",
+      "description": "This response is sent when a request conflicts with the current state of the server.",
+      "solution": "This often occurs when trying to upload a file that is older than the existing one on the server, or when creating a resource that already exists."
+    },
+    "fa": {
+      "title": "خطای ۴۰۹: تداخل",
+      "description": "این پاسخ زمانی ارسال می‌شود که یک درخواست با وضعیت فعلی سرور در تضاد باشد.",
+      "solution": "این خطا اغلب هنگام تلاش برای آپلود فایلی که قدیمی‌تر از نسخه موجود است، یا هنگام ایجاد منبعی که از قبل وجود دارد، رخ می‌دهد."
+    }
+  },
+  "410": {
+    "en": {
+      "title": "Error 410: Gone",
+      "description": "This response is sent when the requested content has been permanently deleted from the server, with no forwarding address.",
+      "solution": "The content you are looking for is permanently gone. Remove any bookmarks pointing to this page."
+    },
+    "fa": {
+      "title": "خطای ۴۱۰: حذف شده",
+      "description": "این پاسخ زمانی ارسال می‌شود که محتوای درخواستی برای همیشه از سرور حذف شده و هیچ آدرس جایگزینی برای آن وجود ندارد.",
+      "solution": "محتوایی که به دنبال آن هستید برای همیشه حذف شده است. بوکمارک‌های مربوط به این صفحه را حذف کنید."
+    }
+  },
+  "411": {
+    "en": {
+      "title": "Error 411: Length Required",
+      "description": "The server rejected the request because the Content-Length header field is not defined and the server requires it.",
+      "solution": "This is a developer-side error. The request must include the size of the content being sent."
+    },
+    "fa": {
+      "title": "خطای ۴۱۱: طول محتوا الزامی است",
+      "description": "سرور درخواست را رد کرد زیرا هدر Content-Length تعریف نشده در حالی که سرور به آن نیاز دارد.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. درخواست باید شامل اندازه محتوای ارسالی باشد."
+    }
+  },
+  "412": {
+    "en": {
+      "title": "Error 412: Precondition Failed",
+      "description": "The client has indicated preconditions in its headers which the server does not meet.",
+      "solution": "This is a developer-side error related to conditional requests. The conditions set for the request are not met by the server's state."
+    },
+    "fa": {
+      "title": "خطای ۴۱۲: پیش‌شرط ناموفق بود",
+      "description": "کلاینت پیش‌شرط‌هایی را در هدرهای خود مشخص کرده که سرور آن‌ها را برآورده نمی‌کند.",
+      "solution": "این یک خطای سمت توسعه‌دهنده مربوط به درخواست‌های شرطی است. شروط تعیین‌شده برای درخواست با وضعیت سرور مطابقت ندارد."
+    }
+  },
+  "413": {
+    "en": {
+      "title": "Error 413: Payload Too Large",
+      "description": "The request entity is larger than limits defined by the server.",
+      "solution": "The file or data you are trying to send is too large. Try uploading a smaller file."
+    },
+    "fa": {
+      "title": "خطای ۴۱۳: حجم بار ارسالی بیش از حد بزرگ است",
+      "description": "حجم داده ارسالی در درخواست، از محدودیت‌های تعریف‌شده توسط سرور بیشتر است.",
+      "solution": "فایل یا داده‌ای که در تلاش برای ارسال آن هستید، بیش از حد بزرگ است. یک فایل کوچکتر را امتحان کنید."
+    }
+  },
+  "418": {
+    "en": {
+      "title": "Error 418: I'm a teapot",
+      "description": "The server refuses the attempt to brew coffee with a teapot. This is a classic April Fools' joke from 1998.",
+      "solution": "This is not a real error. It's a humorous Easter egg in the HTTP protocol. Enjoy the moment!"
+    },
+    "fa": {
+      "title": "خطای ۴۱۸: من یک قوری هستم",
+      "description": "سرور از تلاش برای دم کردن قهوه با یک قوری امتناع می‌کند. این یک شوخی اول آوریل کلاسیک از سال ۱۹۹۸ است.",
+      "solution": "این یک خطای واقعی نیست، بلکه یک ایستر اگ طنزآمیز در پروتکل HTTP است. از این لحظه لذت ببرید!"
+    }
+  },
+  "429": {
+    "en": {
+      "title": "Error 429: Too Many Requests",
+      "description": "The user has sent too many requests in a given amount of time ('rate limiting').",
+      "solution": "You are making requests too quickly. Please wait a moment before trying again."
+    },
+    "fa": {
+      "title": "خطای ۴۲۹: تعداد درخواست‌ها بیش از حد است",
+      "description": "کاربر در یک بازه زمانی معین، تعداد زیادی درخواست ارسال کرده است (محدودیت نرخ).",
+      "solution": "شما با سرعت زیادی در حال ارسال درخواست هستید. لطفاً کمی صبر کرده و سپس دوباره تلاش کنید."
     }
   },
   "500": {
     "en": {
       "title": "Error 500: Internal Server Error",
-      "description": "An issue has occurred on the website's server that prevented the page from loading.",
-      "solution": "1. Refresh the page after a few minutes (F5).\n2. Visit the site again later."
+      "description": "The server has encountered a situation it doesn't know how to handle.",
+      "solution": "This is a problem with the website's server, not your computer. Try again later, as administrators are usually notified and fix it quickly."
     },
     "fa": {
       "title": "خطای ۵۰۰: خطای داخلی سرور",
-      "description": "مشکلی در سرور وب‌سایت رخ داده که مانع از بارگذاری صفحه شده است.",
-      "solution": "۱. صفحه را پس از چند دقیقه رفرش کنید (F5).\n۲. بعداً دوباره به سایت سر بزنید."
+      "description": "سرور با وضعیتی مواجه شده که نمی‌داند چگونه آن را مدیریت کند.",
+      "solution": "این مشکل از سرور وب‌سایت است، نه کامپیوتر شما. بعداً دوباره تلاش کنید، زیرا مدیران معمولاً مطلع شده و به سرعت آن را برطرف می‌کنند."
+    }
+  },
+  "501": {
+    "en": {
+      "title": "Error 501: Not Implemented",
+      "description": "The request method is not supported by the server and cannot be handled.",
+      "solution": "This is a server-side issue. The server's software is not capable of performing the requested action."
+    },
+    "fa": {
+      "title": "خطای ۵۰۱: پیاده‌سازی نشده",
+      "description": "متد درخواست توسط سرور پشتیبانی نمی‌شود و قابل مدیریت نیست.",
+      "solution": "این یک مشکل سمت سرور است. نرم‌افزار سرور قادر به انجام عمل درخواستی نیست."
+    }
+  },
+  "502": {
+    "en": {
+      "title": "Error 502: Bad Gateway",
+      "description": "The server, while acting as a gateway or proxy, received an invalid response from the upstream server.",
+      "solution": "This is a server-side network error. It usually resolves itself. Try again in a few minutes."
+    },
+    "fa": {
+      "title": "خطای ۵۰۲: دروازه بد",
+      "description": "سرور، در حالی که به عنوان یک دروازه یا پراکسی عمل می‌کرد، یک پاسخ نامعتبر از سرور بالادستی دریافت کرده است.",
+      "solution": "این یک خطای شبکه سمت سرور است. معمولاً خود به خود برطرف می‌شود. چند دقیقه دیگر دوباره تلاش کنید."
+    }
+  },
+  "503": {
+    "en": {
+      "title": "Error 503: Service Unavailable",
+      "description": "The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.",
+      "solution": "The website is likely undergoing maintenance or experiencing very high traffic. Try coming back later."
+    },
+    "fa": {
+      "title": "خطای ۵۰۳: سرویس در دسترس نیست",
+      "description": "سرور آماده مدیریت درخواست نیست. دلایل رایج آن، سروری است که برای تعمیرات از دسترس خارج شده یا تحت بار زیاد است.",
+      "solution": "وب‌سایت احتمالاً در حال تعمیرات است یا ترافیک بسیار بالایی را تجربه می‌کند. بعداً دوباره سر بزنید."
+    }
+  },
+  "504": {
+    "en": {
+      "title": "Error 504: Gateway Timeout",
+      "description": "The server is acting as a gateway and cannot get a response in time from the upstream server.",
+      "solution": "This is a server-side network issue. The problem lies with slow communication between servers. Try again later."
+    },
+    "fa": {
+      "title": "خطای ۵۰۴: اتمام زمان دروازه",
+      "description": "سرور به عنوان یک دروازه عمل می‌کند و نتوانسته در زمان مقرر پاسخی از سرور بالادستی دریافت کند.",
+      "solution": "این یک مشکل شبکه سمت سرور است. مشکل به ارتباط کند بین سرورها مربوط می‌شود. بعداً دوباره تلاش کنید."
+    }
+  },
+  "505": {
+    "en": {
+      "title": "Error 505: HTTP Version Not Supported",
+      "description": "The HTTP version used in the request is not supported by the server.",
+      "solution": "This is a technical incompatibility between the client (e.g., your browser or a script) and the server. It's a server-side configuration issue."
+    },
+    "fa": {
+      "title": "خطای ۵۰۵: نسخه HTTP پشتیبانی نمی‌شود",
+      "description": "نسخه HTTP استفاده شده در درخواست، توسط سرور پشتیبانی نمی‌شود.",
+      "solution": "این یک ناسازگاری فنی بین کلاینت (مثلاً مرورگر شما یا یک اسکریپت) و سرور است. این یک مشکل پیکربندی سمت سرور است."
+    }
+  },
+  "net::ERR_CONNECTION_TIMED_OUT": {
+    "en": {
+      "title": "Error: Connection Timed Out",
+      "description": "The server took too long to respond. This is usually caused by a high load on the server or a slow network.",
+      "solution": "1. Check your internet connection.\n2. Try again in a few minutes.\n3. Temporarily disable your firewall or antivirus to ensure they are not blocking the connection."
+    },
+    "fa": {
+      "title": "خطا: زمان اتصال به پایان رسید",
+      "description": "سرور وب‌سایت برای پاسخ دادن بیش از حد طول کشید. این مشکل معمولاً به دلیل بار زیاد روی سرور یا کندی شبکه رخ می‌دهد.",
+      "solution": "۱. اتصال اینترنت خود را بررسی کنید.\n۲. چند دقیقه بعد دوباره تلاش کنید.\n۳. فایروال یا آنتی‌ویروس خود را به طور موقت غیرفعال کنید تا مطمئن شوید که اتصال را مسدود نکرده‌اند."
+    }
+  },
+  "net::ERR_CONNECTION_REFUSED": {
+    "en": {
+      "title": "Error: Connection Refused",
+      "description": "The website's server actively refused the connection from your browser.",
+      "solution": "This is almost always a server-side issue. The server might be down, or its firewall is misconfigured. There is nothing you can do but wait."
+    },
+    "fa": {
+      "title": "خطا: اتصال رد شد",
+      "description": "سرور وب‌سایت به طور فعال اتصال از طرف مرورگر شما را رد کرده است.",
+      "solution": "این تقریباً همیشه یک مشکل سمت سرور است. ممکن است سرور از کار افتاده باشد یا فایروال آن به درستی پیکربندی نشده باشد. کاری جز صبر کردن از دست شما برنمی‌آید."
     }
   },
   "net::ERR_INTERNET_DISCONNECTED": {
     "en": {
       "title": "Error: Internet Disconnected",
-      "description": "You are not connected to the internet.",
-      "solution": "1. Check your Wi-Fi or network cable connection.\n2. Restart your modem or router."
+      "description": "You are not connected to the internet. The browser cannot load any websites.",
+      "solution": "1. Check your Wi-Fi or network cable connection.\n2. Restart your modem or router.\n3. Review your computer's network settings."
     },
     "fa": {
       "title": "خطا: اتصال اینترنت قطع است",
-      "description": "شما به اینترنت متصل نیستید.",
-      "solution": "۱. اتصال Wi-Fi یا کابل شبکه خود را بررسی کنید.\n۲. مودم یا روتر خود را یک‌بار خاموش و روشن کنید."
+      "description": "شما به اینترنت متصل نیستید. مرورگر نمی‌تواند هیچ وب‌سایتی را بارگذاری کند.",
+      "solution": "۱. اتصال Wi-Fi یا کابل شبکه خود را بررسی کنید.\n۲. مودم یا روتر خود را یک‌بار خاموش و روشن کنید.\n۳. تنظیمات شبکه کامپیوتر خود را بازبینی کنید."
+    }
+  },
+  "net::ERR_NAME_NOT_RESOLVED": {
+    "en": {
+      "title": "Error: Name Not Resolved",
+      "description": "The domain name you entered could not be found. The DNS server failed to resolve the hostname.",
+      "solution": "1. Check the URL for typos.\n2. Clear your browser cache and cookies.\n3. Try changing your DNS server (e.g., to Google's 8.8.8.8)."
+    },
+    "fa": {
+      "title": "خطا: نام دامنه یافت نشد",
+      "description": "نام دامنه‌ای که وارد کرده‌اید، پیدا نشد. سرور DNS نتوانست نام میزبان را ترجمه کند.",
+      "solution": "۱. آدرس URL را برای اشتباهات تایپی بررسی کنید.\n۲. حافظه پنهان و کوکی‌های مرورگر خود را پاک کنید.\n۳. سرور DNS خود را تغییر دهید (مثلاً به 8.8.8.8 گوگل)."
+    }
+  },
+  "net::ERR_CERT_AUTHORITY_INVALID": {
+    "en": {
+      "title": "Error: Invalid Certificate Authority",
+      "description": "The website's security certificate (SSL) was not issued by a trusted authority.",
+      "solution": "Do not proceed, especially if it's a site that handles sensitive data. The connection is not secure. This could be a misconfiguration or an attempt to intercept your data."
+    },
+    "fa": {
+      "title": "خطا: مرجع صدور گواهی‌نامه نامعتبر است",
+      "description": "گواهی‌نامه امنیتی وب‌سایت (SSL) توسط یک مرجع معتبر صادر نشده است.",
+      "solution": "ادامه ندهید، به خصوص اگر سایتی است که با داده‌های حساس سروکار دارد. اتصال امن نیست. این می‌تواند یک پیکربندی نادرست یا تلاشی برای رهگیری داده‌های شما باشد."
+    }
+  },
+  "net::ERR_CERT_DATE_INVALID": {
+    "en": {
+      "title": "Error: Invalid Certificate Date",
+      "description": "The website's security certificate (SSL) has expired or is not yet valid.",
+      "solution": "1. Check your computer's date and time to ensure they are correct.\n2. If your clock is correct, the website owner must renew their certificate. You should not proceed."
+    },
+    "fa": {
+      "title": "خطا: تاریخ گواهی‌نامه نامعتبر است",
+      "description": "گواهی‌نامه امنیتی وب‌سایت (SSL) منقضی شده یا هنوز معتبر نیست.",
+      "solution": "۱. تاریخ و ساعت کامپیوتر خود را بررسی کنید تا مطمئن شوید صحیح هستند.\n۲. اگر ساعت شما درست است، صاحب وب‌سایت باید گواهی‌نامه خود را تمدید کند. شما نباید ادامه دهید."
+    }
+  },
+  "net::ERR_CONNECTION_RESET": {
+    "en": {
+      "title": "Error: Connection Reset",
+      "description": "The connection was unexpectedly closed by the peer. This can be caused by the server crashing or a network device in between.",
+      "solution": "This is usually a temporary network issue. Try refreshing the page. If it persists, the problem is likely with the server or an intermediate network."
+    },
+    "fa": {
+      "title": "خطا: اتصال بازنشانی شد",
+      "description": "اتصال به صورت ناگهانی توسط طرف مقابل بسته شد. این می‌تواند به دلیل از کار افتادن سرور یا یک دستگاه شبکه در مسیر باشد.",
+      "solution": "این معمولاً یک مشکل شبکه موقتی است. صفحه را رفرش کنید. اگر ادامه داشت، مشکل احتمالاً از سرور یا یک شبکه میانی است."
+    }
+  },
+  "net::ERR_SSL_PROTOCOL_ERROR": {
+    "en": {
+      "title": "Error: SSL Protocol Error",
+      "description": "The browser and the server could not establish a secure connection due to an SSL/TLS protocol incompatibility.",
+      "solution": "This is usually a server-side misconfiguration. The server might be using an outdated or insecure SSL/TLS version. There is nothing you can do as a user."
+    },
+    "fa": {
+      "title": "خطا: خطای پروتکل SSL",
+      "description": "مرورگر و سرور به دلیل ناسازگاری پروتکل SSL/TLS نتوانستند یک اتصال امن برقرار کنند.",
+      "solution": "این معمولاً یک پیکربندی نادرست سمت سرور است. ممکن است سرور از یک نسخه قدیمی یا ناامن SSL/TLS استفاده کند. شما به عنوان کاربر کاری نمی‌توانید انجام دهید."
+    }
+  },
+  "net::ERR_BLOCKED_BY_CLIENT": {
+    "en": {
+      "title": "Error: Blocked By Client",
+      "description": "The request was blocked by the browser itself, usually due to an ad blocker or another security extension.",
+      "solution": "1. Temporarily disable your ad blocker or other blocking extensions for this site.\n2. Check the extension's settings to see if you can whitelist the blocked resource."
+    },
+    "fa": {
+      "title": "خطا: توسط کلاینت مسدود شد",
+      "description": "درخواست توسط خود مرورگر، معمولاً به دلیل یک مسدودکننده تبلیغات یا افزونه امنیتی دیگر، مسدود شده است.",
+      "solution": "۱. مسدودکننده تبلیغات یا سایر افزونه‌های مسدودکننده خود را برای این سایت به طور موقت غیرفعال کنید.\n۲. تنظیمات افزونه را بررسی کنید تا ببینید آیا می‌توانید منبع مسدود شده را در لیست سفید قرار دهید."
+    }
+  },
+  "DNS_PROBE_FINISHED_NXDOMAIN": {
+    "en": {
+      "title": "Error: DNS Probe Finished NXDOMAIN",
+      "description": "This means the domain name does not exist (Non-Existent Domain). The DNS lookup failed because there is no IP address associated with the hostname.",
+      "solution": "1. Double-check that you typed the website address correctly.\n2. Your internet connection might be down.\n3. The domain may have expired or never existed."
+    },
+    "fa": {
+      "title": "خطا: کاوش DNS با دامنه ناموجود به پایان رسید",
+      "description": "این به معنی عدم وجود دامنه است (Non-Existent Domain). جستجوی DNS ناموفق بود زیرا هیچ آدرس IP با این نام میزبان مرتبط نیست.",
+      "solution": "۱. مطمئن شوید که آدرس وب‌سایت را به درستی تایپ کرده‌اید.\n۲. ممکن است اتصال اینترنت شما قطع باشد.\n۳. دامنه ممکن است منقضی شده یا هرگز وجود نداشته باشد."
+    }
+  },
+  "CORS Policy Error": {
+    "en": {
+      "title": "CORS Policy Error",
+      "description": "A script on this page made a request to a different domain, but was blocked by the browser's Cross-Origin Resource Sharing (CORS) policy.",
+      "solution": "This is a security feature and a server-side configuration issue. The owner of the external resource must configure their server to allow requests from your current domain."
+    },
+    "fa": {
+      "title": "خطای سیاست CORS",
+      "description": "یک اسکریپت در این صفحه درخواستی به یک دامنه دیگر ارسال کرد، اما توسط سیاست اشتراک‌گذاری منابع بین مبدأ (CORS) مرورگر مسدود شد.",
+      "solution": "این یک ویژگی امنیتی و یک مشکل پیکربندی سمت سرور است. صاحب منبع خارجی باید سرور خود را طوری پیکربندی کند که به درخواست‌ها از دامنه فعلی شما اجازه دهد."
+    }
+  },
+  "Mixed Content Warning": {
+    "en": {
+      "title": "Warning: Mixed Content",
+      "description": "This secure page (HTTPS) is trying to load insecure content (HTTP). Modern browsers block this by default.",
+      "solution": "The website owner needs to update their site to serve all content over HTTPS. As a user, you should be cautious about this site's security."
+    },
+    "fa": {
+      "title": "هشدار: محتوای ترکیبی",
+      "description": "این صفحه امن (HTTPS) در تلاش است تا محتوای ناامن (HTTP) را بارگذاری کند. مرورگرهای مدرن به طور پیش‌فرض این کار را مسدود می‌کنند.",
+      "solution": "صاحب وب‌سایت باید سایت خود را به‌روز کند تا تمام محتوا را از طریق HTTPS ارائه دهد. به عنوان کاربر، باید در مورد امنیت این سایت محتاط باشید."
+    }
+  },
+  "ReferenceError": {
+    "en": {
+      "title": "JavaScript Error: ReferenceError",
+      "description": "This occurs when code tries to use a variable that has not been declared yet.",
+      "solution": "This is a bug in the website's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای جاوا اسکریپت: ReferenceError",
+      "description": "این خطا زمانی رخ می‌دهد که کد تلاش می‌کند از یک متغیر که هنوز تعریف نشده است، استفاده کند.",
+      "solution": "این یک باگ در کد وب‌سایت است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "TypeError": {
+    "en": {
+      "title": "JavaScript Error: TypeError",
+      "description": "This occurs when an operation is performed on a value of the wrong data type (e.g., treating a number as a function).",
+      "solution": "This is a bug in the website's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای جاوا اسکریپت: TypeError",
+      "description": "این خطا زمانی رخ می‌دهد که یک عملیات روی مقداری با نوع داده اشتباه انجام شود (مثلاً یک عدد را به عنوان یک تابع فراخوانی کنیم).",
+      "solution": "این یک باگ در کد وب‌سایت است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "SyntaxError": {
+    "en": {
+      "title": "JavaScript Error: SyntaxError",
+      "description": "This occurs when the JavaScript engine encounters code that violates the language's syntax rules.",
+      "solution": "This is a bug in the website's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای جاوا اسکریپت: SyntaxError",
+      "description": "این خطا زمانی رخ می‌دهد که موتور جاوا اسکریپت با کدی مواجه شود که قوانین دستوری زبان را نقض می‌کند.",
+      "solution": "این یک باگ در کد وب‌سایت است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "Aw, Snap! / Page Crash": {
+    "en": {
+      "title": "Page Crash: 'Aw, Snap!'",
+      "description": "The web page has crashed. This can happen for many reasons, including a bug in the page, an extension conflict, or the page using too much memory.",
+      "solution": "1. Try reloading the page.\n2. Close other tabs to free up memory.\n3. Disable your extensions one by one to see if one is causing the issue."
+    },
+    "fa": {
+      "title": "کرش کردن صفحه",
+      "description": "صفحه وب از کار افتاده است. این می‌تواند به دلایل زیادی رخ دهد، از جمله یک باگ در صفحه، تداخل افزونه‌ها، یا استفاده بیش از حد از حافظه.",
+      "solution": "۱. صفحه را دوباره بارگذاری کنید.\n۲. تب‌های دیگر را ببندید تا حافظه آزاد شود.\n۳. افزونه‌های خود را یک به یک غیرفعال کنید تا ببینید آیا یکی از آن‌ها باعث مشکل شده است."
+    }
+  },
+  "100": {
+    "en": {
+      "title": "Status 100: Continue",
+      "description": "This interim response indicates that the client should continue the request or ignore the response if the request is already finished.",
+      "solution": "This is an informational status code and not an error. No action is needed."
+    },
+    "fa": {
+      "title": "وضعیت ۱۰۰: ادامه بده",
+      "description": "این پاسخ موقت نشان می‌دهد که کلاینت باید درخواست را ادامه دهد یا اگر درخواست قبلاً تمام شده، این پاسخ را نادیده بگیرد.",
+      "solution": "این یک کد وضعیت اطلاعاتی است و خطا محسوب نمی‌شود. نیازی به اقدام نیست."
+    }
+  },
+  "200": {
+    "en": {
+      "title": "Status 200: OK",
+      "description": "The request has succeeded. This is the standard response for successful HTTP requests.",
+      "solution": "This indicates a successful operation. It is not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۲۰۰: OK",
+      "description": "درخواست با موفقیت انجام شده است. این پاسخ استاندارد برای درخواست‌های HTTP موفق است.",
+      "solution": "این نشان‌دهنده یک عملیات موفق است و خطا نیست."
+    }
+  },
+  "201": {
+    "en": {
+      "title": "Status 201: Created",
+      "description": "The request has succeeded and a new resource has been created as a result.",
+      "solution": "This indicates a successful creation of a resource. It is not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۲۰۱: ایجاد شد",
+      "description": "درخواست با موفقیت انجام شده و در نتیجه آن، یک منبع جدید ایجاد شده است.",
+      "solution": "این نشان‌دهنده ایجاد موفق یک منبع است و خطا نیست."
+    }
+  },
+  "202": {
+    "en": {
+      "title": "Status 202: Accepted",
+      "description": "The request has been received but not yet acted upon. It is intended for cases where another process or server handles the request, or for batch processing.",
+      "solution": "This is an informational status, not an error. The request is in a queue to be processed."
+    },
+    "fa": {
+      "title": "وضعیت ۲۰۲: پذیرفته شد",
+      "description": "درخواست دریافت شده اما هنوز روی آن اقدامی صورت نگرفته است. این برای مواردی است که یک فرآیند یا سرور دیگر درخواست را مدیریت می‌کند، یا برای پردازش دسته‌ای.",
+      "solution": "این یک وضعیت اطلاعاتی است، نه خطا. درخواست در صف پردازش قرار دارد."
+    }
+  },
+  "204": {
+    "en": {
+      "title": "Status 204: No Content",
+      "description": "There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.",
+      "solution": "This indicates a successful request where no data needed to be returned (e.g., after a DELETE request). Not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۲۰۴: بدون محتوا",
+      "description": "هیچ محتوایی برای ارسال برای این درخواست وجود ندارد، اما هدرها ممکن است مفید باشند. مرورگر ممکن است هدرهای کش‌شده خود را با هدرهای جدید به‌روز کند.",
+      "solution": "این نشان‌دهنده یک درخواست موفق است که نیازی به بازگرداندن داده نداشته (مثلاً پس از یک درخواست DELETE). خطا نیست."
+    }
+  },
+  "301": {
+    "en": {
+      "title": "Status 301: Moved Permanently",
+      "description": "The URL of the requested resource has been changed permanently. The new URL is given in the response.",
+      "solution": "This is a redirect, not an error. Your browser will automatically follow it. You may want to update your bookmarks."
+    },
+    "fa": {
+      "title": "وضعیت ۳۰۱: برای همیشه منتقل شد",
+      "description": "آدرس URL منبع درخواستی برای همیشه تغییر کرده است. آدرس جدید در پاسخ داده شده است.",
+      "solution": "این یک ریدایرکت است، نه خطا. مرورگر شما به طور خودکار آن را دنبال خواهد کرد. بهتر است بوکمارک‌های خود را به‌روز کنید."
+    }
+  },
+  "302": {
+    "en": {
+      "title": "Status 302: Found",
+      "description": "The URI of the requested resource has been changed temporarily. Further changes in the URI might be made in the future.",
+      "solution": "This is a temporary redirect. Your browser will automatically follow it. You should continue to use the original URL for future requests."
+    },
+    "fa": {
+      "title": "وضعیت ۳۰۲: یافت شد",
+      "description": "آدرس URI منبع درخواستی به طور موقت تغییر کرده است. تغییرات بیشتری در آینده ممکن است در URI ایجاد شود.",
+      "solution": "این یک ریدایرکت موقتی است. مرورگر شما به طور خودکار آن را دنبال خواهد کرد. برای درخواست‌های آینده باید از URL اصلی استفاده کنید."
+    }
+  },
+  "303": {
+    "en": {
+      "title": "Status 303: See Other",
+      "description": "The server sent this response to direct the client to get the requested resource at another URI with a GET request.",
+      "solution": "This is a redirect, typically used after a POST request to prevent the user from accidentally re-submitting a form. Not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۳۰۳: به جای دیگر مراجعه کنید",
+      "description": "سرور این پاسخ را برای هدایت کلاینت به دریافت منبع درخواستی در یک URI دیگر با درخواست GET ارسال کرده است.",
+      "solution": "این یک ریدایرکت است که معمولاً پس از یک درخواست POST برای جلوگیری از ارسال مجدد تصادفی فرم استفاده می‌شود. خطا نیست."
+    }
+  },
+  "304": {
+    "en": {
+      "title": "Status 304: Not Modified",
+      "description": "This is used for caching purposes. It tells the client that the response has not been modified, so the client can continue to use the same cached version of the response.",
+      "solution": "This is a performance optimization, not an error. It means the page loaded faster because it was loaded from your browser's cache."
+    },
+    "fa": {
+      "title": "وضعیت ۳۰۴: اصلاح نشده",
+      "description": "این برای اهداف کش کردن استفاده می‌شود. به کلاینت می‌گوید که پاسخ اصلاح نشده، بنابراین کلاینت می‌تواند به استفاده از همان نسخه کش‌شده پاسخ ادامه دهد.",
+      "solution": "این یک بهینه‌سازی عملکرد است، نه خطا. به این معنی است که صفحه سریع‌تر بارگذاری شده زیرا از حافظه پنهان مرورگر شما بارگذاری شده است."
+    }
+  },
+  "net::ERR_ADDRESS_UNREACHABLE": {
+    "en": {
+      "title": "Error: Address Unreachable",
+      "description": "The browser could not reach the IP address for the requested domain. This usually indicates a routing problem at a low network level.",
+      "solution": "1. Check your internet connection.\n2. This could be a temporary issue with your ISP or a broader network problem. Try again later.\n3. A firewall might be blocking the connection."
+    },
+    "fa": {
+      "title": "خطا: آدرس غیرقابل دسترس است",
+      "description": "مرورگر نتوانست به آدرس IP دامنه درخواستی برسد. این معمولاً نشان‌دهنده یک مشکل مسیریابی در سطح پایین شبکه است.",
+      "solution": "۱. اتصال اینترنت خود را بررسی کنید.\n۲. این می‌تواند یک مشکل موقتی با ISP شما یا یک مشکل شبکه گسترده‌تر باشد. بعداً دوباره تلاش کنید.\n۳. ممکن است یک فایروال اتصال را مسدود کرده باشد."
+    }
+  },
+  "net::ERR_TOO_MANY_REDIRECTS": {
+    "en": {
+      "title": "Error: Too Many Redirects",
+      "description": "The page tried to redirect you too many times, creating an infinite loop.",
+      "solution": "This is a server-side misconfiguration. The website is stuck in a loop of redirecting to itself or another page. Clearing your cookies for this site might sometimes help."
+    },
+    "fa": {
+      "title": "خطا: تعداد ریدایرکت‌ها بیش از حد است",
+      "description": "صفحه تلاش کرده شما را بیش از حد ریدایرکت کند و یک حلقه بی‌نهایت ایجاد کرده است.",
+      "solution": "این یک پیکربندی نادرست سمت سرور است. وب‌سایت در یک حلقه ریدایرکت به خود یا صفحه دیگر گیر کرده است. پاک کردن کوکی‌های این سایت گاهی اوقات می‌تواند کمک کند."
+    }
+  },
+  "net::ERR_EMPTY_RESPONSE": {
+    "en": {
+      "title": "Error: Empty Response",
+      "description": "The website sent no data and closed the connection.",
+      "solution": "This could be a temporary server glitch or a network issue. Try reloading the page. If it persists, the website's server is likely having problems."
+    },
+    "fa": {
+      "title": "خطا: پاسخ خالی",
+      "description": "وب‌سایت هیچ داده‌ای ارسال نکرد و اتصال را بست.",
+      "solution": "این می‌تواند یک مشکل موقتی سرور یا یک مشکل شبکه باشد. صفحه را دوباره بارگذاری کنید. اگر ادامه داشت، سرور وب‌سایت احتمالاً مشکل دارد."
+    }
+  },
+  "net::ERR_INVALID_HTTP_RESPONSE": {
+    "en": {
+      "title": "Error: Invalid HTTP Response",
+      "description": "The browser received a response from the server that was malformed or it could not parse.",
+      "solution": "This is typically a server-side issue where the server is not correctly following the HTTP protocol. There is little a user can do."
+    },
+    "fa": {
+      "title": "خطا: پاسخ HTTP نامعتبر",
+      "description": "مرورگر پاسخی از سرور دریافت کرد که خراب بود یا نمی‌توانست آن را تجزیه کند.",
+      "solution": "این معمولاً یک مشکل سمت سرور است که در آن سرور به درستی از پروتکل HTTP پیروی نمی‌کند. کاربر کار زیادی نمی‌تواند انجام دهد."
+    }
+  },
+  "SSL Handshake Failed": {
+    "en": {
+      "title": "Error: SSL Handshake Failed",
+      "description": "The browser and the server failed to agree on a secure communication channel. This can be due to protocol mismatches or server configuration issues.",
+      "solution": "This is a server-side issue. The server might be misconfigured, or there could be a network device interfering with the secure connection. Trying again might help if it was a temporary glitch."
+    },
+    "fa": {
+      "title": "خطا: دست‌دهی SSL ناموفق بود",
+      "description": "مرورگر و سرور نتوانستند بر سر یک کانال ارتباطی امن به توافق برسند. این می‌تواند به دلیل عدم تطابق پروتکل‌ها یا مشکلات پیکربندی سرور باشد.",
+      "solution": "این یک مشکل سمت سرور است. ممکن است سرور به درستی پیکربندی نشده باشد یا یک دستگاه شبکه در اتصال امن دخالت کند. تلاش مجدد ممکن است در صورت موقتی بودن مشکل، کمک کند."
+    }
+  },
+  "MEDIA_ERR_SRC_NOT_SUPPORTED": {
+    "en": {
+      "title": "Media Error: Source Not Supported",
+      "description": "The audio or video could not be loaded, either because the server or network failed or because the format is not supported.",
+      "solution": "The video file might be corrupt, or your browser might not support this video format. Try a different browser or check if the link to the video is correct."
+    },
+    "fa": {
+      "title": "خطای رسانه: منبع پشتیبانی نمی‌شود",
+      "description": "صوت یا ویدیو نتوانست بارگذاری شود، یا به دلیل مشکل سرور یا شبکه، یا به دلیل اینکه فرمت آن پشتیبانی نمی‌شود.",
+      "solution": "ممکن است فایل ویدیویی خراب باشد، یا مرورگر شما از این فرمت ویدیویی پشتیبانی نکند. یک مرورگر دیگر را امتحان کنید یا بررسی کنید که آیا لینک ویدیو صحیح است."
+    }
+  },
+  "MEDIA_ERR_DECODE": {
+    "en": {
+      "title": "Media Error: Decode Error",
+      "description": "The audio or video playback was aborted due to a corruption problem or because the media used features your browser did not support.",
+      "solution": "This usually means the media file itself is broken. There is little you can do besides informing the website owner."
+    },
+    "fa": {
+      "title": "خطای رسانه: خطای رمزگشایی",
+      "description": "پخش صوت یا ویدیو به دلیل مشکل خرابی یا به دلیل اینکه رسانه از ویژگی‌هایی استفاده کرده که مرورگر شما از آن‌ها پشتیبانی نمی‌کند، متوقف شد.",
+      "solution": "این معمولاً به این معنی است که خود فایل رسانه‌ای خراب است. کار زیادی جز اطلاع دادن به صاحب وب‌سایت نمی‌توانید انجام دهید."
+    }
+  },
+  "STATUS_ACCESS_VIOLATION": {
+    "en": {
+      "title": "Crash: Access Violation",
+      "description": "This is a low-level crash code indicating that the browser process tried to access memory that it did not have permission to read or write to.",
+      "solution": "This is a serious bug, either in the browser or the webpage's code. Reloading the page might help, but the issue will likely persist until developers fix it."
+    },
+    "fa": {
+      "title": "کرش: نقض دسترسی",
+      "description": "این یک کد کرش سطح پایین است که نشان می‌دهد فرآیند مرورگر تلاش کرده به حافظه‌ای دسترسی پیدا کند که مجوز خواندن یا نوشتن در آن را نداشته است.",
+      "solution": "این یک باگ جدی است، یا در مرورگر یا در کد صفحه وب. بارگذاری مجدد صفحه ممکن است کمک کند، اما مشکل احتمالاً تا زمانی که توسعه‌دهندگان آن را برطرف نکنند، باقی خواهد ماند."
+    }
+  },
+  "WebAssembly.LinkError": {
+    "en": {
+      "title": "WebAssembly Error: LinkError",
+      "description": "This occurs when a WebAssembly module tries to import a function or memory that was not provided or does not match the expected type.",
+      "solution": "This is a developer-side error in how the WebAssembly module is integrated with JavaScript."
+    },
+    "fa": {
+      "title": "خطای وب‌اسمبلی: LinkError",
+      "description": "این خطا زمانی رخ می‌دهد که یک ماژول وب‌اسمبلی تلاش می‌کند یک تابع یا حافظه‌ای را وارد کند که ارائه نشده یا با نوع مورد انتظار مطابقت ندارد.",
+      "solution": "این یک خطای سمت توسعه‌دهنده در نحوه یکپارچه‌سازی ماژول وب‌اسمبلی با جاوا اسکریپت است."
+    }
+  },
+  "RESULT_CODE_KILLED_BAD_MESSAGE": {
+    "en": {
+      "title": "Process Killed: Bad Message",
+      "description": "The browser's main process killed a renderer process (e.g., a tab) because it sent a malformed or malicious message.",
+      "solution": "This is a security measure. The page or an extension might be behaving maliciously or is seriously bugged. Reloading is usually safe but be cautious."
+    },
+    "fa": {
+      "title": "فرآیند متوقف شد: پیام بد",
+      "description": "فرآیند اصلی مرورگر یک فرآیند رندرکننده (مثلاً یک تب) را به دلیل ارسال یک پیام خراب یا مخرب، متوقف کرده است.",
+      "solution": "این یک اقدام امنیتی است. صفحه یا یک افزونه ممکن است به صورت مخرب رفتار کند یا به شدت باگ داشته باشد. بارگذاری مجدد معمولاً امن است اما محتاط باشید."
+    }
+  },
+  "ERR_UNSAFE_REDIRECT": {
+    "en": {
+      "title": "Error: Unsafe Redirect",
+      "description": "The browser blocked a redirect from a secure (HTTPS) page to an insecure (HTTP) page for security reasons.",
+      "solution": "The website has a misconfiguration that attempts to downgrade your secure connection. This is a good block by the browser."
+    },
+    "fa": {
+      "title": "خطا: ریدایرکت ناامن",
+      "description": "مرورگر به دلایل امنیتی یک ریدایرکت از یک صفحه امن (HTTPS) به یک صفحه ناامن (HTTP) را مسدود کرده است.",
+      "solution": "وب‌سایت یک پیکربندی نادرست دارد که تلاش می‌کند اتصال امن شما را تضعیف کند. این یک مسدودسازی خوب توسط مرورگر است."
+    }
+  },
+  "415": {
+    "en": {
+      "title": "Error 415: Unsupported Media Type",
+      "description": "The server is rejecting the request because the payload format is in an unsupported format.",
+      "solution": "This is a developer-side error. The client is sending data (e.g., XML) that the server does not accept (e.g., it only accepts JSON)."
+    },
+    "fa": {
+      "title": "خطای ۴۱۵: نوع رسانه پشتیبانی نمی‌شود",
+      "description": "سرور درخواست را رد می‌کند زیرا فرمت داده ارسالی، یک فرمت پشتیبانی‌نشده است.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. کلاینت در حال ارسال داده‌ای (مثلاً XML) است که سرور آن را نمی‌پذیرد (مثلاً فقط JSON می‌پذیرد)."
+    }
+  },
+  "416": {
+    "en": {
+      "title": "Error 416: Range Not Satisfiable",
+      "description": "The range specified by the Range header field in the request cannot be fulfilled.",
+      "solution": "This means the client is asking for a part of a file (e.g., bytes 900-1000) that doesn't exist (e.g., the file is only 500 bytes long)."
+    },
+    "fa": {
+      "title": "خطای ۴۱۶: محدوده درخواستی قابل اجرا نیست",
+      "description": "محدوده مشخص‌شده توسط هدر Range در درخواست، قابل اجرا نیست.",
+      "solution": "این به این معنی است که کلاینت درخواست بخشی از یک فایل (مثلاً بایت‌های ۹۰۰-۱۰۰۰) را دارد که وجود ندارد (مثلاً فایل فقط ۵۰۰ بایت است)."
+    }
+  },
+  "417": {
+    "en": {
+      "title": "Error 417: Expectation Failed",
+      "description": "The expectation indicated by the Expect request-header field could not be met by the server.",
+      "solution": "This is a technical error where the client expects a certain behavior from the server before sending its data, but the server does not support it."
+    },
+    "fa": {
+      "title": "خطای ۴۱۷: انتظار برآورده نشد",
+      "description": "انتظار مشخص‌شده توسط هدر Expect در درخواست، توسط سرور قابل برآورده شدن نبود.",
+      "solution": "این یک خطای فنی است که در آن کلاینت قبل از ارسال داده‌های خود، انتظار رفتار خاصی از سرور دارد، اما سرور از آن پشتیبانی نمی‌کند."
+    }
+  },
+  "422": {
+    "en": {
+      "title": "Error 422: Unprocessable Entity",
+      "description": "The server understands the content type of the request entity, but was unable to process the contained instructions.",
+      "solution": "This often occurs in APIs when the sent data is syntactically correct (e.g., valid JSON) but semantically wrong (e.g., a required field is missing)."
+    },
+    "fa": {
+      "title": "خطای ۴۲۲: موجودیت غیرقابل پردازش",
+      "description": "سرور نوع محتوای درخواست را درک می‌کند، اما قادر به پردازش دستورالعمل‌های موجود در آن نبود.",
+      "solution": "این خطا اغلب در APIها زمانی رخ می‌دهد که داده ارسالی از نظر دستوری صحیح است (مثلاً JSON معتبر) اما از نظر معنایی اشتباه است (مثلاً یک فیلد الزامی وجود ندارد)."
+    }
+  },
+  "423": {
+    "en": {
+      "title": "Error 423: Locked (WebDAV)",
+      "description": "The resource that is being accessed is locked.",
+      "solution": "This is specific to the WebDAV protocol and means the file or resource is temporarily locked for editing by another user or process."
+    },
+    "fa": {
+      "title": "خطای ۴۲۳: قفل شده (WebDAV)",
+      "description": "منبعی که در حال دسترسی به آن هستید، قفل شده است.",
+      "solution": "این خطا مختص پروتکل WebDAV است و به این معنی است که فایل یا منبع به طور موقت برای ویرایش توسط کاربر یا فرآیند دیگری قفل شده است."
+    }
+  },
+  "424": {
+    "en": {
+      "title": "Error 424: Failed Dependency (WebDAV)",
+      "description": "The request failed due to failure of a previous request.",
+      "solution": "In a WebDAV context, if one action in a series of actions fails, subsequent dependent actions will also fail with this error."
+    },
+    "fa": {
+      "title": "خطای ۴۲۴: وابستگی ناموفق (WebDAV)",
+      "description": "درخواست به دلیل شکست یک درخواست قبلی، ناموفق بود.",
+      "solution": "در زمینه WebDAV، اگر یک عمل در یک سری از عملیات‌ها با شکست مواجه شود، عملیات‌های وابسته بعدی نیز با این خطا ناموفق خواهند بود."
+    }
+  },
+  "426": {
+    "en": {
+      "title": "Error 426: Upgrade Required",
+      "description": "The server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol.",
+      "solution": "This is a server's way of indicating that you must use a newer protocol, like switching from HTTP/1.1 to HTTP/2."
+    },
+    "fa": {
+      "title": "خطای ۴۲۶: نیاز به ارتقا",
+      "description": "سرور از انجام درخواست با پروتکل فعلی امتناع می‌کند اما ممکن است پس از ارتقاء کلاینت به پروتکل دیگر، مایل به انجام آن باشد.",
+      "solution": "این روشی است که سرور نشان می‌دهد شما باید از یک پروتکل جدیدتر استفاده کنید، مانند تغییر از HTTP/1.1 به HTTP/2."
+    }
+  },
+  "428": {
+    "en": {
+      "title": "Error 428: Precondition Required",
+      "description": "The origin server requires the request to be conditional.",
+      "solution": "This is used to prevent the 'lost update' problem, where a client GETs a resource's state, modifies it, and PUTs it back to the server, while a third party has modified the state on the server in the meantime."
+    },
+    "fa": {
+      "title": "خطای ۴۲۸: پیش‌شرط الزامی است",
+      "description": "سرور مبدأ نیاز دارد که درخواست شرطی باشد.",
+      "solution": "این برای جلوگیری از مشکل 'آپدیت از دست رفته' استفاده می‌شود، جایی که یک کلاینت وضعیت یک منبع را GET می‌کند، آن را تغییر می‌دهد و دوباره PUT می‌کند، در حالی که یک شخص ثالث در این بین وضعیت را در سرور تغییر داده است."
+    }
+  },
+  "431": {
+    "en": {
+      "title": "Error 431: Request Header Fields Too Large",
+      "description": "The server is unwilling to process the request because its header fields are too large.",
+      "solution": "This can happen if too many cookies or a very large Referer URL is being sent with the request. Clearing cookies for the site might help."
+    },
+    "fa": {
+      "title": "خطای ۴۳1: فیلدهای هدر درخواست بیش از حد بزرگ است",
+      "description": "سرور مایل به پردازش درخواست نیست زیرا فیلدهای هدر آن بیش از حد بزرگ هستند.",
+      "solution": "این می‌تواند در صورتی رخ دهد که کوکی‌های بیش از حد یا یک URL ارجاع‌دهنده بسیار بزرگ با درخواست ارسال شود. پاک کردن کوکی‌های این سایت ممکن است کمک کند."
+    }
+  },
+  "451": {
+    "en": {
+      "title": "Error 451: Unavailable For Legal Reasons",
+      "description": "The user-agent requested a resource that cannot legally be provided, such as a web page censored by a government.",
+      "solution": "This content is blocked due to a legal order. It is not a technical error."
+    },
+    "fa": {
+      "title": "خطای ۴۵۱: به دلایل قانونی در دسترس نیست",
+      "description": "کلاینت درخواستی برای منبعی داشته که ارائه آن قانوناً ممکن نیست، مانند یک صفحه وب که توسط یک دولت سانسور شده است.",
+      "solution": "این محتوا به دلیل یک دستور قانونی مسدود شده است. این یک خطای فنی نیست."
+    }
+  },
+  "506": {
+    "en": {
+      "title": "Error 506: Variant Also Negotiates",
+      "description": "The server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper endpoint in the negotiation process.",
+      "solution": "This is a server misconfiguration that must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطای ۵۰۶: نوع دیگر نیز مذاکره می‌کند",
+      "description": "سرور یک خطای پیکربندی داخلی دارد: منبع انتخاب شده خود برای مذاکره محتوای شفاف پیکربندی شده است و بنابراین یک نقطه پایانی مناسب در فرآیند مذاکره نیست.",
+      "solution": "این یک پیکربندی نادرست سرور است که باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "507": {
+    "en": {
+      "title": "Error 507: Insufficient Storage (WebDAV)",
+      "description": "The server is unable to store the representation needed to complete the request.",
+      "solution": "The server has run out of disk space or has exceeded its storage quota. This must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطای ۵۰۷: فضای ذخیره‌سازی ناکافی (WebDAV)",
+      "description": "سرور قادر به ذخیره نمایش مورد نیاز برای تکمیل درخواست نیست.",
+      "solution": "فضای دیسک سرور تمام شده یا از سهمیه ذخیره‌سازی خود فراتر رفته است. این باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "508": {
+    "en": {
+      "title": "Error 508: Loop Detected (WebDAV)",
+      "description": "The server detected an infinite loop while processing the request.",
+      "solution": "This is a server misconfiguration, often related to symbolic links or redirect rules creating an endless cycle."
+    },
+    "fa": {
+      "title": "خطای ۵۰۸: حلقه شناسایی شد (WebDAV)",
+      "description": "سرور هنگام پردازش درخواست، یک حلقه بی‌نهایت را شناسایی کرده است.",
+      "solution": "این یک پیکربندی نادرست سرور است که اغلب به لینک‌های نمادین یا قوانین ریدایرکت که یک چرخه بی‌پایان ایجاد می‌کنند، مربوط می‌شود."
+    }
+  },
+  "510": {
+    "en": {
+      "title": "Error 510: Not Extended",
+      "description": "Further extensions to the request are required for the server to fulfill it.",
+      "solution": "This is a technical requirement from the server that the client (browser) does not support. It's a developer-level issue."
+    },
+    "fa": {
+      "title": "خطای ۵۱۰: گسترش نیافته",
+      "description": "برای اینکه سرور بتواند درخواست را انجام دهد، به افزونه‌های بیشتری برای درخواست نیاز است.",
+      "solution": "این یک نیاز فنی از طرف سرور است که کلاینت (مرورگر) از آن پشتیبانی نمی‌کند. این یک مشکل در سطح توسعه‌دهنده است."
+    }
+  },
+  "511": {
+    "en": {
+      "title": "Error 511: Network Authentication Required",
+      "description": "The client needs to authenticate to gain network access. This is common in captive portals (e.g., hotel or airport Wi-Fi).",
+      "solution": "You must log in to the Wi-Fi or network portal page before you can access the internet."
+    },
+    "fa": {
+      "title": "خطای ۵۱۱: نیاز به احراز هویت شبکه",
+      "description": "کلاینت برای دسترسی به شبکه نیاز به احراز هویت دارد. این در پورتال‌های Captive (مانند وای‌فای هتل یا فرودگاه) رایج است.",
+      "solution": "قبل از اینکه بتوانید به اینترنت دسترسی پیدا کنید، باید به صفحه پورتال وای‌فای یا شبکه وارد شوید."
+    }
+  },
+  "Cloudflare Error 520": {
+    "en": {
+      "title": "Cloudflare Error 520: Unknown Error",
+      "description": "This is a catch-all response when the origin server returns an unexpected or empty response to Cloudflare.",
+      "solution": "This is a server-side issue. Contact the website administrator with a screenshot of the error."
+    },
+    "fa": {
+      "title": "خطای ۵۲۰ کلادفلر: خطای ناشناخته",
+      "description": "این یک پاسخ کلی است زمانی که سرور مبدأ یک پاسخ غیرمنتظره یا خالی به کلادفلر ارسال می‌کند.",
+      "solution": "این یک مشکل سمت سرور است. با مدیر وب‌سایت تماس گرفته و یک اسکرین‌شات از خطا برای او ارسال کنید."
+    }
+  },
+  "Cloudflare Error 521": {
+    "en": {
+      "title": "Cloudflare Error 521: Web Server Is Down",
+      "description": "Cloudflare could not make a TCP connection to the origin server. The server is offline or blocking Cloudflare's requests.",
+      "solution": "The website's hosting server is down. Only the site administrator can fix this."
+    },
+    "fa": {
+      "title": "خطای ۵۲۱ کلادفلر: وب سرور از کار افتاده است",
+      "description": "کلادفلر نتوانست یک اتصال TCP به سرور مبدأ برقرار کند. سرور آفلاین است یا درخواست‌های کلادفلر را مسدود می‌کند.",
+      "solution": "سرور میزبان وب‌سایت از کار افتاده است. فقط مدیر سایت می‌تواند این مشکل را برطرف کند."
+    }
+  },
+  "Cloudflare Error 522": {
+    "en": {
+      "title": "Cloudflare Error 522: Connection Timed Out",
+      "description": "Cloudflare successfully connected to the origin server, but did not receive a response within the timeout period.",
+      "solution": "The server is overloaded or has a process that is taking too long. This is a server-side issue."
+    },
+    "fa": {
+      "title": "خطای ۵۲۲ کلادفلر: اتصال تایم‌اوت شد",
+      "description": "کلادفلر با موفقیت به سرور مبدأ متصل شد، اما در بازه زمانی مشخص پاسخی دریافت نکرد.",
+      "solution": "سرور تحت بار زیاد است یا فرآیندی دارد که بیش از حد طول می‌کشد. این یک مشکل سمت سرور است."
+    }
+  },
+  "Cloudflare Error 524": {
+    "en": {
+      "title": "Cloudflare Error 524: A Timeout Occurred",
+      "description": "This indicates that a connection to the origin server was established, but the server took too long to respond to a request.",
+      "solution": "A script or database query on the server is taking longer than Cloudflare's 100-second timeout. This must be fixed by the site's developers."
+    },
+    "fa": {
+      "title": "خطای ۵۲۴ کلادفلر: یک تایم‌اوت رخ داد",
+      "description": "این نشان می‌دهد که یک اتصال به سرور مبدأ برقرار شد، اما سرور برای پاسخ به یک درخواست بیش از حد طول کشید.",
+      "solution": "یک اسکریپت یا کوئری دیتابیس در سرور بیش از تایم‌اوت ۱۰۰ ثانیه‌ای کلادفلر زمان می‌برد. این باید توسط توسعه‌دهندگان سایت برطرف شود."
+    }
+  },
+  "Cloudflare Error 525": {
+    "en": {
+      "title": "Cloudflare Error 525: SSL Handshake Failed",
+      "description": "Cloudflare could not negotiate an SSL/TLS handshake with the origin server.",
+      "solution": "This is a server-side issue, often caused by an invalid SSL certificate on the origin server or a cipher suite mismatch."
+    },
+    "fa": {
+      "title": "خطای ۵۲۵ کلادفلر: دست‌دهی SSL ناموفق بود",
+      "description": "کلادفلر نتوانست یک دست‌دهی SSL/TLS با سرور مبدأ مذاکره کند.",
+      "solution": "این یک مشکل سمت سرور است که اغلب به دلیل یک گواهی‌نامه SSL نامعتبر در سرور مبدأ یا عدم تطابق مجموعه رمزنگاری ایجاد می‌شود."
+    }
+  },
+  "Cloudflare Error 526": {
+    "en": {
+      "title": "Cloudflare Error 526: Invalid SSL Certificate",
+      "description": "Cloudflare cannot validate the SSL certificate on your origin web server.",
+      "solution": "The origin server's SSL certificate is either expired, self-signed, or improperly installed. The site administrator must fix this."
+    },
+    "fa": {
+      "title": "خطای ۵۲۶ کلادفلر: گواهی‌نامه SSL نامعتبر",
+      "description": "کلادفلر نمی‌تواند گواهی‌نامه SSL را در وب سرور مبدأ شما تأیید کند.",
+      "solution": "گواهی‌نامه SSL سرور مبدأ یا منقضی شده، خودامضا است، یا به درستی نصب نشده است. مدیر سایت باید این مشکل را برطرف کند."
+    }
+  },
+  "The character encoding of the HTML document was not declared": {
+    "en": {
+      "title": "Warning: Character Encoding Not Declared",
+      "description": "The HTML document did not specify its character encoding. The browser has to guess, which can lead to characters displaying incorrectly.",
+      "solution": "The website developer needs to add a `<meta charset=\"UTF-8\">` tag to the head of the HTML document."
+    },
+    "fa": {
+      "title": "هشدار: کدگذاری کاراکترها اعلام نشده است",
+      "description": "سند HTML کدگذاری کاراکترهای خود را مشخص نکرده است. مرورگر مجبور به حدس زدن است، که می‌تواند منجر به نمایش نادرست کاراکترها شود.",
+      "solution": "توسعه‌دهنده وب‌سایت باید یک تگ `<meta charset=\"UTF-8\">` به بخش head سند HTML اضافه کند."
+    }
+  },
+  "XML Parsing Error: syntax error": {
+    "en": {
+      "title": "Error: XML Parsing Error",
+      "description": "The browser could not parse the document because it contains malformed XML syntax.",
+      "solution": "This is a bug in the website's code (e.g., in an SVG, XHTML, or other XML file) that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطا: خطای تجزیه XML",
+      "description": "مرورگر نتوانست سند را تجزیه کند زیرا حاوی سینتکس XML خراب است.",
+      "solution": "این یک باگ در کد وب‌سایت (مثلاً در یک فایل SVG، XHTML یا XML دیگر) است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "Strict-MIME-type-checking Block": {
+    "en": {
+      "title": "Error: Blocked due to MIME type mismatch",
+      "description": "The browser blocked a resource (like a script or stylesheet) because its `Content-Type` header did not match what was expected, and the server sent the `X-Content-Type-Options: nosniff` header.",
+      "solution": "This is a server-side security configuration issue that must be fixed by the website administrator."
+    },
+    "fa": {
+      "title": "خطا: به دلیل عدم تطابق نوع MIME مسدود شد",
+      "description": "مرورگر یک منبع (مانند یک اسکریپت یا استایل‌شیت) را مسدود کرد زیرا هدر `Content-Type` آن با آنچه انتظار می‌رفت مطابقت نداشت و سرور هدر `X-Content-Type-Options: nosniff` را ارسال کرده بود.",
+      "solution": "این یک مشکل پیکربندی امنیتی سمت سرور است که باید توسط مدیر وب‌سایت برطرف شود."
+    }
+  },
+  "Failed to decode downloaded font": {
+    "en": {
+      "title": "Error: Failed to decode font",
+      "description": "The browser downloaded a web font file but could not decode it. The file is likely corrupt.",
+      "solution": "The website owner needs to re-upload a valid version of the font file."
+    },
+    "fa": {
+      "title": "خطا: رمزگشایی فونت دانلود شده ناموفق بود",
+      "description": "مرورگر یک فایل فونت وب را دانلود کرد اما نتوانست آن را رمزگشایی کند. فایل احتمالاً خراب است.",
+      "solution": "صاحب وب‌سایت باید یک نسخه معتبر از فایل فونت را دوباره آپلود کند."
+    }
+  },
+  "CSP Violation: unsafe-eval": {
+    "en": {
+      "title": "CSP Violation: 'unsafe-eval'",
+      "description": "The page's Content Security Policy (CSP) blocks the use of `eval()` and similar functions for security reasons.",
+      "solution": "This is a deliberate security measure. The website's code is trying to do something that its own security policy forbids."
+    },
+    "fa": {
+      "title": "نقض CSP: 'unsafe-eval'",
+      "description": "سیاست امنیت محتوای صفحه (CSP) به دلایل امنیتی استفاده از `eval()` و توابع مشابه را مسدود می‌کند.",
+      "solution": "این یک اقدام امنیتی عمدی است. کد وب‌سایت در تلاش است کاری انجام دهد که سیاست امنیتی خود آن را ممنوع کرده است."
+    }
+  },
+  "WebAssembly.CompileError": {
+    "en": {
+      "title": "WebAssembly Error: CompileError",
+      "description": "The browser failed to compile the WebAssembly bytecode because it is invalid or malformed.",
+      "solution": "This is a developer-side error. The provided .wasm file is corrupt or not a valid WebAssembly module."
+    },
+    "fa": {
+      "title": "خطای وب‌اسمبلی: CompileError",
+      "description": "مرورگر در کامپایل بایت‌کد وب‌اسمبلی شکست خورد زیرا نامعتبر یا خراب است.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. فایل .wasm ارائه شده خراب است یا یک ماژول وب‌اسمبلی معتبر نیست."
+    }
+  },
+  "WebAssembly.RuntimeError": {
+    "en": {
+      "title": "WebAssembly Error: RuntimeError",
+      "description": "An error occurred during the execution of WebAssembly code, such as division by zero or an out-of-bounds memory access.",
+      "solution": "This is a bug within the logic of the WebAssembly code itself, which must be fixed by the developers."
+    },
+    "fa": {
+      "title": "خطای وب‌اسمبلی: RuntimeError",
+      "description": "یک خطا در حین اجرای کد وب‌اسمبلی رخ داد، مانند تقسیم بر صفر یا دسترسی به حافظه خارج از محدوده.",
+      "solution": "این یک باگ در منطق خود کد وب‌اسمبلی است که باید توسط توسعه‌دهندگان برطرف شود."
+    }
+  },
+  "DOMException: Failed to execute 'importScripts'": {
+    "en": {
+      "title": "Worker Error: Failed to import scripts",
+      "description": "A script inside a Web Worker or Service Worker failed to import another script.",
+      "solution": "This is usually caused by a network error or an incorrect path to the script being imported. A developer issue."
+    },
+    "fa": {
+      "title": "خطای Worker: وارد کردن اسکریپت‌ها ناموفق بود",
+      "description": "یک اسکریپت در داخل یک Web Worker یا Service Worker نتوانست اسکریپت دیگری را وارد کند.",
+      "solution": "این معمولاً به دلیل یک خطای شبکه یا یک مسیر نادرست به اسکریپت مورد نظر ایجاد می‌شود. یک مشکل توسعه‌دهنده."
+    }
+  },
+  "DOMException: The data being cloned could not be cloned": {
+    "en": {
+      "title": "Worker Error: Data Cloning Failed",
+      "description": "An attempt was made to pass data to a Web Worker (using postMessage) that is not cloneable, such as a function or a non-serializable object.",
+      "solution": "This is a developer-side error. Only cloneable data types can be passed between the main thread and workers."
+    },
+    "fa": {
+      "title": "خطای Worker: شبیه‌سازی داده ناموفق بود",
+      "description": "تلاشی برای ارسال داده به یک Web Worker (با استفاده از postMessage) انجام شد که قابل شبیه‌سازی نیست، مانند یک تابع یا یک شیء غیرقابل سریال‌سازی.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. فقط انواع داده‌های قابل شبیه‌سازی می‌توانند بین رشته اصلی و workerها منتقل شوند."
+    }
+  },
+  "ERR_HTTP_RESPONSE_CODE_FAILURE": {
+    "en": {
+      "title": "Error: HTTP Response Code Failure",
+      "description": "A generic browser error for when an HTTP request receives a non-2xx response that isn't handled by a more specific error.",
+      "solution": "This is a general failure indicator. The specific HTTP code (e.g., 404, 503) provides the real reason for the failure."
+    },
+    "fa": {
+      "title": "خطا: شکست کد پاسخ HTTP",
+      "description": "یک خطای عمومی مرورگر برای زمانی که یک درخواست HTTP یک پاسخ غیر-2xx دریافت می‌کند که توسط یک خطای مشخص‌تر مدیریت نشده است.",
+      "solution": "این یک نشانگر شکست عمومی است. کد HTTP خاص (مثلاً ۴۰۴، ۵۰۳) دلیل واقعی شکست را ارائه می‌دهد."
+    }
+  },
+  "ERR_SSL_PINNED_KEY_NOT_IN_CERT_CHAIN": {
+    "en": {
+      "title": "Error: Pinned Key Not in Certificate Chain",
+      "description": "A security error related to HPKP (HTTP Public Key Pinning). The server's certificate chain does not contain a public key that the browser was expecting.",
+      "solution": "This is a serious security warning. It could indicate a misconfiguration or a man-in-the-middle attack. Do not proceed."
+    },
+    "fa": {
+      "title": "خطا: کلید پین‌شده در زنجیره گواهی‌نامه نیست",
+      "description": "یک خطای امنیتی مربوط به HPKP (پین کردن کلید عمومی HTTP). زنجیره گواهی‌نامه سرور حاوی یک کلید عمومی که مرورگر انتظار آن را داشته، نیست.",
+      "solution": "این یک هشدار امنیتی جدی است. می‌تواند نشان‌دهنده یک پیکربندی نادرست یا یک حمله مرد میانی باشد. ادامه ندهید."
+    }
+  },
+  "HTTP/2 Stream Error: REFUSED_STREAM": {
+    "en": {
+      "title": "HTTP/2 Error: Stream Refused",
+      "description": "The server explicitly refused a specific stream within an HTTP/2 connection.",
+      "solution": "This is a server-side issue where the server decided to terminate a specific request within a connection for its own reasons (e.g., resource limits)."
+    },
+    "fa": {
+      "title": "خطای HTTP/2: استریم رد شد",
+      "description": "سرور به صراحت یک استریم خاص را در یک اتصال HTTP/2 رد کرده است.",
+      "solution": "این یک مشکل سمت سرور است که در آن سرور تصمیم گرفته یک درخواست خاص را در یک اتصال به دلایل خود (مثلاً محدودیت منابع) خاتمه دهد."
+    }
+  },
+  "ERR_DNS_SERVER_FAILED": {
+    "en": {
+      "title": "Error: DNS Server Failed",
+      "description": "The DNS server itself returned a failure response (e.g., SERVFAIL) to the browser's query.",
+      "solution": "This indicates a problem with your configured DNS server. Try switching to a public DNS provider like Google (8.8.8.8) or Cloudflare (1.1.1.1)."
+    },
+    "fa": {
+      "title": "خطا: سرور DNS شکست خورد",
+      "description": "خود سرور DNS یک پاسخ شکست (مثلاً SERVFAIL) به کوئری مرورگر شما برگردانده است.",
+      "solution": "این نشان‌دهنده یک مشکل در سرور DNS پیکربندی شده شما است. سعی کنید به یک ارائه‌دهنده DNS عمومی مانند گوگل (8.8.8.8) یا کلادفلر (1.1.1.1) سوییچ کنید."
+    }
+  },
+  "auth/user-not-found (Firebase)": {
+    "en": {
+      "title": "Firebase Error: User Not Found",
+      "description": "No user record corresponds to the provided identifier (email, UID) in Firebase Authentication.",
+      "solution": "Check if you have entered the correct email or username. You may need to sign up first."
+    },
+    "fa": {
+      "title": "خطای فایربیس: کاربر یافت نشد",
+      "description": "هیچ رکورد کاربری با شناسه ارائه شده (ایمیل، UID) در Firebase Authentication مطابقت ندارد.",
+      "solution": "بررسی کنید که آیا ایمیل یا نام کاربری صحیح را وارد کرده‌اید. ممکن است لازم باشد ابتدا ثبت نام کنید."
+    }
+  },
+  "auth/wrong-password (Firebase)": {
+    "en": {
+      "title": "Firebase Error: Wrong Password",
+      "description": "The password is invalid for the given email address.",
+      "solution": "The password you entered is incorrect. Use the 'Forgot Password' link if available."
+    },
+    "fa": {
+      "title": "خطای فایربیس: رمز عبور اشتباه است",
+      "description": "رمز عبور برای آدرس ایمیل داده شده نامعتبر است.",
+      "solution": "رمز عبوری که وارد کرده‌اید نادرست است. در صورت وجود، از لینک 'فراموشی رمز عبور' استفاده کنید."
+    }
+  },
+  "storage/object-not-found (Firebase)": {
+    "en": {
+      "title": "Firebase Error: Object Not Found",
+      "description": "No object exists at the desired reference in Cloud Storage for Firebase.",
+      "solution": "The file you are trying to access does not exist or has been deleted."
+    },
+    "fa": {
+      "title": "خطای فایربیس: شیء یافت نشد",
+      "description": "هیچ شیئی در مرجع مورد نظر در Cloud Storage for Firebase وجود ندارد.",
+      "solution": "فایلی که در تلاش برای دسترسی به آن هستید وجود ندارد یا حذف شده است."
+    }
+  },
+  "firestore/permission-denied (Firebase)": {
+    "en": {
+      "title": "Firebase Error: Permission Denied",
+      "description": "The client does not have permission to execute the specified Firestore operation, based on your security rules.",
+      "solution": "This is a developer-side security configuration. You are not authorized to read or write this data."
+    },
+    "fa": {
+      "title": "خطای فایربیس: دسترسی رد شد",
+      "description": "کلاینت بر اساس قوانین امنیتی شما، اجازه اجرای عملیات مشخص شده Firestore را ندارد.",
+      "solution": "این یک پیکربندی امنیتی سمت توسعه‌دهنده است. شما مجاز به خواندن یا نوشتن این داده نیستید."
+    }
+  },
+  "Error Establishing a Database Connection (WordPress)": {
+    "en": {
+      "title": "WordPress Error: Error Establishing a Database Connection",
+      "description": "The website is unable to connect to its MySQL database. This can be due to incorrect credentials or a database server that is down.",
+      "solution": "This is a critical server-side error that must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطای وردپرس: خطا در برقراری ارتباط با پایگاه داده",
+      "description": "وب‌سایت قادر به اتصال به پایگاه داده MySQL خود نیست. این می‌تواند به دلیل اطلاعات ورود نادرست یا از کار افتادن سرور پایگاه داده باشد.",
+      "solution": "این یک خطای بحرانی سمت سرور است که باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "The white screen of death (WSOD) (WordPress)": {
+    "en": {
+      "title": "WordPress Error: White Screen of Death (WSOD)",
+      "description": "A fatal error in WordPress (often a PHP error or memory limit issue) that results in a blank white page with no information.",
+      "solution": "This is a critical server-side error, often caused by a faulty plugin or theme. The site administrator needs to debug it."
+    },
+    "fa": {
+      "title": "خطای وردپرس: صفحه سفید مرگ (WSOD)",
+      "description": "یک خطای بحرانی در وردپرس (اغلب یک خطای PHP یا مشکل محدودیت حافظه) که منجر به یک صفحه سفید خالی بدون هیچ اطلاعاتی می‌شود.",
+      "solution": "این یک خطای بحرانی سمت سرور است که اغلب توسط یک پلاگین یا قالب معیوب ایجاد می‌شود. مدیر سایت باید آن را دیباگ کند."
+    }
+  },
+  "The link you followed has expired (WordPress)": {
+    "en": {
+      "title": "WordPress Error: The link you followed has expired",
+      "description": "This typically happens when trying to upload a file (like a theme or plugin) that exceeds the server's configured upload size limits in PHP.",
+      "solution": "The site administrator needs to increase the `upload_max_filesize` and `post_max_size` values in the server's PHP configuration."
+    },
+    "fa": {
+      "title": "خطای وردپرس: لینکی که دنبال کردید منقضی شده است",
+      "description": "این معمولاً هنگام تلاش برای آپلود یک فایل (مانند یک قالب یا پلاگین) که حجم آن از محدودیت‌های اندازه آپلود پیکربندی شده در سرور PHP فراتر می‌رود، رخ می‌دهد.",
+      "solution": "مدیر سایت باید مقادیر `upload_max_filesize` و `post_max_size` را در پیکربندی PHP سرور افزایش دهد."
+    }
+  },
+  "Briefly unavailable for scheduled maintenance (WordPress)": {
+    "en": {
+      "title": "WordPress: Maintenance Mode",
+      "description": "This is not an error, but a temporary status page displayed while WordPress is updating its core, themes, or plugins.",
+      "solution": "Please wait a minute or two and refresh the page. The site should come back online shortly."
+    },
+    "fa": {
+      "title": "وردپرس: حالت تعمیر و نگهداری",
+      "description": "این یک خطا نیست، بلکه یک صفحه وضعیت موقتی است که هنگام به‌روزرسانی هسته، قالب‌ها یا پلاگین‌های وردپرس نمایش داده می‌شود.",
+      "solution": "لطفاً یک یا دو دقیقه صبر کرده و صفحه را رفرش کنید. سایت به زودی آنلاین خواهد شد."
+    }
+  },
+  "ERR_CACHE_READ_FAILURE": {
+    "en": {
+      "title": "Error: Cache Read Failure",
+      "description": "The browser failed to read a resource from its disk cache.",
+      "solution": "This could indicate a minor corruption in the cache files. Clearing your browser's cache should resolve the issue."
+    },
+    "fa": {
+      "title": "خطا: شکست در خواندن از حافظه پنهان",
+      "description": "مرورگر در خواندن یک منبع از حافظه پنهان دیسک خود با مشکل مواجه شده است.",
+      "solution": "این می‌تواند نشان‌دهنده یک خرابی جزئی در فایل‌های کش باشد. پاک کردن حافظه پنهان مرورگر شما باید مشکل را برطرف کند."
+    }
+  },
+  "ERR_SSL_WEAK_SERVER_EPHEMERAL_DH_KEY": {
+    "en": {
+      "title": "Error: Weak Server DH Key",
+      "description": "A security error where the server is using a weak and insecure Diffie-Hellman key exchange mechanism.",
+      "solution": "This is a serious server misconfiguration that makes your connection vulnerable. Do not proceed. The site administrator must update their server's SSL/TLS configuration."
+    },
+    "fa": {
+      "title": "خطا: کلید DH سرور ضعیف است",
+      "description": "یک خطای امنیتی که در آن سرور از یک مکانیزم تبادل کلید Diffie-Hellman ضعیف و ناامن استفاده می‌کند.",
+      "solution": "این یک پیکربندی نادرست جدی سرور است که اتصال شما را آسیب‌پذیر می‌کند. ادامه ندهید. مدیر سایت باید پیکربندی SSL/TLS سرور خود را به‌روز کند."
+    }
+  },
+  "ERR_INVALID_CHUNKED_ENCODING": {
+    "en": {
+      "title": "Error: Invalid Chunked Encoding",
+      "description": "The browser received data with chunked transfer encoding, but one of the chunks was malformed.",
+      "solution": "This usually indicates a bug or glitch in the server's software. Trying again might help if it was a temporary issue."
+    },
+    "fa": {
+      "title": "خطا: کدگذاری تکه‌ای نامعتبر",
+      "description": "مرورگر داده‌هایی با کدگذاری انتقال تکه‌ای دریافت کرد، اما یکی از تکه‌ها خراب بود.",
+      "solution": "این معمولاً نشان‌دهنده یک باگ یا مشکل در نرم‌افزار سرور است. تلاش مجدد ممکن است در صورت موقتی بودن مشکل، کمک کند."
+    }
+  },
+  "SharePoint: The file is currently checked out": {
+    "en": {
+      "title": "SharePoint: File Checked Out",
+      "description": "The file is currently checked out or locked for editing by another user.",
+      "solution": "You must wait for the other user to check the file back in before you can edit it."
+    },
+    "fa": {
+      "title": "شیرپوینت: فایل Check Out شده است",
+      "description": "فایل در حال حاضر توسط کاربر دیگری برای ویرایش Check Out یا قفل شده است.",
+      "solution": "قبل از اینکه بتوانید آن را ویرایش کنید، باید منتظر بمانید تا کاربر دیگر فایل را Check In کند."
+    }
+  },
+  "SharePoint: Correlation ID": {
+    "en": {
+      "title": "SharePoint: Correlation ID",
+      "description": "SharePoint generates a unique Correlation ID for every error. This ID itself is not the error.",
+      "solution": "Provide this ID to the SharePoint administrator. They can use it to look up the exact technical details of the error in the server logs."
+    },
+    "fa": {
+      "title": "شیرپوینت: شناسه همبستگی",
+      "description": "شیرپوینت برای هر خطا یک شناسه همبستگی منحصر به فرد تولید می‌کند. این شناسه خود خطا نیست.",
+      "solution": "این شناسه را به مدیر شیرپوینت ارائه دهید. او می‌تواند از آن برای یافتن جزئیات فنی دقیق خطا در لاگ‌های سرور استفاده کند."
+    }
+  },
+  "SharePoint: The specified file or folder name is too long": {
+    "en": {
+      "title": "SharePoint: Name Too Long",
+      "description": "The full path to the file or folder, including the name, exceeds SharePoint's path length limitations.",
+      "solution": "Use shorter file and folder names to resolve this issue."
+    },
+    "fa": {
+      "title": "شیرپوینت: نام بیش از حد طولانی است",
+      "description": "مسیر کامل فایل یا پوشه، شامل نام، از محدودیت‌های طول مسیر شیرپوینت فراتر می‌رود.",
+      "solution": "برای حل این مشکل از نام‌های کوتاه‌تر برای فایل‌ها و پوشه‌ها استفاده کنید."
+    }
+  },
+  "SharePoint: This site has not been shared with you": {
+    "en": {
+      "title": "SharePoint: Site Not Shared",
+      "description": "A user-friendly message indicating you do not have permission to access the requested SharePoint site.",
+      "solution": "Request access from the site owner or a SharePoint administrator."
+    },
+    "fa": {
+      "title": "شیرپوینت: این سایت با شما به اشتراک گذاشته نشده است",
+      "description": "یک پیام کاربرپسند که نشان می‌دهد شما اجازه دسترسی به سایت شیرپوینت درخواستی را ندارید.",
+      "solution": "از صاحب سایت یا یک مدیر شیرپوینت درخواست دسترسی کنید."
+    }
+  },
+  "Steam: Error Code: -105": {
+    "en": {
+      "title": "Steam Error: -105",
+      "description": "A generic connectivity error within the Steam client's built-in browser, often meaning it was unable to connect to a specific server.",
+      "solution": "1. Check your internet connection.\n2. Restart the Steam client.\n3. Clear Steam's web browser cache and cookies."
+    },
+    "fa": {
+      "title": "خطای استیم: -105",
+      "description": "یک خطای اتصال عمومی در مرورگر داخلی کلاینت استیم، که اغلب به معنی عدم توانایی در اتصال به یک سرور خاص است.",
+      "solution": "۱. اتصال اینترنت خود را بررسی کنید.\n۲. کلاینت استیم را دوباره راه‌اندازی کنید.\n۳. حافظه پنهان و کوکی‌های مرورگر وب استیم را پاک کنید."
+    }
+  },
+  "Steam: Disk Write Error": {
+    "en": {
+      "title": "Steam Error: Disk Write Error",
+      "description": "Steam cannot write a game's files to the disk during a download or update.",
+      "solution": "1. Run Steam as an administrator.\n2. Check your hard drive for errors and ensure you have enough free space.\n3. Verify the integrity of the game files within Steam."
+    },
+    "fa": {
+      "title": "خطای استیم: خطای نوشتن روی دیسک",
+      "description": "استیم نمی‌تواند فایل‌های بازی را هنگام دانلود یا آپدیت روی دیسک بنویسد.",
+      "solution": "۱. استیم را به عنوان مدیر (Administrator) اجرا کنید.\n۲. هارد دیسک خود را برای خطاها بررسی کرده و مطمئن شوید فضای خالی کافی دارید.\n۳. یکپارچگی فایل‌های بازی را در استیم تأیید کنید."
+    }
+  },
+  "MySQL: #1045 - Access denied": {
+    "en": {
+      "title": "MySQL Error: #1045 Access denied",
+      "description": "The username or password provided for the database connection is incorrect.",
+      "solution": "The website's configuration file (e.g., wp-config.php for WordPress) has incorrect database credentials. This must be fixed by the developer."
+    },
+    "fa": {
+      "title": "خطای مای‌اس‌کیو‌ال: #1045 دسترسی رد شد",
+      "description": "نام کاربری یا رمز عبور ارائه شده برای اتصال به پایگاه داده نادرست است.",
+      "solution": "فایل پیکربندی وب‌سایت (مثلاً wp-config.php برای وردپرس) دارای اطلاعات ورود به پایگاه داده نادرست است. این باید توسط توسعه‌دهنده برطرف شود."
+    }
+  },
+  "MySQL: #1062 - Duplicate entry": {
+    "en": {
+      "title": "MySQL Error: #1062 Duplicate entry",
+      "description": "An attempt was made to insert a duplicate value into a column that is set as a unique or primary key.",
+      "solution": "This is a developer-side issue where the application is trying to create a record that already exists (e.g., signing up with an email that is already registered)."
+    },
+    "fa": {
+      "title": "خطای مای‌اس‌کیو‌ال: #1062 ورودی تکراری",
+      "description": "تلاشی برای وارد کردن یک مقدار تکراری در یک ستون که به عنوان کلید منحصر به فرد یا اصلی تنظیم شده، انجام شده است.",
+      "solution": "این یک مشکل سمت توسعه‌دهنده است که در آن اپلیکیشن در تلاش است رکوردی را ایجاد کند که از قبل وجود دارد (مثلاً ثبت نام با ایمیلی که قبلاً ثبت شده است)."
+    }
+  },
+  "MySQL: #1064 - You have an error in your SQL syntax": {
+    "en": {
+      "title": "MySQL Error: #1064 SQL syntax error",
+      "description": "The SQL command sent to the database contains a syntax error.",
+      "solution": "This is a bug in the website's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای مای‌اس‌کیو‌ال: #1064 خطای سینتکس SQL",
+      "description": "دستور SQL ارسال شده به پایگاه داده حاوی یک خطای دستوری است.",
+      "solution": "این یک باگ در کد وب‌سایت است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "MySQL: #2006 - MySQL server has gone away": {
+    "en": {
+      "title": "MySQL Error: #2006 Server has gone away",
+      "description": "The connection to the database server was lost. This can be caused by a server timeout, a server crash, or a query that is too large.",
+      "solution": "This is a server-side issue. The administrator may need to increase timeout variables or optimize database queries."
+    },
+    "fa": {
+      "title": "خطای مای‌اس‌کیو‌ال: #2006 سرور مای‌اس‌کیو‌ال رفته است",
+      "description": "اتصال به سرور پایگاه داده قطع شده است. این می‌تواند به دلیل تایم‌اوت سرور، کرش کردن سرور یا یک کوئری بیش از حد بزرگ باشد.",
+      "solution": "این یک مشکل سمت سرور است. مدیر ممکن است نیاز به افزایش متغیرهای تایم‌اوت یا بهینه‌سازی کوئری‌های دیتابیس داشته باشد."
+    }
+  },
+  "ERR_FILE_NOT_FOUND": {
+    "en": {
+      "title": "Error: File Not Found",
+      "description": "The browser could not find a local file at the specified `file:///` path.",
+      "solution": "Check that the file path is correct and that the file has not been moved or deleted."
+    },
+    "fa": {
+      "title": "خطا: فایل یافت نشد",
+      "description": "مرورگر نتوانست یک فایل محلی را در مسیر مشخص شده `file:///` پیدا کند.",
+      "solution": "بررسی کنید که مسیر فایل صحیح است و فایل جابجا یا حذف نشده است."
+    }
+  },
+  "ERR_ACCESS_DENIED": {
+    "en": {
+      "title": "Error: Access Denied",
+      "description": "The browser does not have the necessary permissions to access the requested resource. This often applies to local files (`file:///`).",
+      "solution": "Ensure the browser has permission to access local files, or try running the browser as an administrator (not recommended for general use)."
+    },
+    "fa": {
+      "title": "خطا: دسترسی رد شد",
+      "description": "مرورگر مجوزهای لازم برای دسترسی به منبع درخواستی را ندارد. این اغلب برای فایل‌های محلی (`file:///`) کاربرد دارد.",
+      "solution": "اطمینان حاصل کنید که مرورگر اجازه دسترسی به فایل‌های محلی را دارد، یا سعی کنید مرورگر را به عنوان مدیر (Administrator) اجرا کنید (برای استفاده عمومی توصیه نمی‌شود)."
+    }
+  },
+  "ERR_CERT_COMMON_NAME_INVALID": {
+    "en": {
+      "title": "Error: Certificate Common Name Invalid",
+      "description": "The name on the security certificate (SSL) does not match the name of the site you are visiting.",
+      "solution": "This is a serious security warning. It could mean you are being redirected to a malicious site. Do not proceed. The site administrator must fix the certificate."
+    },
+    "fa": {
+      "title": "خطا: نام عمومی گواهی‌نامه نامعتبر است",
+      "description": "نام موجود در گواهی‌نامه امنیتی (SSL) با نام سایتی که در حال بازدید از آن هستید، مطابقت ندارد.",
+      "solution": "این یک هشدار امنیتی جدی است. می‌تواند به این معنی باشد که شما به یک سایت مخرب هدایت شده‌اید. ادامه ندهید. مدیر سایت باید گواهی‌نامه را اصلاح کند."
+    }
+  },
+  "ERR_CERT_REVOKED": {
+    "en": {
+      "title": "Error: Certificate Revoked",
+      "description": "The website's security certificate (SSL) has been revoked by the issuing authority and is no longer valid.",
+      "solution": "Do not proceed. A revoked certificate is a major red flag and could indicate a security breach of the site."
+    },
+    "fa": {
+      "title": "خطا: گواهی‌نامه باطل شده است",
+      "description": "گواهی‌نامه امنیتی وب‌سایت (SSL) توسط مرجع صادرکننده آن باطل شده و دیگر اعتباری ندارد.",
+      "solution": "ادامه ندهید. یک گواهی‌نامه باطل شده یک پرچم قرمز بزرگ است و می‌تواند نشان‌دهنده یک رخنه امنیتی در سایت باشد."
+    }
+  },
+  "ERR_CONTENT_DECODING_FAILED": {
+    "en": {
+      "title": "Error: Content Decoding Failed",
+      "description": "The browser received content with a specific encoding (like gzip) but failed to decode it, often because the data is corrupt.",
+      "solution": "This is a server-side or network issue. Try reloading the page. If it persists, the problem is on the website's end."
+    },
+    "fa": {
+      "title": "خطا: رمزگشایی محتوا ناموفق بود",
+      "description": "مرورگر محتوایی با یک کدگذاری مشخص (مانند gzip) دریافت کرد اما در رمزگشایی آن شکست خورد، که اغلب به دلیل خراب بودن داده‌ها است.",
+      "solution": "این یک مشکل سمت سرور یا شبکه است. صفحه را دوباره بارگذاری کنید. اگر ادامه داشت، مشکل از سمت وب‌سایت است."
+    }
+  },
+  "ERR_TUNNEL_CONNECTION_FAILED": {
+    "en": {
+      "title": "Error: Tunnel Connection Failed",
+      "description": "The browser failed to establish a secure tunnel, usually for HTTPS traffic through a proxy server.",
+      "solution": "This is often a problem with the proxy server's configuration or a network firewall blocking the connection. Check your proxy settings."
+    },
+    "fa": {
+      "title": "خطا: اتصال تونل ناموفق بود",
+      "description": "مرورگر در ایجاد یک تونل امن، معمولاً برای ترافیک HTTPS از طریق یک سرور پراکسی، شکست خورد.",
+      "solution": "این اغلب یک مشکل در پیکربندی سرور پراکسی یا یک فایروال شبکه است که اتصال را مسدود می‌کند. تنظیمات پراکسی خود را بررسی کنید."
+    }
+  },
+  "ERR_PAC_SCRIPT_FAILED": {
+    "en": {
+      "title": "Error: PAC Script Failed",
+      "description": "An error occurred while executing a Proxy Auto-Config (PAC) script. The browser cannot determine which proxy to use.",
+      "solution": "This is a network configuration issue, often in a corporate environment. The PAC file is either unavailable or contains errors. Contact your network administrator."
+    },
+    "fa": {
+      "title": "خطا: اسکریپت PAC ناموفق بود",
+      "description": "یک خطا هنگام اجرای اسکریپت پیکربندی خودکار پراکسی (PAC) رخ داد. مرورگر نمی‌تواند تعیین کند از کدام پراکسی استفاده کند.",
+      "solution": "این یک مشکل پیکربندی شبکه است که اغلب در یک محیط سازمانی رخ می‌دهد. فایل PAC یا در دسترس نیست یا حاوی خطا است. با مدیر شبکه خود تماس بگیرید."
+    }
+  },
+  "ERR_INVALID_URL": {
+    "en": {
+      "title": "Error: Invalid URL",
+      "description": "The URL provided is not structurally valid.",
+      "solution": "Check the URL for invalid characters, incorrect formatting, or typos."
+    },
+    "fa": {
+      "title": "خطا: URL نامعتبر",
+      "description": "URL ارائه شده از نظر ساختاری معتبر نیست.",
+      "solution": "URL را برای کاراکترهای نامعتبر، قالب‌بندی نادرست یا اشتباهات تایپی بررسی کنید."
+    }
+  },
+  "ERR_FTP_COMMAND_NOT_SUPPORTED": {
+    "en": {
+      "title": "FTP Error: Command Not Supported",
+      "description": "The FTP command sent by the client is not supported by the FTP server.",
+      "solution": "This indicates an incompatibility between your browser's FTP client and the server. Consider using a dedicated FTP client application."
+    },
+    "fa": {
+      "title": "خطای FTP: دستور پشتیبانی نمی‌شود",
+      "description": "دستور FTP ارسال شده توسط کلاینت، توسط سرور FTP پشتیبانی نمی‌شود.",
+      "solution": "این نشان‌دهنده ناسازگاری بین کلاینت FTP مرورگر شما و سرور است. استفاده از یک برنامه کلاینت FTP اختصاصی را در نظر بگیرید."
+    }
+  },
+  "ERR_UNSUPPORTED_AUTH_SCHEME": {
+    "en": {
+      "title": "Error: Unsupported Auth Scheme",
+      "description": "The authentication method requested by the server is not supported by the browser.",
+      "solution": "This is a technical incompatibility, often seen in corporate networks using proprietary authentication methods. There is little a user can do."
+    },
+    "fa": {
+      "title": "خطا: طرح احراز هویت پشتیبانی نمی‌شود",
+      "description": "روش احراز هویت درخواست شده توسط سرور، در مرورگر پشتیبانی نمی‌شود.",
+      "solution": "این یک ناسازگاری فنی است که اغلب در شبکه‌های سازمانی با استفاده از روش‌های احراز هویت اختصاصی دیده می‌شود. کاربر کار زیادی نمی‌تواند انجام دهد."
+    }
+  },
+  "ERR_INVALID_AUTH_CREDENTIALS": {
+    "en": {
+      "title": "Error: Invalid Auth Credentials",
+      "description": "The authentication credentials provided (e.g., username/password, token) are invalid.",
+      "solution": "Double-check your login information. Make sure you are using the correct username and password."
+    },
+    "fa": {
+      "title": "خطا: اطلاعات احراز هویت نامعتبر",
+      "description": "اطلاعات احراز هویت ارائه شده (مانند نام کاربری/رمز عبور، توکن) نامعتبر است.",
+      "solution": "اطلاعات ورود خود را دوباره بررسی کنید. مطمئن شوید که از نام کاربری و رمز عبور صحیح استفاده می‌کنید."
+    }
+  },
+  "Missing Plugin Error": {
+    "en": {
+      "title": "Error: Missing Plugin",
+      "description": "The webpage content requires a browser plugin (like the old Adobe Flash Player) that is not installed or enabled.",
+      "solution": "This type of content is largely obsolete. Modern browsers use built-in HTML5 features instead of plugins for security and performance reasons."
+    },
+    "fa": {
+      "title": "خطا: پلاگین موجود نیست",
+      "description": "محتوای صفحه وب به یک پلاگین مرورگر (مانند Adobe Flash Player قدیمی) نیاز دارد که نصب یا فعال نشده است.",
+      "solution": "این نوع محتوا تا حد زیادی منسوخ شده است. مرورگرهای مدرن به دلایل امنیتی و عملکردی به جای پلاگین‌ها از ویژگی‌های داخلی HTML5 استفاده می‌کنند."
+    }
+  },
+  "Content Decryption Module (DRM) Error": {
+    "en": {
+      "title": "DRM Error: Content Decryption Module Missing",
+      "description": "The browser cannot play protected media content because the required Content Decryption Module (like Widevine) is missing, disabled, or outdated.",
+      "solution": "1. Go to your browser's settings and ensure 'protected content' is enabled.\n2. Update your browser to the latest version."
+    },
+    "fa": {
+      "title": "خطای DRM: ماژول رمزگشایی محتوا موجود نیست",
+      "description": "مرورگر نمی‌تواند محتوای رسانه‌ای محافظت‌شده را پخش کند زیرا ماژول رمزگشایی محتوای مورد نیاز (مانند Widevine) موجود نیست، غیرفعال یا قدیمی است.",
+      "solution": "۱. به تنظیمات مرورگر خود بروید و اطمینان حاصل کنید که 'محتوای محافظت‌شده' فعال است.\n۲. مرورگر خود را به آخرین نسخه به‌روز کنید."
+    }
+  },
+  "Unknown Protocol Handler": {
+    "en": {
+      "title": "Error: Unknown Protocol",
+      "description": "The browser does not know how to handle a link with a custom protocol (e.g., `zoommtg://`) because the corresponding application is not installed.",
+      "solution": "Install the application associated with the link (e.g., install Zoom to handle `zoommtg://` links)."
+    },
+    "fa": {
+      "title": "خطا: پروتکل ناشناخته",
+      "description": "مرورگر نمی‌داند چگونه لینکی با یک پروتکل سفارشی (مثلاً `zoommtg://`) را مدیریت کند زیرا برنامه مربوطه نصب نشده است.",
+      "solution": "برنامه مرتبط با لینک را نصب کنید (مثلاً برای مدیریت لینک‌های `zoommtg://`، برنامه Zoom را نصب کنید)."
+    }
+  },
+  "PDF Viewer Disabled": {
+    "en": {
+      "title": "Info: PDF Viewer Disabled",
+      "description": "The browser cannot display the PDF file because its built-in PDF viewer is disabled.",
+      "solution": "Go to your browser's settings and enable the built-in PDF viewer, or download the file to view it with an external application."
+    },
+    "fa": {
+      "title": "اطلاعات: نمایشگر PDF غیرفعال است",
+      "description": "مرورگر نمی‌تواند فایل PDF را نمایش دهد زیرا نمایشگر داخلی PDF آن غیرفعال شده است.",
+      "solution": "به تنظیمات مرورگر خود بروید و نمایشگر داخلی PDF را فعال کنید، یا فایل را دانلود کرده و با یک برنامه خارجی مشاهده کنید."
+    }
+  },
+  "WebSocket connection failed": {
+    "en": {
+      "title": "WebSocket Connection Failed",
+      "description": "The browser could not establish a real-time WebSocket connection to the server.",
+      "solution": "This can be caused by the server being down, a firewall blocking the connection, or an incorrect WebSocket URL. It's a developer-side issue."
+    },
+    "fa": {
+      "title": "اتصال WebSocket ناموفق بود",
+      "description": "مرورگر نتوانست یک اتصال بلادرنگ WebSocket به سرور برقرار کند.",
+      "solution": "این می‌تواند به دلیل از کار افتادن سرور، مسدود شدن اتصال توسط فایروال یا یک URL نادرست WebSocket باشد. این یک مشکل سمت توسعه‌دهنده است."
+    }
+  },
+  "IndexedDB ConstraintError": {
+    "en": {
+      "title": "Database Error: ConstraintError",
+      "description": "An attempt was made to add data to the browser's internal database (IndexedDB) that violates a uniqueness constraint (e.g., a duplicate key).",
+      "solution": "This is a bug in the website's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای پایگاه داده: ConstraintError",
+      "description": "تلاشی برای افزودن داده به پایگاه داده داخلی مرورگر (IndexedDB) انجام شد که یک محدودیت یکتایی (مانند یک کلید تکراری) را نقض می‌کند.",
+      "solution": "این یک باگ در کد وب‌سایت است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "Service Worker registration failed": {
+    "en": {
+      "title": "Service Worker Registration Failed",
+      "description": "The browser failed to install or activate a background script (Service Worker) required for offline functionality or push notifications.",
+      "solution": "This is a developer-side issue, often caused by an incorrect path to the script or a syntax error within the script."
+    },
+    "fa": {
+      "title": "ثبت Service Worker ناموفق بود",
+      "description": "مرورگر در نصب یا فعال‌سازی یک اسکریپت پس‌زمینه (Service Worker) که برای عملکرد آفلاین یا پوش نوتیفیکیشن‌ها لازم است، شکست خورد.",
+      "solution": "این یک مشکل سمت توسعه‌دهنده است که اغلب به دلیل یک مسیر نادرست به اسکریپت یا یک خطای دستوری در داخل اسکریپت ایجاد می‌شود."
+    }
+  },
+  "MEDIA_ERR_NETWORK": {
+    "en": {
+      "title": "Media Error: Network Error",
+      "description": "The audio or video download was stopped due to a network error.",
+      "solution": "Check your internet connection and try reloading the page. The media server may also be temporarily unavailable."
+    },
+    "fa": {
+      "title": "خطای رسانه: خطای شبکه",
+      "description": "دانلود صوت یا ویدیو به دلیل یک خطای شبکه متوقف شد.",
+      "solution": "اتصال اینترنت خود را بررسی کرده و صفحه را دوباره بارگذاری کنید. سرور رسانه نیز ممکن است به طور موقت در دسترس نباشد."
+    }
+  },
+  "ERR_HTTP2_PROTOCOL_ERROR": {
+    "en": {
+      "title": "HTTP/2 Protocol Error",
+      "description": "An error occurred in the HTTP/2 protocol layer, indicating an incompatibility or issue between the client and server.",
+      "solution": "This is a low-level network error. Refreshing the page may resolve it if it was a temporary glitch."
+    },
+    "fa": {
+      "title": "خطای پروتکل HTTP/2",
+      "description": "یک خطا در لایه پروتکل HTTP/2 رخ داد که نشان‌دهنده ناسازگاری یا مشکل بین کلاینت و سرور است.",
+      "solution": "این یک خطای شبکه سطح پایین است. بارگذاری مجدد صفحه ممکن است در صورت موقتی بودن مشکل، آن را برطرف کند."
+    }
+  },
+  "ERR_QUIC_PROTOCOL_ERROR": {
+    "en": {
+      "title": "QUIC Protocol Error",
+      "description": "An error specific to the QUIC protocol, which is the foundation for HTTP/3.",
+      "solution": "This is a low-level network error related to modern web protocols. It is usually temporary or requires a server-side fix."
+    },
+    "fa": {
+      "title": "خطای پروتکل QUIC",
+      "description": "یک خطای مختص پروتکل QUIC که پایه و اساس HTTP/3 است.",
+      "solution": "این یک خطای شبکه سطح پایین مربوط به پروتکل‌های وب مدرن است. معمولاً موقتی است یا نیاز به یک اصلاح سمت سرور دارد."
+    }
+  },
+  "Download Failed - Network error": {
+    "en": {
+      "title": "Download Failed: Network Error",
+      "description": "A general error indicating that a network problem prevented the download from completing.",
+      "solution": "Check your internet connection and try the download again."
+    },
+    "fa": {
+      "title": "دانلود ناموفق: خطای شبکه",
+      "description": "یک خطای عمومی که نشان می‌دهد یک مشکل شبکه مانع از تکمیل دانلود شده است.",
+      "solution": "اتصال اینترنت خود را بررسی کرده و دوباره دانلود را امتحان کنید."
+    }
+  },
+  "Download Failed - Forbidden": {
+    "en": {
+      "title": "Download Failed: Forbidden",
+      "description": "You do not have permission to download this file.",
+      "solution": "You may need to be logged in, or you may not have the necessary rights to access this resource. This is similar to a 403 HTTP error."
+    },
+    "fa": {
+      "title": "دانلود ناموفق: ممنوع",
+      "description": "شما اجازه دسترسی به این فایل برای دانلود را ندارید.",
+      "solution": "ممکن است لازم باشد وارد شوید، یا حقوق لازم برای دسترسی به این منبع را نداشته باشید. این شبیه به یک خطای HTTP 403 است."
+    }
+  },
+  "Download Failed - Virus detected": {
+    "en": {
+      "title": "Download Failed: Virus Detected",
+      "description": "The browser's built-in scanner identified the downloaded file as malware or a virus and blocked it.",
+      "solution": "This is a security feature. Do not attempt to bypass this warning unless you are absolutely certain the file is safe."
+    },
+    "fa": {
+      "title": "دانلود ناموفق: ویروس شناسایی شد",
+      "description": "اسکنر داخلی مرورگر، فایل دانلود شده را به عنوان یک بدافزار یا ویروس شناسایی کرده و آن را مسدود نموده است.",
+      "solution": "این یک ویژگی امنیتی است. سعی نکنید این هشدار را دور بزنید مگر اینکه کاملاً مطمئن باشید فایل امن است."
+    }
+  },
+  "Download Failed - Disk full": {
+    "en": {
+      "title": "Download Failed: Disk Full",
+      "description": "There is not enough free space on your hard drive to save the file.",
+      "solution": "Free up some space on your disk and try the download again."
+    },
+    "fa": {
+      "title": "دانلود ناموفق: دیسک پر است",
+      "description": "فضای خالی کافی روی هارد دیسک شما برای ذخیره فایل وجود ندارد.",
+      "solution": "مقداری فضا روی دیسک خود آزاد کرده و دوباره دانلود را امتحان کنید."
+    }
+  },
+  "[Violation] 'setTimeout' handler took...": {
+    "en": {
+      "title": "Performance Violation: Long Task",
+      "description": "A piece of JavaScript code (in a 'setTimeout' handler) took too long to execute, potentially blocking the main thread and making the page unresponsive.",
+      "solution": "This is a performance issue that should be addressed by the website's developers."
+    },
+    "fa": {
+      "title": "نقض عملکرد: وظیفه طولانی",
+      "description": "بخشی از کد جاوا اسکریپت (در یک کنترلر 'setTimeout') بیش از حد طول کشید تا اجرا شود، که به طور بالقوه رشته اصلی را مسدود کرده و صفحه را غیرپاسخگو می‌کند.",
+      "solution": "این یک مشکل عملکردی است که باید توسط توسعه‌دهندگان وب‌سایت برطرف شود."
+    }
+  },
+  "A cookie was set without the 'SameSite' attribute": {
+    "en": {
+      "title": "Cookie Warning: Missing 'SameSite' Attribute",
+      "description": "A security warning about a cookie that is not properly configured for modern privacy standards. Browsers may block this cookie in the future.",
+      "solution": "This is a notice for the website's developers to update their cookie settings to improve security."
+    },
+    "fa": {
+      "title": "هشدار کوکی: ویژگی 'SameSite' وجود ندارد",
+      "description": "یک هشدار امنیتی در مورد یک کوکی که به درستی برای استانداردهای حریم خصوصی مدرن پیکربندی نشده است. مرورگرها ممکن است این کوکی را در آینده مسدود کنند.",
+      "solution": "این یک تذکر برای توسعه‌دهندگان وب‌سایت است تا تنظیمات کوکی خود را برای بهبود امنیت به‌روز کنند."
+    }
+  },
+  "TypeError: Failed to fetch": {
+    "en": {
+      "title": "JavaScript Error: Failed to fetch",
+      "description": "A very common error in modern JavaScript that occurs when a `fetch` request cannot be completed due to a network error (e.g., DNS failure, no internet).",
+      "solution": "This usually indicates a network connectivity problem on the user's end or a CORS policy issue on the server's end."
+    },
+    "fa": {
+      "title": "خطای جاوا اسکریپت: واکشی ناموفق بود",
+      "description": "یک خطای بسیار رایج در جاوا اسکریپت مدرن که هنگام عدم تکمیل یک درخواست `fetch` به دلیل یک خطای شبکه (مثلاً شکست DNS، عدم وجود اینترنت) رخ می‌دهد.",
+      "solution": "این معمولاً نشان‌دهنده یک مشکل اتصال شبکه در سمت کاربر یا یک مشکل سیاست CORS در سمت سرور است."
+    }
+  },
+  "Web Storage: QuotaExceededError": {
+    "en": {
+      "title": "Storage Error: Quota Exceeded",
+      "description": "An attempt to store data in the browser's localStorage or sessionStorage has exceeded the allowed storage limit (usually 5-10 MB).",
+      "solution": "This is a developer-side issue. The website is trying to save too much data in your browser."
+    },
+    "fa": {
+      "title": "خطای ذخیره‌سازی: سهمیه بیش از حد مجاز",
+      "description": "تلاشی برای ذخیره داده در localStorage یا sessionStorage مرورگر از محدودیت حجم مجاز (معمولاً ۵-۱۰ مگابایت) فراتر رفته است.",
+      "solution": "این یک مشکل سمت توسعه‌دهنده است. وب‌سایت در تلاش است داده‌های بیش از حدی را در مرورگر شما ذخیره کند."
+    }
+  },
+  "WebUSB: DOMException: The device was disconnected.": {
+    "en": {
+      "title": "WebUSB Error: Device Disconnected",
+      "description": "The connected USB device was disconnected during an operation.",
+      "solution": "Reconnect the USB device and try the operation again."
+    },
+    "fa": {
+      "title": "خطای WebUSB: دستگاه قطع شد",
+      "description": "دستگاه USB متصل در حین یک عملیات، قطع شده است.",
+      "solution": "دستگاه USB را دوباره متصل کرده و عملیات را مجدداً امتحان کنید."
+    }
+  },
+  "WebBluetooth: DOMException: Bluetooth is not available.": {
+    "en": {
+      "title": "WebBluetooth Error: Bluetooth not available",
+      "description": "Bluetooth is not available on the user's device or is turned off.",
+      "solution": "Ensure Bluetooth is turned on on your device and that your browser has permission to use it."
+    },
+    "fa": {
+      "title": "خطای WebBluetooth: بلوتوث در دسترس نیست",
+      "description": "بلوتوث روی دستگاه کاربر در دسترس نیست یا خاموش است.",
+      "solution": "اطمینان حاصل کنید که بلوتوث روی دستگاه شما روشن است و مرورگر شما اجازه استفاده از آن را دارد."
+    }
+  },
+  "Geolocation API: PositionError: PERMISSION_DENIED": {
+    "en": {
+      "title": "Geolocation Error: Permission Denied",
+      "description": "The user did not grant the webpage permission to access their location.",
+      "solution": "To use this feature, you must allow the website to access your location when prompted by the browser."
+    },
+    "fa": {
+      "title": "خطای موقعیت‌یابی: مجوز رد شد",
+      "description": "کاربر به صفحه وب اجازه دسترسی به موقعیت مکانی خود را نداده است.",
+      "solution": "برای استفاده از این ویژگی، باید هنگام درخواست توسط مرورگر، به وب‌سایت اجازه دسترسی به موقعیت مکانی خود را بدهید."
+    }
+  },
+  "Geolocation API: PositionError: TIMEOUT": {
+    "en": {
+      "title": "Geolocation Error: Timeout",
+      "description": "The request to get the user's location timed out.",
+      "solution": "The network or GPS signal may be too weak. Try moving to a location with a better signal and try again."
+    },
+    "fa": {
+      "title": "خطای موقعیت‌یابی: تایم‌اوت",
+      "description": "درخواست برای دریافت موقعیت مکانی کاربر تایم‌اوت شد.",
+      "solution": "ممکن است سیگنال شبکه یا GPS بیش از حد ضعیف باشد. به مکانی با سیگنال بهتر بروید و دوباره تلاش کنید."
+    }
+  },
+  "ERR_CERT_VALIDITY_TOO_LONG": {
+    "en": {
+      "title": "Error: Certificate Validity Too Long",
+      "description": "The website's SSL certificate has a validity period that is longer than what the browser's policy allows (e.g., more than 398 days).",
+      "solution": "This is a configuration issue that the website administrator must fix by issuing a new certificate with a shorter validity period."
+    },
+    "fa": {
+      "title": "خطا: دوره اعتبار گواهی‌نامه بیش از حد طولانی است",
+      "description": "دوره اعتبار گواهی‌نامه SSL وب‌سایت از آنچه سیاست مرورگر مجاز می‌داند (مثلاً بیش از ۳۹۸ روز) طولانی‌تر است.",
+      "solution": "این یک مشکل پیکربندی است که مدیر وب‌سایت باید با صدور یک گواهی‌نامه جدید با دوره اعتبار کوتاه‌تر، آن را برطرف کند."
+    }
+  },
+  "ERR_DNS_CACHE_MISS": {
+    "en": {
+      "title": "Info: DNS Cache Miss",
+      "description": "The requested domain was not found in the browser's local DNS cache.",
+      "solution": "This is not an error, but a normal part of the process. The browser will now perform a full DNS lookup from a DNS server."
+    },
+    "fa": {
+      "title": "اطلاعات: عدم وجود در حافظه پنهان DNS",
+      "description": "دامنه درخواستی در حافظه پنهان DNS محلی مرورگر یافت نشد.",
+      "solution": "این یک خطا نیست، بلکه یک بخش عادی از فرآیند است. مرورگر اکنون یک جستجوی کامل DNS را از یک سرور DNS انجام خواهد داد."
+    }
+  },
+  "ERR_NETWORK_ACCESS_DENIED": {
+    "en": {
+      "title": "Error: Network Access Denied",
+      "description": "A firewall or security software on your computer or network is blocking the browser's access to the network.",
+      "solution": "Check your firewall, antivirus, or corporate network security settings to ensure the browser is not being blocked."
+    },
+    "fa": {
+      "title": "خطا: دسترسی به شبکه رد شد",
+      "description": "یک فایروال یا نرم‌افزار امنیتی روی کامپیوتر یا شبکه شما، دسترسی مرورگر به شبکه را مسدود می‌کند.",
+      "solution": "تنظیمات فایروال، آنتی‌ویروس یا امنیت شبکه سازمانی خود را بررسی کنید تا مطمئن شوید مرورگر مسدود نشده است."
+    }
+  },
+  "ERR_PROXY_CERTIFICATE_INVALID": {
+    "en": {
+      "title": "Error: Invalid Proxy Certificate",
+      "description": "The SSL certificate presented by the proxy server is invalid.",
+      "solution": "This could indicate a misconfigured proxy or a man-in-the-middle attack on your connection. Contact your network administrator."
+    },
+    "fa": {
+      "title": "خطا: گواهی‌نامه پراکسی نامعتبر است",
+      "description": "گواهی‌نامه SSL ارائه شده توسط سرور پراکسی نامعتبر است.",
+      "solution": "این می‌تواند نشان‌دهنده یک پراکسی با پیکربندی نادرست یا یک حمله مرد میانی روی اتصال شما باشد. با مدیر شبکه خود تماس بگیرید."
+    }
+  },
+  "ERR_MSG_TOO_BIG": {
+    "en": {
+      "title": "Error: Message Too Big",
+      "description": "A datagram (network packet) message was too big to be sent.",
+      "solution": "This is a low-level network error. It's usually a temporary issue or a problem that needs to be fixed by developers."
+    },
+    "fa": {
+      "title": "خطا: پیام بیش از حد بزرگ است",
+      "description": "یک پیام دیتاگرام (بسته شبکه) برای ارسال بیش از حد بزرگ بود.",
+      "solution": "این یک خطای شبکه سطح پایین است. معمولاً یک مشکل موقتی یا مشکلی است که باید توسط توسعه‌دهندگان برطرف شود."
+    }
+  },
+  "RTCError: sdp-syntax-error": {
+    "en": {
+      "title": "WebRTC Error: SDP Syntax Error",
+      "description": "An error occurred while parsing the Session Description Protocol (SDP) data, which is used to negotiate a WebRTC connection.",
+      "solution": "This is a developer-side bug in the signaling process for the video/audio chat application."
+    },
+    "fa": {
+      "title": "خطای WebRTC: خطای سینتکس SDP",
+      "description": "یک خطا هنگام تجزیه داده‌های پروتکل توصیف نشست (SDP) که برای مذاکره یک اتصال WebRTC استفاده می‌شود، رخ داد.",
+      "solution": "این یک باگ سمت توسعه‌دهنده در فرآیند سیگنالینگ برای اپلیکیشن چت ویدیویی/صوتی است."
+    }
+  },
+  "PlayStation: WS-37403-7 (PSN is down)": {
+    "en": {
+      "title": "PlayStation Error: WS-37403-7",
+      "description": "A general error indicating that the PlayStation Network (PSN) is temporarily unavailable or undergoing maintenance.",
+      "solution": "Check the official PlayStation Network status page. If it's down, you must wait for Sony to resolve the issue."
+    },
+    "fa": {
+      "title": "خطای پلی‌استیشن: WS-37403-7",
+      "description": "یک خطای عمومی که نشان می‌دهد شبکه پلی‌استیشن (PSN) به طور موقت در دسترس نیست یا در دست تعمیر است.",
+      "solution": "صفحه وضعیت رسمی شبکه پلی‌استیشن را بررسی کنید. اگر از کار افتاده است، باید منتظر بمانید تا سونی مشکل را برطرف کند."
+    }
+  },
+  "PlayStation: CE-34878-0 (Application crash)": {
+    "en": {
+      "title": "PlayStation Error: CE-34878-0",
+      "description": "The famous 'blue screen' error on PS4/PS5, indicating that a game or application has crashed.",
+      "solution": "1. Restart the application.\n2. Ensure both the game and your console system software are updated to the latest version."
+    },
+    "fa": {
+      "title": "خطای پلی‌استیشن: CE-34878-0",
+      "description": "خطای معروف 'صفحه آبی' در PS4/PS5 که نشان‌دهنده کرش کردن یک بازی یا اپلیکیشن است.",
+      "solution": "۱. اپلیکیشن را دوباره راه‌اندازی کنید.\n۲. اطمینان حاصل کنید که هم بازی و هم نرم‌افزار سیستم کنسول شما به آخرین نسخه به‌روز شده‌اند."
+    }
+  },
+  "Xbox: 0x87DD0006 (Sign-in error)": {
+    "en": {
+      "title": "Xbox Error: 0x87DD0006",
+      "description": "A sign-in error, usually caused by the Xbox Live servers being down or a local network issue preventing connection.",
+      "solution": "Check the official Xbox Live status page. If servers are online, restart your console and your router."
+    },
+    "fa": {
+      "title": "خطای ایکس‌باکس: 0x87DD0006",
+      "description": "یک خطای ورود به حساب کاربری، که معمولاً به دلیل از کار افتادن سرورهای Xbox Live یا یک مشکل شبکه محلی که مانع از اتصال می‌شود، ایجاد می‌شود.",
+      "solution": "صفحه وضعیت رسمی Xbox Live را بررسی کنید. اگر سرورها آنلاین هستند، کنسول و روتر خود را دوباره راه‌اندازی کنید."
+    }
+  },
+  "YouTube: videoUnavailable": {
+    "en": {
+      "title": "YouTube Error: Video Unavailable",
+      "description": "The video is unavailable for various reasons, such as being removed, set to private, or restricted by age.",
+      "solution": "There is nothing you can do to view this video unless the owner makes it available again."
+    },
+    "fa": {
+      "title": "خطای یوتیوب: ویدیو در دسترس نیست",
+      "description": "ویدیو به دلایل مختلفی مانند حذف شدن، خصوصی شدن یا محدودیت سنی در دسترس نیست.",
+      "solution": "کاری برای مشاهده این ویدیو نمی‌توانید انجام دهید مگر اینکه صاحب آن دوباره آن را در دسترس قرار دهد."
+    }
+  },
+  "YouTube: embeddingNotAllowed": {
+    "en": {
+      "title": "YouTube Error: Embedding Not Allowed",
+      "description": "The owner of the video does not allow it to be embedded on other websites.",
+      "solution": "You must watch this video directly on the YouTube website."
+    },
+    "fa": {
+      "title": "خطای یوتیوب: جاسازی مجاز نیست",
+      "description": "صاحب ویدیو اجازه نمایش آن را در وب‌سایت‌های دیگر (Embed کردن) نداده است.",
+      "solution": "شما باید این ویدیو را مستقیماً در وب‌سایت یوتیوب تماشا کنید."
+    }
+  },
+  "CSS: Invalid property value": {
+    "en": {
+      "title": "CSS Error: Invalid property value",
+      "description": "The value provided for a CSS property is incorrect (e.g., `color: 123;`).",
+      "solution": "This is a coding error that must be fixed by the website's developer."
+    },
+    "fa": {
+      "title": "خطای CSS: مقدار ویژگی نامعتبر است",
+      "description": "مقدار ارائه شده برای یک خاصیت CSS نادرست است (مثلاً `color: 123;`).",
+      "solution": "این یک خطای کدنویسی است که باید توسط توسعه‌دهنده وب‌سایت برطرف شود."
+    }
+  },
+  "CSS: Unknown property name": {
+    "en": {
+      "title": "CSS Error: Unknown property name",
+      "description": "The CSS property name used is not recognized by the browser.",
+      "solution": "This is likely a typo or a non-standard property. It must be fixed by the website's developer."
+    },
+    "fa": {
+      "title": "خطای CSS: نام ویژگی ناشناخته است",
+      "description": "نام خاصیت CSS استفاده شده توسط مرورگر شناخته‌شده نیست.",
+      "solution": "این احتمالاً یک اشتباه تایپی یا یک خاصیت غیراستاندارد است. باید توسط توسعه‌دهنده وب‌سایت برطرف شود."
+    }
+  },
+  "ERR_SOCKET_IS_CONNECTED": {
+    "en": {
+      "title": "Error: Socket Is Connected",
+      "description": "The requested operation is not allowed because the network socket is already connected.",
+      "solution": "This is a low-level programming error that must be fixed by the application's developers."
+    },
+    "fa": {
+      "title": "خطا: سوکت متصل است",
+      "description": "عملیات درخواستی مجاز نیست زیرا سوکت شبکه از قبل متصل است.",
+      "solution": "این یک خطای برنامه‌نویسی سطح پایین است که باید توسط توسعه‌دهندگان اپلیکیشن برطرف شود."
+    }
+  },
+  "ERR_EMPTY_REUSE_BODY": {
+    "en": {
+      "title": "Error: Empty Reused Body",
+      "description": "A reused network connection had an empty body when one was expected.",
+      "solution": "This is a technical networking issue, likely a bug in the browser or server's handling of persistent connections."
+    },
+    "fa": {
+      "title": "خطا: بدنه استفاده مجدد خالی است",
+      "description": "یک اتصال شبکه استفاده مجدد، بدنه‌ای خالی داشت در حالی که انتظار می‌رفت بدنه داشته باشد.",
+      "solution": "این یک مشکل فنی شبکه است، احتمالاً یک باگ در مدیریت اتصالات پایدار توسط مرورگر یا سرور."
+    }
+  },
+  "ERR_CERTIFICATE_TRANSPARENCY_REQUIRED": {
+    "en": {
+      "title": "Error: Certificate Transparency Required",
+      "description": "A modern security error indicating the site's SSL certificate is not registered in public Certificate Transparency logs.",
+      "solution": "This is a server-side security issue. The site administrator must obtain a new certificate that complies with CT policy."
+    },
+    "fa": {
+      "title": "خطا: شفافیت گواهی‌نامه الزامی است",
+      "description": "یک خطای امنیتی مدرن که نشان می‌دهد گواهی‌نامه SSL سایت در لاگ‌های عمومی شفافیت گواهی‌نامه ثبت نشده است.",
+      "solution": "این یک مشکل امنیتی سمت سرور است. مدیر سایت باید یک گواهی‌نامه جدید که با سیاست CT مطابقت دارد، دریافت کند."
+    }
+  },
+  "ERR_BLOCKED_BY_XSS_AUDITOR": {
+    "en": {
+      "title": "Error: Blocked by XSS Auditor",
+      "description": "The browser's built-in Cross-Site Scripting (XSS) auditor detected and blocked a potential reflected XSS attack.",
+      "solution": "This is a security protection. While modern browsers have replaced this with other mechanisms, it indicates the site may be vulnerable."
+    },
+    "fa": {
+      "title": "خطا: توسط حسابرس XSS مسدود شد",
+      "description": "حسابرس داخلی مرورگر برای اسکریپت بین‌سایتی (XSS)، یک حمله بالقوه XSS بازتابی را شناسایی و مسدود کرده است.",
+      "solution": "این یک حفاظت امنیتی است. در حالی که مرورگرهای مدرن این مکانیزم را با روش‌های دیگر جایگزین کرده‌اند، این نشان می‌دهد که سایت ممکن است آسیب‌پذیر باشد."
+    }
+  },
+  "ERR_SSL_CLIENT_AUTH_CERT_NEEDED": {
+    "en": {
+      "title": "Error: SSL Client Auth Certificate Needed",
+      "description": "The server has requested a client certificate for authentication, but the browser does not have one to provide.",
+      "solution": "This is common in high-security corporate environments. You need to have a client certificate installed on your machine, usually provided by your IT department."
+    },
+    "fa": {
+      "title": "خطا: نیاز به گواهی‌نامه احراز هویت کلاینت SSL",
+      "description": "سرور برای احراز هویت یک گواهی‌نامه کلاینت درخواست کرده است، اما مرورگر هیچ گواهی‌نامه‌ای برای ارائه ندارد.",
+      "solution": "این در محیط‌های سازمانی با امنیت بالا رایج است. شما باید یک گواهی‌نامه کلاینت روی دستگاه خود نصب کرده باشید که معمولاً توسط بخش IT شما ارائه می‌شود."
+    }
+  },
+  "ERR_INVALID_REDIRECT": {
+    "en": {
+      "title": "Error: Invalid Redirect",
+      "description": "The redirect performed by the server was invalid (e.g., redirecting to a `data:` URL).",
+      "solution": "This is a server-side misconfiguration that must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطا: ریدایرکت نامعتبر",
+      "description": "ریدایرکت انجام شده توسط سرور نامعتبر بود (مثلاً ریدایرکت به یک آدرس `data:`).",
+      "solution": "این یک پیکربندی نادرست سمت سرور است که باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "ERR_TOO_MANY_RETRIES": {
+    "en": {
+      "title": "Error: Too Many Retries",
+      "description": "A request has failed after multiple automatic retry attempts.",
+      "solution": "This indicates a persistent problem with the network or server. Check your connection and try again later."
+    },
+    "fa": {
+      "title": "خطا: تعداد تلاش‌های مجدد بیش از حد است",
+      "description": "یک درخواست پس از چندین بار تلاش مجدد خودکار، همچنان ناموفق بوده است.",
+      "solution": "این نشان‌دهنده یک مشکل پایدار در شبکه یا سرور است. اتصال خود را بررسی کرده و بعداً دوباره تلاش کنید."
+    }
+  },
+  "ERR_WEAK_KEY_EXCHANGE": {
+    "en": {
+      "title": "Error: Weak Key Exchange",
+      "description": "The server is using a weak or insecure key exchange algorithm for its SSL/TLS connection.",
+      "solution": "This is a serious server security misconfiguration. The site administrator must update their server to use modern, secure algorithms."
+    },
+    "fa": {
+      "title": "خطا: تبادل کلید ضعیف",
+      "description": "سرور از یک الگوریتم تبادل کلید ضعیف یا ناامن برای اتصال SSL/TLS خود استفاده می‌کند.",
+      "solution": "این یک پیکربندی نادرست امنیتی جدی سرور است. مدیر سایت باید سرور خود را برای استفاده از الگوریتم‌های مدرن و امن به‌روز کند."
+    }
+  },
+  "ERR_MALFORMED_IDENTITY": {
+    "en": {
+      "title": "Error: Malformed Identity",
+      "description": "The identity provided in the response headers (like `Content-Encoding`) is incorrect.",
+      "solution": "This is a server-side issue where the server is sending invalid headers."
+    },
+    "fa": {
+      "title": "خطا: هویت خراب",
+      "description": "هویت ارائه شده در هدرهای پاسخ (مانند `Content-Encoding`) نادرست است.",
+      "solution": "این یک مشکل سمت سرور است که در آن سرور در حال ارسال هدرهای نامعتبر است."
+    }
+  },
+  "ERR_UNABLE_TO_DOWNLOAD_MIME_TYPE": {
+    "en": {
+      "title": "Error: Unable to Download MIME Type",
+      "description": "The browser is unable to download a file with the specified MIME type.",
+      "solution": "This could be due to a browser policy or a problem with how the server is serving the file."
+    },
+    "fa": {
+      "title": "خطا: قادر به دانلود نوع MIME نیست",
+      "description": "مرورگر قادر به دانلود یک فایل با نوع MIME مشخص نیست.",
+      "solution": "این می‌تواند به دلیل یک سیاست مرورگر یا مشکلی در نحوه ارائه فایل توسط سرور باشد."
+    }
+  },
+  "ERR_SSL_UNRECOGNIZED_NAME_ALERT": {
+    "en": {
+      "title": "Error: SSL Unrecognized Name Alert",
+      "description": "The server does not recognize the hostname sent by the client in the TLS handshake.",
+      "solution": "This is a server configuration issue, often related to how Server Name Indication (SNI) is set up for hosting multiple SSL sites on one IP address."
+    },
+    "fa": {
+      "title": "خطا: هشدار نام ناشناخته SSL",
+      "description": "سرور نام میزبان ارسال شده توسط کلاینت را در دست‌دهی TLS تشخیص نمی‌دهد.",
+      "solution": "این یک مشکل پیکربندی سرور است که اغلب به نحوه تنظیم Server Name Indication (SNI) برای میزبانی چندین سایت SSL روی یک آدرس IP مربوط می‌شود."
+    }
+  },
+  "ERR_NO_SUPPORTED_PROXIES": {
+    "en": {
+      "title": "Error: No Supported Proxies",
+      "description": "None of the specified proxies are supported by the browser.",
+      "solution": "The proxy configuration (e.g., in a PAC file) lists proxy types that your browser cannot handle. Contact your network administrator."
+    },
+    "fa": {
+      "title": "خطا: هیچ پراکسی پشتیبانی‌شده‌ای وجود ندارد",
+      "description": "هیچ یک از پراکسی‌های مشخص شده توسط مرورگر پشتیبانی نمی‌شوند.",
+      "solution": "پیکربندی پراکسی (مثلاً در یک فایل PAC) انواعی از پراکسی را لیست می‌کند که مرورگر شما نمی‌تواند آن‌ها را مدیریت کند. با مدیر شبکه خود تماس بگیرید."
+    }
+  },
+  "Extension-Required Prompt": {
+    "en": {
+      "title": "Info: Extension Required",
+      "description": "A web application is prompting you to install its companion browser extension to enable full functionality.",
+      "solution": "This is not an error. You can choose to install the extension if you trust the source and need the features it provides."
+    },
+    "fa": {
+      "title": "اطلاعات: نیاز به افزونه",
+      "description": "یک اپلیکیشن وب از شما می‌خواهد افزونه مرورگر همراه آن را برای فعال کردن عملکرد کامل، نصب کنید.",
+      "solution": "این یک خطا نیست. شما می‌توانید در صورتی که به منبع اعتماد دارید و به ویژگی‌های آن نیاز دارید، افزونه را نصب کنید."
+    }
+  },
+  "208 Already Reported (WebDAV)": {
+    "en": {
+      "title": "Status 208: Already Reported",
+      "description": "The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.",
+      "solution": "This is an informational status code used for efficiency in WebDAV responses. Not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۲۰۸: قبلاً گزارش شده",
+      "description": "اعضای یک اتصال DAV قبلاً در بخش قبلی پاسخ (چندوظعیتی) شمارش شده‌اند و دوباره گنجانده نمی‌شوند.",
+      "solution": "این یک کد وضعیت اطلاعاتی است که برای کارایی در پاسخ‌های WebDAV استفاده می‌شود. خطا نیست."
+    }
+  },
+  "308 Permanent Redirect": {
+    "en": {
+      "title": "Status 308: Permanent Redirect",
+      "description": "The resource has been permanently moved to another URI. Unlike 301, it does not allow changing the request method from POST to GET.",
+      "solution": "Your browser will automatically follow this redirect. This is not an error."
+    },
+    "fa": {
+      "title": "وضعیت ۳۰۸: ریدایرکت دائمی",
+      "description": "منبع برای همیشه به یک URI دیگر منتقل شده است. برخلاف ۳۰۱، این کد اجازه تغییر متد درخواست از POST به GET را نمی‌دهد.",
+      "solution": "مرورگر شما به طور خودکار این ریدایرکت را دنبال خواهد کرد. این یک خطا نیست."
+    }
+  },
+  "ERR_FILE_EXISTS": {
+    "en": {
+      "title": "Error: File Exists",
+      "description": "An operation failed because the file already exists at the destination.",
+      "solution": "This typically occurs when trying to save a file. Either rename the file you are saving or delete the existing one."
+    },
+    "fa": {
+      "title": "خطا: فایل وجود دارد",
+      "description": "یک عملیات شکست خورد زیرا فایل از قبل در مقصد وجود دارد.",
+      "solution": "این معمولاً هنگام تلاش برای ذخیره یک فایل رخ می‌دهد. یا نام فایلی که در حال ذخیره آن هستید را تغییر دهید یا فایل موجود را حذف کنید."
+    }
+  },
+  "SharePoint: list view threshold": {
+    "en": {
+      "title": "SharePoint: List View Threshold Exceeded",
+      "description": "The attempted operation is prohibited because it exceeds the list view threshold (typically 5,000 items), which is designed to protect server performance.",
+      "solution": "The user should filter the view to show fewer items. The administrator can also create indexed columns to support larger queries."
+    },
+    "fa": {
+      "title": "شیرپوینت: از آستانه نمایش لیست فراتر رفته است",
+      "description": "عملیات درخواستی ممنوع است زیرا از آستانه نمایش لیست (معمولاً ۵۰۰۰ آیتم) که برای حفاظت از عملکرد سرور طراحی شده، فراتر می‌رود.",
+      "solution": "کاربر باید نما را فیلتر کند تا آیتم‌های کمتری نمایش داده شود. مدیر همچنین می‌تواند ستون‌های ایندکس‌شده برای پشتیبانی از کوئری‌های بزرگتر ایجاد کند."
+    }
+  },
+  "SharePoint: version checked out": {
+    "en": {
+      "title": "SharePoint: Different Version Checked Out",
+      "description": "You cannot check out a version of a file when a different version of the same file is already checked out by another user.",
+      "solution": "Wait for the other user to check in their version of the file before proceeding."
+    },
+    "fa": {
+      "title": "شیرپوینت: نسخه دیگری Check Out شده است",
+      "description": "شما نمی‌توانید یک نسخه از فایل را Check Out کنید در حالی که نسخه دیگری از همان فایل قبلاً توسط کاربر دیگری Check Out شده است.",
+      "solution": "منتظر بمانید تا کاربر دیگر نسخه خود از فایل را Check In کند و سپس ادامه دهید."
+    }
+  },
+  "Steam: This item is not available in your region": {
+    "en": {
+      "title": "Steam Error: Not Available in Region",
+      "description": "A geo-blocking error indicating the game or content is not available for purchase or access in your country.",
+      "solution": "This content cannot be accessed from your current location due to regional restrictions."
+    },
+    "fa": {
+      "title": "خطای استیم: در منطقه شما موجود نیست",
+      "description": "یک خطای مسدودسازی جغرافیایی که نشان می‌دهد بازی یا محتوا برای خرید یا دسترسی در کشور شما موجود نیست.",
+      "solution": "به دلیل محدودیت‌های منطقه‌ای نمی‌توان از مکان فعلی شما به این محتوا دسترسی پیدا کرد."
+    }
+  },
+  "Steam: VAC: An issue with your computer...": {
+    "en": {
+      "title": "Steam Error: VAC Was Blocked",
+      "description": "Valve Anti-Cheat (VAC) system was blocked from running, often due to interfering software on your computer.",
+      "solution": "Close any third-party software that might interfere with Steam, such as antivirus programs or system cleaners, and restart your computer."
+    },
+    "fa": {
+      "title": "خطای استیم: VAC مسدود شد",
+      "description": "سیستم ضد تقلب Valve (VAC) از اجرا مسدود شد، که اغلب به دلیل نرم‌افزارهای مداخله‌گر روی کامپیوتر شما است.",
+      "solution": "هر نرم‌افزار شخص ثالثی که ممکن است با استیم تداخل داشته باشد، مانند برنامه‌های آنتی‌ویروس یا پاک‌کننده‌های سیستم، را ببندید و کامپیوتر خود را دوباره راه‌اندازی کنید."
+    }
+  },
+  "Discord: API Error 50001: Missing Access": {
+    "en": {
+      "title": "Discord API Error: Missing Access",
+      "description": "Your bot or application lacks the necessary permissions to perform the requested action in that specific channel or server.",
+      "solution": "A server administrator must grant the bot the required permissions (e.g., 'Send Messages', 'Manage Roles') in the server settings."
+    },
+    "fa": {
+      "title": "خطای API دیسکورد: عدم دسترسی",
+      "description": "ربات یا اپلیکیشن شما برای انجام عمل درخواستی در آن کانال یا سرور خاص، مجوزهای لازم را ندارد.",
+      "solution": "یک مدیر سرور باید مجوزهای مورد نیاز (مانند 'ارسال پیام'، 'مدیریت نقش‌ها') را در تنظیمات سرور به ربات بدهد."
+    }
+  },
+  "Discord: API Error 50007: Cannot send messages to this user": {
+    "en": {
+      "title": "Discord API Error: Cannot Send DM",
+      "description": "You cannot send a Direct Message to this user, likely because they have DMs disabled for non-friends or they have blocked you/your bot.",
+      "solution": "This action cannot be completed unless the user changes their privacy settings."
+    },
+    "fa": {
+      "title": "خطای API دیسکورد: نمی‌توان به این کاربر پیام ارسال کرد",
+      "description": "شما نمی‌توانید به این کاربر پیام خصوصی ارسال کنید، احتمالاً به این دلیل که او پیام‌های خصوصی را برای افراد غیردوست غیرفعال کرده یا شما/ربات شما را مسدود کرده است.",
+      "solution": "این عمل تا زمانی که کاربر تنظیمات حریم خصوصی خود را تغییر ندهد، قابل انجام نیست."
+    }
+  },
+  "Discord: Maximum number of reactions reached (20)": {
+    "en": {
+      "title": "Discord Error: Max Reactions Reached",
+      "description": "An attempt was made to add more than 20 unique reactions to a single message.",
+      "solution": "Remove an existing reaction before adding a new one. This is a platform limit."
+    },
+    "fa": {
+      "title": "خطای دیسکورد: به حداکثر تعداد Reactionها رسیده‌اید",
+      "description": "تلاشی برای افزودن بیش از ۲۰ Reaction منحصر به فرد به یک پیام واحد انجام شده است.",
+      "solution": "قبل از افزودن یک Reaction جدید، یک Reaction موجود را حذف کنید. این یک محدودیت پلتفرم است."
+    }
+  },
+  "MySQL: #2002 - No such file or directory": {
+    "en": {
+      "title": "MySQL Error: #2002 Connection Failed",
+      "description": "The application cannot connect to the MySQL socket, which usually means the database server is not running or is configured incorrectly.",
+      "solution": "The server administrator must ensure the MySQL service is running and the connection settings in the application are correct."
+    },
+    "fa": {
+      "title": "خطای مای‌اس‌کیو‌ال: #2002 اتصال ناموفق بود",
+      "description": "اپلیکیشن نمی‌تواند به سوکت MySQL متصل شود، که معمولاً به این معنی است که سرور پایگاه داده در حال اجرا نیست یا به درستی پیکربندی نشده است.",
+      "solution": "مدیر سرور باید اطمینان حاصل کند که سرویس MySQL در حال اجرا است و تنظیمات اتصال در اپلیکیشن صحیح است."
+    }
+  },
+  "SMTP Error 421: Service not available": {
+    "en": {
+      "title": "SMTP Error 421: Service Not Available",
+      "description": "The mail server is temporarily unavailable and is closing the transmission channel. This is not a permanent error.",
+      "solution": "The sending mail client should automatically try again later. This is a temporary server-side issue."
+    },
+    "fa": {
+      "title": "خطای SMTP 421: سرویس در دسترس نیست",
+      "description": "سرور ایمیل به طور موقت در دسترس نیست و در حال بستن کانال انتقال است. این یک خطای دائمی نیست.",
+      "solution": "کلاینت ایمیل فرستنده باید به طور خودکار بعداً دوباره تلاش کند. این یک مشکل موقتی سمت سرور است."
+    }
+  },
+  "IMAP Error: [TRYCREATE] Mailbox does not exist": {
+    "en": {
+      "title": "IMAP Error: Mailbox Does Not Exist",
+      "description": "The mail client tried to access a mailbox/folder that does not exist on the server.",
+      "solution": "This usually indicates a synchronization issue. Try refreshing your email client or creating the folder manually if needed."
+    },
+    "fa": {
+      "title": "خطای IMAP: صندوق پستی وجود ندارد",
+      "description": "کلاینت ایمیل تلاش کرده به یک صندوق پستی/پوشه‌ای دسترسی پیدا کند که در سرور وجود ندارد.",
+      "solution": "این معمولاً نشان‌دهنده یک مشکل همگام‌سازی است. سعی کنید کلاینت ایمیل خود را رفرش کنید یا در صورت نیاز پوشه را به صورت دستی ایجاد کنید."
+    }
+  },
+  "ERR_CERT_WEAK_SIGNATURE_ALGORITHM": {
+    "en": {
+      "title": "Error: Weak Signature Algorithm",
+      "description": "The website's SSL certificate uses a weak and outdated signature algorithm (like SHA-1).",
+      "solution": "This is a serious security risk. The site administrator must replace the certificate with one that uses a modern algorithm (like SHA-256)."
+    },
+    "fa": {
+      "title": "خطا: الگوریتم امضای ضعیف",
+      "description": "گواهی‌نامه SSL وب‌سایت از یک الگوریتم امضای ضعیف و قدیمی (مانند SHA-1) استفاده می‌کند.",
+      "solution": "این یک ریسک امنیتی جدی است. مدیر سایت باید گواهی‌نامه را با یکی که از یک الگوریتم مدرن (مانند SHA-256) استفاده می‌کند، جایگزین کند."
+    }
+  },
+  "ERR_DISALLOWED_URL_SCHEME": {
+    "en": {
+      "title": "Error: Disallowed URL Scheme",
+      "description": "The browser's policies prevent navigation to the requested URL scheme (e.g., a custom, non-standard protocol).",
+      "solution": "This is a security feature to prevent websites from launching potentially harmful local applications."
+    },
+    "fa": {
+      "title": "خطا: طرح URL غیرمجاز",
+      "description": "سیاست‌های مرورگر مانع از ناوبری به طرح URL درخواستی (مثلاً یک پروتکل سفارشی و غیراستاندارد) می‌شوند.",
+      "solution": "این یک ویژگی امنیتی برای جلوگیری از اجرای برنامه‌های محلی بالقوه مضر توسط وب‌سایت‌ها است."
+    }
+  },
+  "ERR_RESPONSE_HEADERS_MULTIPLE_LOCATION": {
+    "en": {
+      "title": "Error: Multiple Location Headers",
+      "description": "The server's response contains multiple `Location` headers, which is invalid for a redirect.",
+      "solution": "This is a server-side bug that must be fixed by the site's developers."
+    },
+    "fa": {
+      "title": "خطا: هدرهای Location چندگانه",
+      "description": "پاسخ سرور شامل چندین هدر `Location` است که برای یک ریدایرکت نامعتبر است.",
+      "solution": "این یک باگ سمت سرور است که باید توسط توسعه‌دهندگان سایت برطرف شود."
+    }
+  },
+  "ERR_ABORTED": {
+    "en": {
+      "title": "Error: Request Aborted",
+      "description": "The request was aborted, typically by the user (e.g., by pressing Escape or navigating away) or by a script on the page.",
+      "solution": "This is usually intentional. If it happens unexpectedly, it could be a bug in the page's JavaScript."
+    },
+    "fa": {
+      "title": "خطا: درخواست لغو شد",
+      "description": "درخواست لغو شد، معمولاً توسط کاربر (مثلاً با فشردن کلید Escape یا رفتن به صفحه‌ای دیگر) یا توسط یک اسکریپت در صفحه.",
+      "solution": "این معمولاً عمدی است. اگر به طور غیرمنتظره رخ دهد، می‌تواند یک باگ در جاوا اسکریپت صفحه باشد."
+    }
+  },
+  "ERR_INVALID_SIGNED_EXCHANGE": {
+    "en": {
+      "title": "Error: Invalid Signed Exchange",
+      "description": "An error related to Signed HTTP Exchanges (SXG), a technology for distributing content securely.",
+      "solution": "This is a technical issue with how the content is packaged and signed, which must be fixed by the content publisher."
+    },
+    "fa": {
+      "title": "خطا: تبادل امضاشده نامعتبر",
+      "description": "یک خطای مربوط به تبادل‌های HTTP امضاشده (SXG)، یک فناوری برای توزیع امن محتوا.",
+      "solution": "این یک مشکل فنی در نحوه بسته‌بندی و امضای محتوا است که باید توسط ناشر محتوا برطرف شود."
+    }
+  },
+  "ERR_REQUEST_PREVENTED_BY_CLIENT_BLOCK": {
+    "en": {
+      "title": "Error: Request Blocked by Client",
+      "description": "The request was blocked by a built-in feature of the browser, such as Safe Browse or an ad blocker.",
+      "solution": "Check your browser's security settings or ad blocker configuration to see why the request was blocked."
+    },
+    "fa": {
+      "title": "خطا: درخواست توسط مسدودکننده کلاینت منع شد",
+      "description": "درخواست توسط یک قابلیت داخلی مرورگر، مانند Safe Browse یا یک مسدودکننده تبلیغات، مسدود شده است.",
+      "solution": "تنظیمات امنیتی مرورگر یا پیکربندی مسدودکننده تبلیغات خود را بررسی کنید تا ببینید چرا درخواست مسدود شده است."
+    }
+  },
+  "ERR_CACHE_WRITE_ERROR": {
+    "en": {
+      "title": "Error: Cache Write Error",
+      "description": "The browser failed to write a resource to its disk cache.",
+      "solution": "This could be caused by a lack of disk space, incorrect file permissions, or a corrupted cache directory."
+    },
+    "fa": {
+      "title": "خطا: خطای نوشتن در حافظه پنهان",
+      "description": "مرورگر در نوشتن یک منبع در حافظه پنهان دیسک خود با مشکل مواجه شده است.",
+      "solution": "این می‌تواند به دلیل کمبود فضای دیسک، مجوزهای نادرست فایل یا یک دایرکتوری کش خراب ایجاد شود."
+    }
+  },
+  "ERR_BLOCKED_BY_POLICY": {
+    "en": {
+      "title": "Error: Blocked by Policy",
+      "description": "An enterprise policy set by a system administrator on your machine is blocking the request.",
+      "solution": "You must contact your network or system administrator to understand and potentially change this restriction."
+    },
+    "fa": {
+      "title": "خطا: توسط سیاست مسدود شد",
+      "description": "یک سیاست سازمانی که توسط یک مدیر سیستم روی دستگاه شما تنظیم شده، این درخواست را مسدود می‌کند.",
+      "solution": "شما باید با مدیر شبکه یا سیستم خود تماس بگیرید تا این محدودیت را درک کرده و به طور بالقوه تغییر دهید."
+    }
+  },
+  "insufficient_funds (Stripe)": {
+    "en": {
+      "title": "Stripe: Insufficient Funds",
+      "description": "The payment card has insufficient funds to complete the transaction.",
+      "solution": "Try a different payment method or ensure the card has enough balance."
+    },
+    "fa": {
+      "title": "استرایپ: موجودی ناکافی",
+      "description": "کارت پرداخت موجودی کافی برای تکمیل تراکنش را ندارد.",
+      "solution": "یک روش پرداخت دیگر را امتحان کنید یا اطمینان حاصل کنید که کارت موجودی کافی دارد."
+    }
+  },
+  "lost_card (Stripe)": {
+    "en": {
+      "title": "Stripe: Lost Card",
+      "description": "The payment was declined because the card has been reported as lost.",
+      "solution": "Use a different payment method. This card is no longer active."
+    },
+    "fa": {
+      "title": "استرایپ: کارت گم‌شده",
+      "description": "پرداخت رد شد زیرا کارت به عنوان 'گم‌شده' گزارش شده است.",
+      "solution": " از یک روش پرداخت دیگر استفاده کنید. این کارت دیگر فعال نیست."
+    }
+  },
+  "stolen_card (Stripe)": {
+    "en": {
+      "title": "Stripe: Stolen Card",
+      "description": "The payment was declined because the card has been reported as stolen.",
+      "solution": "Use a different payment method. This card has been deactivated for security reasons."
+    },
+    "fa": {
+      "title": "استرایپ: کارت دزدیده‌شده",
+      "description": "پرداخت رد شد زیرا کارت به عنوان 'دزدیده‌شده' گزارش شده است.",
+      "solution": " از یک روش پرداخت دیگر استفاده کنید. این کارت به دلایل امنیتی غیرفعال شده است."
+    }
+  },
+  "do_not_honor (Stripe)": {
+    "en": {
+      "title": "Stripe: Do Not Honor",
+      "description": "A generic decline from the card issuer. The bank has declined the transaction for an unspecified reason.",
+      "solution": "Contact your bank for more information or try a different payment method."
+    },
+    "fa": {
+      "title": "استرایپ: رد شده توسط بانک",
+      "description": "یک رد کردن عمومی از طرف بانک صادرکننده کارت. بانک به دلیلی نامشخص تراکنش را رد کرده است.",
+      "solution": "برای اطلاعات بیشتر با بانک خود تماس بگیرید یا یک روش پرداخت دیگر را امتحان کنید."
+    }
+  },
+  "processing_error (Stripe)": {
+    "en": {
+      "title": "Stripe: Processing Error",
+      "description": "A temporary error occurred within the payment network.",
+      "solution": "Wait a few moments and try the transaction again. If it persists, contact support."
+    },
+    "fa": {
+      "title": "استرایپ: خطای پردازش",
+      "description": "یک خطای موقتی در شبکه پرداخت رخ داده است.",
+      "solution": "چند لحظه صبر کرده و تراکنش را دوباره امتحان کنید. اگر ادامه داشت، با پشتیبانی تماس بگیرید."
+    }
+  },
+  "authentication_error (Stripe)": {
+    "en": {
+      "title": "Stripe: Authentication Error",
+      "description": "The API key used for the request is incorrect or invalid.",
+      "solution": "This is a developer-side error that must be fixed in the website's payment integration."
+    },
+    "fa": {
+      "title": "استرایپ: خطای احراز هویت",
+      "description": "کلید API استفاده شده برای درخواست، نادرست یا نامعتبر است.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است که باید در یکپارچه‌سازی پرداخت وب‌سایت برطرف شود."
+    }
+  },
+  "idempotency_error (Stripe)": {
+    "en": {
+      "title": "Stripe: Idempotency Error",
+      "description": "An attempt was made to reuse an idempotency key with a different request, which prevents duplicate operations.",
+      "solution": "This is a developer-side issue to prevent accidental duplicate charges. Each new operation needs a unique idempotency key."
+    },
+    "fa": {
+      "title": "استرایپ: خطای تکرارناپذیری",
+      "description": "تلاشی برای استفاده مجدد از یک کلید تکرارناپذیری با یک درخواست متفاوت انجام شد، که از عملیات‌های تکراری جلوگیری می‌کند.",
+      "solution": "این یک مشکل سمت توسعه‌دهنده برای جلوگیری از شارژهای تکراری تصادفی است. هر عملیات جدید به یک کلید تکرارناپذیری منحصر به فرد نیاز دارد."
+    }
+  },
+  "rate_limit_error (Stripe)": {
+    "en": {
+      "title": "Stripe: Rate Limit Error",
+      "description": "Too many requests have been made to the Stripe API in a short period of time.",
+      "solution": "This is a developer-side issue. The application needs to manage its request rate."
+    },
+    "fa": {
+      "title": "استرایپ: خطای محدودیت نرخ",
+      "description": "تعداد زیادی درخواست در یک دوره زمانی کوتاه به API استرایپ ارسال شده است.",
+      "solution": "این یک مشکل سمت توسعه‌دهنده است. اپلیکیشن باید نرخ درخواست خود را مدیریت کند."
+    }
+  },
+  "INSTRUMENT_DECLINED (PayPal)": {
+    "en": {
+      "title": "PayPal Error: Instrument Declined",
+      "description": "The payment instrument (e.g., credit card or bank account) was declined by the bank or by PayPal.",
+      "solution": "Try a different payment method or contact your bank."
+    },
+    "fa": {
+      "title": "خطای پی‌پال: ابزار پرداخت رد شد",
+      "description": "ابزار پرداخت (مانند کارت اعتباری یا حساب بانکی) توسط بانک یا خود پی‌پال رد شد.",
+      "solution": "یک روش پرداخت دیگر را امتحان کنید یا با بانک خود تماس بگیرید."
+    }
+  },
+  "PAYER_ACCOUNT_LOCKED_OR_CLOSED (PayPal)": {
+    "en": {
+      "title": "PayPal Error: Payer Account Locked or Closed",
+      "description": "The payer's PayPal account is not active and cannot be used for transactions.",
+      "solution": "The payer needs to resolve the issue with their PayPal account directly."
+    },
+    "fa": {
+      "title": "خطای پی‌پال: حساب پرداخت‌کننده قفل یا بسته شده است",
+      "description": "حساب پی‌پال پرداخت‌کننده فعال نیست و نمی‌توان از آن برای تراکنش‌ها استفاده کرد.",
+      "solution": "پرداخت‌کننده باید مستقیماً مشکل را با حساب پی‌پال خود حل کند."
+    }
+  },
+  "TRANSACTION_REFUSED (PayPal)": {
+    "en": {
+      "title": "PayPal Error: Transaction Refused",
+      "description": "The transaction was refused by PayPal's risk management system.",
+      "solution": "PayPal's security model has flagged this transaction. Try a different payment method or wait and try again later."
+    },
+    "fa": {
+      "title": "خطای پی‌پال: تراکنش رد شد",
+      "description": "تراکنش توسط سیستم مدیریت ریسک پی‌پال رد شده است.",
+      "solution": "مدل امنیتی پی‌پال این تراکنش را پرچم‌گذاری کرده است. یک روش پرداخت دیگر را امتحان کنید یا صبر کرده و بعداً دوباره تلاش کنید."
+    }
+  },
+  "INVALID_RESOURCE_ID (PayPal)": {
+    "en": {
+      "title": "PayPal Error: Invalid Resource ID",
+      "description": "The requested resource (like a payment ID or order ID) was not found in PayPal's system.",
+      "solution": "This is likely a developer-side error where an incorrect ID is being used."
+    },
+    "fa": {
+      "title": "خطای پی‌پال: شناسه منبع نامعتبر",
+      "description": "منبع درخواستی (مانند شناسه پرداخت یا شناسه سفارش) در سیستم پی‌پال یافت نشد.",
+      "solution": "این احتمالاً یک خطای سمت توسعه‌دهنده است که در آن از یک شناسه نادرست استفاده می‌شود."
+    }
+  },
+  "SMTP 552: Exceeded storage allocation": {
+    "en": {
+      "title": "SMTP Error 552: Mailbox Full",
+      "description": "The recipient's mailbox is full and cannot accept new messages.",
+      "solution": "You must wait for the recipient to clear some space in their mailbox."
+    },
+    "fa": {
+      "title": "خطای SMTP 552: صندوق پستی پر است",
+      "description": "صندوق پستی گیرنده پر است و نمی‌تواند پیام‌های جدیدی را بپذیرد.",
+      "solution": "شما باید منتظر بمانید تا گیرنده مقداری فضا در صندوق پستی خود خالی کند."
+    }
+  },
+  "SMTP 553: Mailbox name not allowed": {
+    "en": {
+      "title": "SMTP Error 553: Mailbox Name Not Allowed",
+      "description": "The recipient's email address is syntactically incorrect.",
+      "solution": "Check the recipient's email address for typos or invalid characters."
+    },
+    "fa": {
+      "title": "خطای SMTP 553: نام صندوق پستی مجاز نیست",
+      "description": "آدرس ایمیل گیرنده از نظر ساختاری نادرست است.",
+      "solution": "آدرس ایمیل گیرنده را برای اشتباهات تایپی یا کاراکترهای نامعتبر بررسی کنید."
+    }
+  },
+  "SMTP 554: Transaction failed": {
+    "en": {
+      "title": "SMTP Error 554: Transaction Failed",
+      "description": "A permanent, generic failure from the receiving server, often accompanied by an anti-spam message.",
+      "solution": "Your email was permanently rejected. The reason is often included in the error message, usually related to being on a blacklist or failing security checks."
+    },
+    "fa": {
+      "title": "خطای SMTP 554: تراکنش ناموفق بود",
+      "description": "یک شکست دائمی و عمومی از طرف سرور گیرنده، که اغلب با یک پیام ضد اسپم همراه است.",
+      "solution": "ایمیل شما به طور دائمی رد شده است. دلیل آن اغلب در پیام خطا گنجانده شده و معمولاً مربوط به بودن در یک لیست سیاه یا عدم موفقیت در بررسی‌های امنیتی است."
+    }
+  },
+  "IMAP: [OVERQUOTA] Account is over quota": {
+    "en": {
+      "title": "IMAP Error: Account Over Quota",
+      "description": "The user's entire email account has exceeded its allowed storage space.",
+      "solution": "The user needs to delete emails or purchase more storage from their email provider."
+    },
+    "fa": {
+      "title": "خطای IMAP: حساب کاربری از سهمیه فراتر رفته است",
+      "description": "کل حساب ایمیل کاربر از فضای ذخیره‌سازی مجاز خود فراتر رفته است.",
+      "solution": "کاربر باید ایمیل‌ها را حذف کند یا فضای ذخیره‌سازی بیشتری از ارائه‌دهنده ایمیل خود خریداری کند."
+    }
+  },
+  "WebRTC: ICE failed": {
+    "en": {
+      "title": "WebRTC Error: ICE Failed",
+      "description": "The browser could not establish a direct peer-to-peer connection path between the two users, often due to restrictive firewalls.",
+      "solution": "This often requires a TURN server to relay the media, which is a developer-side configuration. As a user, try a different network."
+    },
+    "fa": {
+      "title": "خطای WebRTC: ICE ناموفق بود",
+      "description": "مرورگر نتوانست یک مسیر اتصال همتا به همتای مستقیم بین دو کاربر پیدا کند، که اغلب به دلیل فایروال‌های محدودکننده است.",
+      "solution": "این اغلب به یک سرور TURN برای رله کردن رسانه نیاز دارد که یک پیکربندی سمت توسعه‌دهنده است. به عنوان کاربر، یک شبکه دیگر را امتحان کنید."
+    }
+  },
+  "WebRTC: Failed to set local/remote description": {
+    "en": {
+      "title": "WebRTC Error: Failed to Set Description",
+      "description": "An error occurred during the 'handshake' process where the two clients exchange their connection information.",
+      "solution": "This is a bug in the signaling logic of the web application that must be fixed by developers."
+    },
+    "fa": {
+      "title": "خطای WebRTC: تنظیم توضیحات ناموفق بود",
+      "description": "یک خطا در فرآیند 'دست‌دهی' که طی آن دو کلاینت اطلاعات اتصال خود را با هم رد و بدل می‌کنند، رخ داد.",
+      "solution": "این یک باگ در منطق سیگنالینگ اپلیکیشن وب است که باید توسط توسعه‌دهندگان برطرف شود."
+    }
+  },
+  "DOMException: NotAllowedError (getUserMedia)": {
+    "en": {
+      "title": "Media Error: Permission Denied",
+      "description": "The user denied the webpage permission to access their camera or microphone.",
+      "solution": "You must grant permission in the browser prompt to use this feature. You can also change site permissions in your browser's settings."
+    },
+    "fa": {
+      "title": "خطای رسانه: مجوز رد شد",
+      "description": "کاربر به صفحه وب اجازه دسترسی به دوربین یا میکروفون خود را نداد.",
+      "solution": "برای استفاده از این ویژگی باید در اعلان مرورگر، مجوز را اعطا کنید. همچنین می‌توانید مجوزهای سایت را در تنظیمات مرورگر خود تغییر دهید."
+    }
+  },
+  "DOMException: NotFoundError (getUserMedia)": {
+    "en": {
+      "title": "Media Error: Device Not Found",
+      "description": "No media tracks of the specified type (e.g., camera, microphone) were found that satisfy the given constraints.",
+      "solution": "Ensure your camera or microphone is properly connected and not being used by another application."
+    },
+    "fa": {
+      "title": "خطای رسانه: دستگاه یافت نشد",
+      "description": "هیچ ترک رسانه‌ای از نوع مشخص شده (مثلاً دوربین، میکروفون) که با محدودیت‌های داده شده مطابقت داشته باشد، یافت نشد.",
+      "solution": "اطمینان حاصل کنید که دوربین یا میکروفون شما به درستی متصل است و توسط برنامه دیگری استفاده نمی‌شود."
+    }
+  },
+  "DOMException: NotReadableError (getUserMedia)": {
+    "en": {
+      "title": "Media Error: Device Not Readable",
+      "description": "The hardware (e.g., webcam) is in use by another application or an operating system service, preventing the browser from accessing it.",
+      "solution": "Close any other applications that might be using your camera or microphone (e.g., Skype, Zoom) and try again."
+    },
+    "fa": {
+      "title": "خطای رسانه: دستگاه قابل خواندن نیست",
+      "description": "سخت‌افزار (مثلاً وب‌کم) توسط یک اپلیکیشن دیگر یا یک سرویس سیستم‌عامل در حال استفاده است، که مانع از دسترسی مرورگر به آن می‌شود.",
+      "solution": "هر اپلیکیشن دیگری که ممکن است از دوربین یا میکروفون شما استفاده کند (مانند اسکایپ، زوم) را ببندید و دوباره تلاش کنید."
+    }
+  },
+  "Reddit: RATELIMIT": {
+    "en": {
+      "title": "Reddit Error: Rate Limited",
+      "description": "You are doing that too much. You have exceeded the allowed number of actions (like posting or commenting) in a given time frame.",
+      "solution": "Wait for the specified amount of time before trying again."
+    },
+    "fa": {
+      "title": "خطای ردیت: محدودیت نرخ",
+      "description": "شما آن کار را بیش از حد انجام می‌دهید. شما از تعداد مجاز اقدامات (مانند پست کردن یا کامنت گذاشتن) در یک بازه زمانی معین فراتر رفته‌اید.",
+      "solution": "قبل از تلاش مجدد، برای مدت زمان مشخص شده صبر کنید."
+    }
+  },
+  "Reddit: SUBREDDIT_EXISTS": {
+    "en": {
+      "title": "Reddit Error: Subreddit Exists",
+      "description": "You tried to create a subreddit with a name that already exists.",
+      "solution": "Choose a different, unique name for your subreddit."
+    },
+    "fa": {
+      "title": "خطای ردیت: ساب‌ردیت وجود دارد",
+      "description": "شما تلاش کرده‌اید یک ساب‌ردیت با نامی که از قبل وجود دارد، ایجاد کنید.",
+      "solution": "یک نام متفاوت و منحصر به فرد برای ساب‌ردیت خود انتخاب کنید."
+    }
+  },
+  "Reddit: USER_DOESNT_EXIST": {
+    "en": {
+      "title": "Reddit Error: User Doesn't Exist",
+      "description": "The specified user was not found.",
+      "solution": "Check the spelling of the username."
+    },
+    "fa": {
+      "title": "خطای ردیت: کاربر وجود ندارد",
+      "description": "کاربر مشخص شده یافت نشد.",
+      "solution": "املای نام کاربری را بررسی کنید."
+    }
+  },
+  "Reddit: USER_IS_BANNED": {
+    "en": {
+      "title": "Reddit Error: User Is Banned",
+      "description": "The specified user is banned from the subreddit where they are trying to post or comment.",
+      "solution": "The user cannot participate in this subreddit unless the ban is lifted by the moderators."
+    },
+    "fa": {
+      "title": "خطای ردیت: کاربر بن شده است",
+      "description": "کاربر مشخص شده از ساب‌ردیتی که در آن تلاش برای پست کردن یا کامنت گذاشتن دارد، بن شده است.",
+      "solution": "کاربر نمی‌تواند در این ساب‌ردیت شرکت کند مگر اینکه بن توسط مدیران لغو شود."
+    }
+  },
+  "Reddit: POST_IS_SPAM": {
+    "en": {
+      "title": "Reddit Error: Post Is Spam",
+      "description": "Reddit's anti-spam filters have identified your post as potential spam.",
+      "solution": "Your post has been automatically removed. If you believe this was a mistake, you can message the moderators of the subreddit."
+    },
+    "fa": {
+      "title": "خطای ردیت: پست اسپم است",
+      "description": "فیلترهای ضد اسپم ردیت، پست شما را به عنوان اسپم بالقوه شناسایی کرده‌اند.",
+      "solution": "پست شما به طور خودکار حذف شده است. اگر فکر می‌کنید این یک اشتباه بوده است، می‌توانید به مدیران ساب‌ردیت پیام دهید."
+    }
+  },
+  "ERR_BLOCKED_BY_ORB": {
+    "en": {
+      "title": "Error: Blocked by ORB",
+      "description": "Blocked by Opaque Response Blocking (ORB), a modern security feature that prevents leaking cross-origin data.",
+      "solution": "This is a security protection enforced by the browser. It's a developer-side issue related to how resources from different origins are requested."
+    },
+    "fa": {
+      "title": "خطا: توسط ORB مسدود شد",
+      "description": "توسط مسدودسازی پاسخ مات (ORB)، یک ویژگی امنیتی مدرن که از نشت داده‌های بین مبدأ جلوگیری می‌کند، مسدود شد.",
+      "solution": "این یک حفاظت امنیتی است که توسط مرورگر اعمال می‌شود. این یک مشکل سمت توسعه‌دهنده مربوط به نحوه درخواست منابع از مبدأهای مختلف است."
+    }
+  },
+  "ERR_BAD_SSL_CLIENT_AUTH_CERT": {
+    "en": {
+      "title": "Error: Bad SSL Client Auth Cert",
+      "description": "The SSL client certificate provided by the browser for authentication is bad or malformed.",
+      "solution": "The client certificate installed in your browser or on your smart card is corrupt or invalid. You may need a new one from your IT department."
+    },
+    "fa": {
+      "title": "خطا: گواهی‌نامه احراز هویت کلاینت SSL بد است",
+      "description": "گواهی‌نامه کلاینت SSL ارائه شده توسط مرورگر برای احراز هویت، بد یا خراب است.",
+      "solution": "گواهی‌نامه کلاینت نصب شده در مرورگر شما یا روی کارت هوشمند شما خراب یا نامعتبر است. ممکن است به یک گواهی‌نامه جدید از بخش IT خود نیاز داشته باشید."
+    }
+  },
+  "ERR_PROCESS_WERE_KILLED": {
+    "en": {
+      "title": "Error: Process Was Killed",
+      "description": "A browser process (like a renderer for a tab) was unexpectedly killed by the operating system, often due to low memory.",
+      "solution": "Try closing other applications to free up system resources and then reload the page."
+    },
+    "fa": {
+      "title": "خطا: فرآیند کشته شد",
+      "description": "یک فرآیند مرورگر (مانند یک رندرکننده برای یک تب) به طور غیرمنتظره توسط سیستم‌عامل، اغلب به دلیل کمبود حافظه، کشته شد.",
+      "solution": "سعی کنید برنامه‌های دیگر را ببندید تا منابع سیستم آزاد شود و سپس صفحه را دوباره بارگذاری کنید."
+    }
+  },
+  "ERR_USER_CANCELLED_AUTH": {
+    "en": {
+      "title": "Error: User Cancelled Authentication",
+      "description": "The user cancelled an operating system-level authentication dialog (e.g., a password, PIN, or smart card prompt).",
+      "solution": "The operation cannot proceed without authentication. Re-initiate the action and complete the authentication prompt."
+    },
+    "fa": {
+      "title": "خطا: کاربر احراز هویت را لغو کرد",
+      "description": "کاربر یک پنجره گفتگوی احراز هویت سطح سیستم‌عامل (مانند درخواست رمز عبور، پین یا کارت هوشمند) را لغو کرد.",
+      "solution": "عملیات بدون احراز هویت نمی‌تواند ادامه یابد. عمل را دوباره آغاز کرده و درخواست احراز هویت را تکمیل کنید."
+    }
+  },
+  "ERR_INVALID_SIGNED_CERTIFICATE_TIMESTAMPS": {
+    "en": {
+      "title": "Error: Invalid Signed Certificate Timestamps",
+      "description": "The Signed Certificate Timestamps (SCTs) embedded in the SSL certificate for transparency purposes are invalid.",
+      "solution": "This is a server-side certificate issue that must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطا: مهرهای زمانی گواهی‌نامه امضاشده نامعتبر",
+      "description": "مهرهای زمانی گواهی‌نامه امضاشده (SCTs) که برای اهداف شفافیت در گواهی‌نامه SSL تعبیه شده‌اند، نامعتبر هستند.",
+      "solution": "این یک مشکل گواهی‌نامه سمت سرور است که باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "ERR_TOO_MANY_ACCEPTED_SOCKETS": {
+    "en": {
+      "title": "Error: Too Many Accepted Sockets",
+      "description": "The browser process has accepted too many network sockets, exceeding its limit.",
+      "solution": "This is a low-level browser or system issue. Restarting the browser usually resolves it."
+    },
+    "fa": {
+      "title": "خطا: تعداد سوکت‌های پذیرفته‌شده بیش از حد است",
+      "description": "فرآیند مرورگر تعداد زیادی سوکت شبکه را پذیرفته و از حد مجاز خود فراتر رفته است.",
+      "solution": "این یک مشکل سطح پایین مرورگر یا سیستم است. راه‌اندازی مجدد مرورگر معمولاً آن را برطرف می‌کند."
+    }
+  },
+  "ERR_WINSOCK_UNEXPECTED_WRITTEN_BYTES": {
+    "en": {
+      "title": "Error: Winsock Unexpected Written Bytes",
+      "description": "An unexpected error occurred in the Windows Sockets (Winsock) networking layer.",
+      "solution": "This is a low-level operating system error. It may be temporary. Restarting your computer can help."
+    },
+    "fa": {
+      "title": "خطا: بایت‌های نوشته‌شده غیرمنتظره Winsock",
+      "description": "یک خطای غیرمنتظره در لایه شبکه ویندوز (Winsock) رخ داد.",
+      "solution": "این یک خطای سطح پایین سیستم‌عامل است. ممکن است موقتی باشد. راه‌اندازی مجدد کامپیوتر شما می‌تواند کمک کند."
+    }
+  },
+  "ERR_EARLY_DATA_REJECTED": {
+    "en": {
+      "title": "Error: Early Data Rejected",
+      "description": "The server rejected data sent during a TLS 1.3 0-RTT handshake, likely for security reasons to prevent replay attacks.",
+      "solution": "This is a technical behavior of the TLS 1.3 protocol. The browser will automatically retry the request with a standard handshake."
+    },
+    "fa": {
+      "title": "خطا: داده‌های اولیه رد شد",
+      "description": "سرور داده‌های ارسال شده در حین یک دست‌دهی 0-RTT در TLS 1.3 را، احتمالاً به دلایل امنیتی برای جلوگیری از حملات بازپخش، رد کرده است.",
+      "solution": "این یک رفتار فنی پروتکل TLS 1.3 است. مرورگر به طور خودکار درخواست را با یک دست‌دهی استاندارد دوباره تلاش خواهد کرد."
+    }
+  },
+  "ERR_PRECONNECT_FAILED": {
+    "en": {
+      "title": "Error: Preconnect Failed",
+      "description": "The browser's attempt to establish an early connection to a domain to speed up future requests has failed.",
+      "solution": "This is a performance optimization that failed. It should not break the page, but might make it load slightly slower."
+    },
+    "fa": {
+      "title": "خطا: پیش‌اتصال ناموفق بود",
+      "description": "تلاش مرورگر برای برقراری یک اتصال زودهنگام به یک دامنه برای افزایش سرعت درخواست‌های آینده، با شکست مواجه شده است.",
+      "solution": "این یک بهینه‌سازی عملکرد است که شکست خورده است. نباید صفحه را خراب کند، اما ممکن است باعث شود کمی کندتر بارگذاری شود."
+    }
+  },
+  "ERR_HOST_RESOLVER_QUEUE_TOO_LARGE": {
+    "en": {
+      "title": "Error: Host Resolver Queue Too Large",
+      "description": "The queue of domain names waiting to be resolved to IP addresses in the browser has become too long.",
+      "solution": "This can happen on a page with an extremely large number of different domains. It's a browser resource limit."
+    },
+    "fa": {
+      "title": "خطا: صف حل‌کننده میزبان بیش از حد بزرگ است",
+      "description": "صف نام‌های دامنه در انتظار ترجمه به آدرس‌های IP در مرورگر، بیش از حد طولانی شده است.",
+      "solution": "این می‌تواند در یک صفحه با تعداد بسیار زیادی دامنه مختلف رخ دهد. این یک محدودیت منابع مرورگر است."
+    }
+  },
+  "ERR_BLOCKED_BY_RESPONSE_WITH_HEADERS": {
+    "en": {
+      "title": "Error: Blocked by Response with Headers",
+      "description": "The response itself contained headers that instructed the browser to block it.",
+      "solution": "This is a security feature dictated by the server's response. The server is intentionally blocking this content."
+    },
+    "fa": {
+      "title": "خطا: توسط پاسخ با هدرها مسدود شد",
+      "description": "پاسخ خود حاوی هدرهایی بود که به مرورگر دستور می‌داد آن را مسدود کند.",
+      "solution": "این یک ویژگی امنیتی است که توسط پاسخ سرور دیکته شده است. سرور به عمد این محتوا را مسدود می‌کند."
+    }
+  },
+  "ERR_PROXY_AUTH_REQUESTED_WITH_NO_CONNECTION": {
+    "en": {
+      "title": "Error: Proxy Auth Requested With No Connection",
+      "description": "The proxy server requested authentication before a connection was even established.",
+      "solution": "This is a technical network protocol error, likely due to a misconfigured proxy server."
+    },
+    "fa": {
+      "title": "خطا: درخواست احراز هویت پراکسی بدون اتصال",
+      "description": "سرور پراکسی قبل از اینکه حتی اتصالی برقرار شود، درخواست احراز هویت کرده است.",
+      "solution": "این یک خطای پروتکل شبکه فنی است، که احتمالاً به دلیل یک سرور پراکسی با پیکربندی نادرست است."
+    }
+  },
+  "ERR_SOCKET_SET_RECEIVE_BUFFER_SIZE_ERROR": {
+    "en": {
+      "title": "Error: Socket Set Receive Buffer Size Error",
+      "description": "An error occurred while trying to set the receive buffer size for a network socket.",
+      "solution": "This is a low-level OS networking error."
+    },
+    "fa": {
+      "title": "خطا: خطای تنظیم اندازه بافر دریافت سوکت",
+      "description": "یک خطا هنگام تلاش برای تنظیم اندازه بافر دریافت برای یک سوکت شبکه رخ داد.",
+      "solution": "این یک خطای شبکه سطح پایین سیستم‌عامل است."
+    }
+  },
+  "ERR_SOCKET_SET_SEND_BUFFER_SIZE_ERROR": {
+    "en": {
+      "title": "Error: Socket Set Send Buffer Size Error",
+      "description": "An error occurred while trying to set the send buffer size for a network socket.",
+      "solution": "This is a low-level OS networking error."
+    },
+    "fa": {
+      "title": "خطا: خطای تنظیم اندازه بافر ارسال سوکت",
+      "description": "یک خطا هنگام تلاش برای تنظیم اندازه بافر ارسال برای یک سوکت شبکه رخ داد.",
+      "solution": "این یک خطای شبکه سطح پایین سیستم‌عامل است."
+    }
+  },
+  "ERR_TLS13_DOWNGRADE_DETECTED": {
+    "en": {
+      "title": "Error: TLS 1.3 Downgrade Detected",
+      "description": "The browser detected that a man-in-the-middle attacker is attempting to force a downgrade of the secure TLS 1.3 connection to a weaker version.",
+      "solution": "This is a serious security block. Do not proceed. Your connection may be compromised. Try again on a different network."
+    },
+    "fa": {
+      "title": "خطا: کاهش نسخه TLS 1.3 شناسایی شد",
+      "description": "مرورگر تشخیص داد که یک مهاجم مرد میانی در تلاش است تا اتصال امن TLS 1.3 را به یک نسخه ضعیف‌تر کاهش دهد.",
+      "solution": "این یک مسدودسازی امنیتی جدی است. ادامه ندهید. اتصال شما ممکن است به خطر افتاده باشد. در یک شبکه دیگر دوباره تلاش کنید."
+    }
+  },
+  "ERR_SSL_KEY_USAGE_INCOMPATIBLE": {
+    "en": {
+      "title": "Error: SSL Key Usage Incompatible",
+      "description": "The intended use of the key in the SSL certificate is not compatible with the requested operation.",
+      "solution": "This is a server-side certificate configuration error. The certificate's 'Key Usage' field is misconfigured."
+    },
+    "fa": {
+      "title": "خطا: استفاده از کلید SSL ناسازگار است",
+      "description": "استفاده مورد نظر از کلید در گواهی‌نامه SSL با عملیات درخواستی سازگار نیست.",
+      "solution": "این یک خطای پیکربندی گواهی‌نامه سمت سرور است. فیلد 'Key Usage' گواهی‌نامه به درستی پیکربندی نشده است."
+    }
+  },
+  "ERR_QUIC_HANDSHAKE_FAILED": {
+    "en": {
+      "title": "QUIC Handshake Failed",
+      "description": "The handshake process for the QUIC protocol (HTTP/3) failed.",
+      "solution": "This is a low-level network error. It may be temporary or indicate an incompatibility between your browser and the server."
+    },
+    "fa": {
+      "title": "دست‌دهی QUIC ناموفق بود",
+      "description": "فرآیند 'دست‌دهی' برای پروتکل QUIC (HTTP/3) ناموفق بود.",
+      "solution": "این یک خطای شبکه سطح پایین است. ممکن است موقتی باشد یا نشان‌دهنده ناسازگاری بین مرورگر شما و سرور باشد."
+    }
+  },
+  "ERR_DNS_MALFORMED_RESPONSE": {
+    "en": {
+      "title": "Error: DNS Malformed Response",
+      "description": "The response received from the DNS server was corrupt or not correctly formatted.",
+      "solution": "This could indicate an issue with your DNS server or a network device interfering with DNS traffic. Try a different DNS server."
+    },
+    "fa": {
+      "title": "خطا: پاسخ DNS خراب است",
+      "description": "پاسخ دریافت شده از سرور DNS خراب یا به درستی قالب‌بندی نشده بود.",
+      "solution": "این می‌تواند نشان‌دهنده یک مشکل در سرور DNS شما یا یک دستگاه شبکه باشد که در ترافیک DNS دخالت می‌کند. یک سرور DNS دیگر را امتحان کنید."
+    }
+  },
+  "ERR_CONNECTION_ID_BOUND_TO_DIFFERENT_SESSION": {
+    "en": {
+      "title": "Error: Connection ID Bound to Different Session",
+      "description": "A technical error where a connection ID belongs to a different session, often related to session resumption.",
+      "solution": "This is a low-level protocol error. Refreshing the page will establish a new connection and should resolve it."
+    },
+    "fa": {
+      "title": "خطا: شناسه اتصال به نشست دیگری متصل است",
+      "description": "یک خطای فنی که در آن یک شناسه اتصال به یک نشست دیگر تعلق دارد، که اغلب به از سرگیری نشست مربوط می‌شود.",
+      "solution": "این یک خطای پروتکل سطح پایین است. بارگذاری مجدد صفحه یک اتصال جدید برقرار کرده و باید آن را برطرف کند."
+    }
+  },
+  "RTCError: create-offer-failed": {
+    "en": {
+      "title": "WebRTC Error: Create Offer Failed",
+      "description": "The browser failed to create an SDP offer, which is the first step in establishing a WebRTC peer connection.",
+      "solution": "This is a bug in the web application's code that must be fixed by its developers."
+    },
+    "fa": {
+      "title": "خطای WebRTC: ایجاد پیشنهاد ناموفق بود",
+      "description": "مرورگر در ایجاد یک پیشنهاد SDP، که اولین قدم در برقراری یک اتصال همتای WebRTC است، شکست خورد.",
+      "solution": "این یک باگ در کد اپلیکیشن وب است که باید توسط توسعه‌دهندگان آن برطرف شود."
+    }
+  },
+  "DataChannel Error: The SCTP transport has been closed": {
+    "en": {
+      "title": "WebRTC Error: SCTP Transport Closed",
+      "description": "The underlying data channel transport (SCTP) has been terminated, likely because the peer connection was closed.",
+      "solution": "This usually happens when a video/audio call ends. If it happens unexpectedly, it's a bug in the application's connection management."
+    },
+    "fa": {
+      "title": "خطای کانال داده: انتقال SCTP بسته شده است",
+      "description": "انتقال کانال داده زیربنایی (SCTP) خاتمه یافته است، احتمالاً به این دلیل که اتصال همتا بسته شده است.",
+      "solution": "این معمولاً زمانی اتفاق می‌افتد که یک تماس ویدیویی/صوتی به پایان می‌رسد. اگر به طور غیرمنتظره رخ دهد، این یک باگ در مدیریت اتصال اپلیکیشن است."
+    }
+  },
+  "PlayStation: NP-34957-8 (Server communication error)": {
+    "en": {
+      "title": "PlayStation Error: NP-34957-8",
+      "description": "A general server communication error occurred on the PlayStation Network.",
+      "solution": "This is usually a temporary PSN issue. Check the PSN status page and try again later."
+    },
+    "fa": {
+      "title": "خطای پلی‌استیشن: NP-34957-8",
+      "description": "یک خطای ارتباطی عمومی سرور در شبکه پلی‌استیشن رخ داده است.",
+      "solution": "این معمولاً یک مشکل موقتی PSN است. صفحه وضعیت PSN را بررسی کرده و بعداً دوباره تلاش کنید."
+    }
+  },
+  "PlayStation: NW-31297-2 (Unable to connect to wireless)": {
+    "en": {
+      "title": "PlayStation Error: NW-31297-2",
+      "description": "The console is unable to connect to the wireless network.",
+      "solution": "Restart your router and your PlayStation console. Check your Wi-Fi password and network settings on the console."
+    },
+    "fa": {
+      "title": "خطای پلی‌استیشن: NW-31297-2",
+      "description": "کنسول قادر به اتصال به شبکه بی‌سیم نیست.",
+      "solution": "روتر و کنسول پلی‌استیشن خود را دوباره راه‌اندازی کنید. رمز عبور وای‌فای و تنظیمات شبکه را در کنسول بررسی کنید."
+    }
+  },
+  "PlayStation: E-82000168 (Invalid credit card)": {
+    "en": {
+      "title": "PlayStation Error: E-82000168",
+      "description": "The credit card information on file with the PlayStation Store is invalid or has expired.",
+      "solution": "Go to your account settings and update your payment information with a valid credit card."
+    },
+    "fa": {
+      "title": "خطای پلی‌استیشن: E-82000168",
+      "description": "اطلاعات کارت اعتباری ثبت شده در فروشگاه پلی‌استیشن نامعتبر یا منقضی شده است.",
+      "solution": "به تنظیمات حساب خود بروید و اطلاعات پرداخت خود را با یک کارت اعتباری معتبر به‌روز کنید."
+    }
+  },
+  "Xbox: 0x80a4001a (Temporary ban)": {
+    "en": {
+      "title": "Xbox Error: 0x80a4001a",
+      "description": "You have been temporarily banned from using a specific feature (like communication) due to a violation of the code of conduct.",
+      "solution": "You must wait for the suspension to end. Check your enforcement history on the Xbox website for details."
+    },
+    "fa": {
+      "title": "خطای ایکس‌باکس: 0x80a4001a",
+      "description": "شما به دلیل نقض قوانین رفتار، به طور موقت از استفاده از یک ویژگی خاص (مانند ارتباطات) محروم شده‌اید.",
+      "solution": "شما باید منتظر بمانید تا تعلیق به پایان برسد. برای جزئیات، سابقه اجرایی خود را در وب‌سایت ایکس‌باکس بررسی کنید."
+    }
+  },
+  "Xbox: 0x800704cf (Network connection error)": {
+    "en": {
+      "title": "Xbox Error: 0x800704cf",
+      "description": "Your console cannot connect to the internet properly. The network resource is unavailable.",
+      "solution": "This is a local network issue. Test your network connection in the console's settings and restart your router."
+    },
+    "fa": {
+      "title": "خطای ایکس‌باکس: 0x800704cf",
+      "description": "کنسول شما نمی‌تواند به درستی به اینترنت متصل شود. منبع شبکه در دسترس نیست.",
+      "solution": "این یک مشکل شبکه محلی است. اتصال شبکه خود را در تنظیمات کنسول تست کرده و روتر خود را دوباره راه‌اندازی کنید."
+    }
+  },
+  "Xbox: 0x8b050033 (Multiplayer session timeout)": {
+    "en": {
+      "title": "Xbox Error: 0x8b050033",
+      "description": "A party or multiplayer game session has timed out, often due to network issues.",
+      "solution": "Check your network's NAT type in the console settings. An 'Open' NAT type is best for multiplayer gaming."
+    },
+    "fa": {
+      "title": "خطای ایکس‌باکس: 0x8b050033",
+      "description": "یک جلسه پارتی یا بازی چندنفره تایم‌اوت شده است، که اغلب به دلیل مشکلات شبکه است.",
+      "solution": "نوع NAT شبکه خود را در تنظیمات کنسول بررسی کنید. یک نوع NAT 'Open' برای بازی‌های چندنفره بهترین است."
+    }
+  },
+  "FIX Protocol: Session-level Reject": {
+    "en": {
+      "title": "FIX Protocol Error: Session-level Reject",
+      "description": "A message is rejected for a violation of a session-level rule in the Financial Information eXchange (FIX) protocol.",
+      "solution": "This is a technical error in a financial trading system, indicating a problem with message sequencing or format."
+    },
+    "fa": {
+      "title": "خطای پروتکل FIX: رد در سطح نشست",
+      "description": "یک پیام به دلیل نقض یک قانون در سطح نشست در پروتکل تبادل اطلاعات مالی (FIX) رد شده است.",
+      "solution": "این یک خطای فنی در یک سیستم معاملاتی مالی است که نشان‌دهنده مشکلی در توالی یا فرمت پیام است."
+    }
+  },
+  "FIX Protocol: Business-level Reject": {
+    "en": {
+      "title": "FIX Protocol Error: Business-level Reject",
+      "description": "A message is syntactically valid but cannot be processed for business reasons (e.g., an invalid price or a closed market).",
+      "solution": "The order or message is not valid according to the current business rules of the exchange."
+    },
+    "fa": {
+      "title": "خطای پروتکل FIX: رد در سطح تجاری",
+      "description": "یک پیام از نظر دستوری معتبر است اما به دلایل تجاری قابل پردازش نیست (مثلاً یک قیمت نامعتبر یا یک بازار بسته).",
+      "solution": "سفارش یا پیام بر اساس قوانین تجاری فعلی بورس، معتبر نیست."
+    }
+  },
+  "FIX Protocol: Order rejected: 'Too late to enter'": {
+    "en": {
+      "title": "FIX Protocol: Order Rejected - Too Late to Enter",
+      "description": "The trading order was sent after the market had closed for the day.",
+      "solution": "Submit the order during market trading hours."
+    },
+    "fa": {
+      "title": "پروتکل FIX: سفارش رد شد - برای ورود خیلی دیر است",
+      "description": "سفارش معاملاتی پس از بسته شدن بازار برای آن روز ارسال شده است.",
+      "solution": "سفارش را در ساعات معاملاتی بازار ارسال کنید."
+    }
+  },
+  "FIX Protocol: Order rejected: 'Duplicate order'": {
+    "en": {
+      "title": "FIX Protocol: Order Rejected - Duplicate Order",
+      "description": "The order was rejected because it has a duplicate Client Order ID (`ClOrdID`).",
+      "solution": "Each new order must have a unique ID to prevent duplicate submissions. This is a developer-side issue."
+    },
+    "fa": {
+      "title": "پروتکل FIX: سفارش رد شد - سفارش تکراری",
+      "description": "سفارش رد شد زیرا دارای یک شناسه سفارش کلاینت (`ClOrdID`) تکراری است.",
+      "solution": "هر سفارش جدید باید یک شناسه منحصر به فرد داشته باشد تا از ارسال‌های تکراری جلوگیری شود. این یک مشکل سمت توسعه‌دهنده است."
+    }
+  },
+  "YouTube: videoNotFound": {
+    "en": {
+      "title": "YouTube Error: Video Not Found",
+      "description": "The video ID specified in the request does not match any video.",
+      "solution": "The video has likely been deleted, or the provided URL or video ID is incorrect."
+    },
+    "fa": {
+      "title": "خطای یوتیوب: ویدیو یافت نشد",
+      "description": "شناسه ویدیوی مشخص شده در درخواست با هیچ ویدیویی مطابقت ندارد.",
+      "solution": "ویدیو احتمالاً حذف شده است، یا URL یا شناسه ویدیوی ارائه شده نادرست است."
+    }
+  },
+  "YouTube: commentsDisabled": {
+    "en": {
+      "title": "YouTube Info: Comments Disabled",
+      "description": "Comments are disabled for this video.",
+      "solution": "The video uploader has chosen to disable comments for this video. This is not an error."
+    },
+    "fa": {
+      "title": "اطلاعات یوتیوب: نظرات غیرفعال شده‌اند",
+      "description": "نظرات برای این ویدیو غیرفعال شده‌اند.",
+      "solution": "آپلودکننده ویدیو تصمیم گرفته است نظرات را برای این ویدیو غیرفعال کند. این یک خطا نیست."
+    }
+  },
+  "Crash Report: OOM: large": {
+    "en": {
+      "title": "Crash Report: Out of Memory (Large Allocation)",
+      "description": "The browser crashed due to an Out of Memory error caused by a single, very large memory allocation attempt.",
+      "solution": "This is a bug in the webpage's code, which is trying to use an unreasonable amount of memory at once."
+    },
+    "fa": {
+      "title": "گزارش کرش: کمبود حافظه (تخصیص بزرگ)",
+      "description": "مرورگر به دلیل یک خطای کمبود حافظه ناشی از یک تلاش برای تخصیص یک قطعه حافظه بسیار بزرگ، کرش کرده است.",
+      "solution": "این یک باگ در کد صفحه وب است که در تلاش است از مقدار غیرمعقولی از حافظه به یکباره استفاده کند."
+    }
+  },
+  "Crash Report: IPC message parsing validation failure": {
+    "en": {
+      "title": "Crash Report: IPC Validation Failure",
+      "description": "A malformed message was received over the browser's Inter-Process Communication (IPC) channel, causing a crash for security reasons.",
+      "solution": "This is a low-level browser bug or a security issue caused by a misbehaving process."
+    },
+    "fa": {
+      "title": "گزارش کرش: شکست اعتبارسنجی پیام IPC",
+      "description": "یک پیام خراب از طریق کانال ارتباطات بین‌فرآیندی (IPC) مرورگر دریافت شد، که به دلایل امنیتی باعث کرش شده است.",
+      "solution": "این یک باگ سطح پایین مرورگر یا یک مشکل امنیتی ناشی از یک فرآیند با رفتار نادرست است."
+    }
+  },
+  "Crash Report: Stack-based buffer overflow detected": {
+    "en": {
+      "title": "Crash Report: Buffer Overflow Detected",
+      "description": "The browser detected and stopped a classic stack-based buffer overflow, a common type of security vulnerability.",
+      "solution": "This is a critical security protection. The page or an extension was trying to exploit a vulnerability."
+    },
+    "fa": {
+      "title": "گزارش کرش: سرریز بافر مبتنی بر پشته شناسایی شد",
+      "description": "مرورگر یک سرریز بافر مبتنی بر پشته کلاسیک، یک نوع رایج از آسیب‌پذیری‌های امنیتی، را شناسایی و متوقف کرده است.",
+      "solution": "این یک حفاظت امنیتی بحرانی است. صفحه یا یک افزونه در تلاش برای بهره‌برداری از یک آسیب‌پذیری بوده است."
+    }
+  },
+  "ERR_HTTP2_SERVER_REFUSED_STREAM": {
+    "en": {
+      "title": "HTTP/2 Error: Server Refused Stream",
+      "description": "The server explicitly refused a specific stream within an HTTP/2 connection without processing it.",
+      "solution": "This is a server-side decision, possibly due to resource limits or a specific server policy. It is not a client-side error."
+    },
+    "fa": {
+      "title": "خطای HTTP/2: سرور استریم را رد کرد",
+      "description": "سرور به صراحت یک استریم خاص را در یک اتصال HTTP/2 بدون پردازش آن رد کرده است.",
+      "solution": "این یک تصمیم سمت سرور است، که احتمالاً به دلیل محدودیت منابع یا یک سیاست خاص سرور است. این یک خطای سمت کلاینت نیست."
+    }
+  },
+  "ERR_DNS_SORT_ERROR": {
+    "en": {
+      "title": "Error: DNS Sort Error",
+      "description": "An error occurred while sorting the DNS results received from the server.",
+      "solution": "This is a low-level browser or OS networking error, which is usually transient."
+    },
+    "fa": {
+      "title": "خطا: خطای مرتب‌سازی DNS",
+      "description": "یک خطا هنگام مرتب‌سازی نتایج DNS دریافت شده از سرور رخ داد.",
+      "solution": "این یک خطای شبکه سطح پایین مرورگر یا سیستم‌عامل است که معمولاً گذرا است."
+    }
+  },
+  "ERR_HSTS_POLICY_BYPASS_DETECTED": {
+    "en": {
+      "title": "Error: HSTS Policy Bypass Detected",
+      "description": "The browser detected an attempt to bypass the HTTP Strict Transport Security (HSTS) policy, which could be a security risk.",
+      "solution": "This is a security block. Do not proceed. The network or a browser extension may be interfering with the connection."
+    },
+    "fa": {
+      "title": "خطا: تلاش برای دور زدن سیاست HSTS شناسایی شد",
+      "description": "مرورگر تلاشی برای دور زدن سیاست امنیت انتقال اکید HTTP (HSTS) را شناسایی کرد که می‌تواند یک ریسک امنیتی باشد.",
+      "solution": "این یک مسدودسازی امنیتی است. ادامه ندهید. شبکه یا یک افزونه مرورگر ممکن است در اتصال دخالت کند."
+    }
+  },
+  "ERR_BLOCKED_BY_PACK_SNIFFER": {
+    "en": {
+      "title": "Error: Blocked by Pack Sniffer",
+      "description": "A security mechanism that sniffs network traffic has blocked the request to prevent potential data leakage.",
+      "solution": "This is a browser security feature. It indicates that the requested resource might be trying to access cross-origin data in an unsafe way."
+    },
+    "fa": {
+      "title": "خطا: توسط Pack Sniffer مسدود شد",
+      "description": "یک مکانیزم امنیتی که ترافیک شبکه را بو می‌کشد، درخواست را برای جلوگیری از نشت بالقوه داده‌ها مسدود کرده است.",
+      "solution": "این یک ویژگی امنیتی مرورگر است. این نشان می‌دهد که منبع درخواستی ممکن است در تلاش برای دسترسی به داده‌های بین مبدأ به روشی ناامن باشد."
+    }
+  },
+  "ERR_SERVICE_WORKER_SCRIPT_NOT_FOUND": {
+    "en": {
+      "title": "Service Worker Error: Script Not Found",
+      "description": "The JavaScript file specified for the Service Worker could not be found at the given URL.",
+      "solution": "This is a developer-side error. The path to the service worker script is incorrect."
+    },
+    "fa": {
+      "title": "خطای سرویس ورکر: اسکریپت یافت نشد",
+      "description": "فایل جاوا اسکریپت مشخص شده برای سرویس ورکر در URL داده شده یافت نشد.",
+      "solution": "این یک خطای سمت توسعه‌دهنده است. مسیر به اسکریپت سرویس ورکر نادرست است."
+    }
+  },
+  "ERR_BACKGROUND_SYNC_FAILED": {
+    "en": {
+      "title": "Error: Background Sync Failed",
+      "description": "The Background Sync API, which allows web apps to defer actions until the user has stable connectivity, has failed.",
+      "solution": "This could be a temporary browser issue or a bug in the web application's code."
+    },
+    "fa": {
+      "title": "خطا: همگام‌سازی پس‌زمینه ناموفق بود",
+      "description": "API همگام‌سازی پس‌زمینه، که به اپلیکیشن‌های وب اجازه می‌دهد اقدامات را تا زمانی که کاربر اتصال پایداری داشته باشد به تعویق بیندازند، با شکست مواجه شده است.",
+      "solution": "این می‌تواند یک مشکل موقتی مرورگر یا یک باگ در کد اپلیکیشن وب باشد."
+    }
+  },
+  "ERR_NAVIGATION_BLOCKED": {
+    "en": {
+      "title": "Error: Navigation Blocked",
+      "description": "Navigation to a page was blocked, often for security reasons or because a beforeunload event handler returned false.",
+      "solution": "A script on the page may be intentionally preventing you from leaving. Check if there are any unsaved changes on the page."
+    },
+    "fa": {
+      "title": "خطا: ناوبری مسدود شد",
+      "description": "ناوبری به یک صفحه مسدود شد، اغلب به دلایل امنیتی یا به این دلیل که یک کنترلر رویداد beforeunload مقدار false را برگردانده است.",
+      "solution": "یک اسکریپت در صفحه ممکن است به عمد مانع از خروج شما شود. بررسی کنید که آیا تغییرات ذخیره‌نشده‌ای در صفحه وجود دارد."
+    }
+  },
+  "ERR_NOT_IMPLEMENTED": {
+    "en": {
+      "title": "Error: Not Implemented",
+      "description": "A feature or method is not yet implemented in the browser.",
+      "solution": "This is a browser-level issue. The functionality you are trying to use is not supported by your current browser version."
+    },
+    "fa": {
+      "title": "خطا: پیاده‌سازی نشده",
+      "description": "یک ویژگی یا متد هنوز در مرورگر پیاده‌سازی نشده است.",
+      "solution": "این یک مشکل در سطح مرورگر است. عملکردی که در تلاش برای استفاده از آن هستید، توسط نسخه فعلی مرورگر شما پشتیبانی نمی‌شود."
+    }
+  },
+  "ERR_CACHE_CHECKSUM_MISMATCH": {
+    "en": {
+      "title": "Error: Cache Checksum Mismatch",
+      "description": "The checksum of a file in the browser's cache does not match the expected value, indicating corruption.",
+      "solution": "Clearing your browser's cache should resolve this issue by forcing a fresh download of the resource."
+    },
+    "fa": {
+      "title": "خطا: عدم تطابق جمع‌آزما حافظه پنهان",
+      "description": "جمع‌آزما (Checksum) یک فایل در حافظه پنهان مرورگر با مقدار مورد انتظار مطابقت ندارد، که نشان‌دهنده خرابی است.",
+      "solution": "پاک کردن حافظه پنهان مرورگر شما باید با وادار کردن به دانلود مجدد منبع، این مشکل را برطرف کند."
+    }
+  },
+  "ERR_CANNOT_LOAD_LOCAL_RESOURCE": {
+    "en": {
+      "title": "Error: Cannot Load Local Resource",
+      "description": "For security reasons, a local resource cannot be loaded in the current context.",
+      "solution": "Modern browsers have strict security policies about loading local files (`file:///`) to prevent malicious websites from accessing your file system."
+    },
+    "fa": {
+      "title": "خطا: نمی‌توان منبع محلی را بارگذاری کرد",
+      "description": "به دلایل امنیتی، یک منبع محلی نمی‌تواند در زمینه فعلی بارگذاری شود.",
+      "solution": "مرورگرهای مدرن سیاست‌های امنیتی سخت‌گیرانه‌ای در مورد بارگذاری فایل‌های محلی (`file:///`) برای جلوگیری از دسترسی وب‌سایت‌های مخرب به سیستم فایل شما دارند."
+    }
+  },
+  "ERR_CERT_WEAK_KEY": {
+    "en": {
+      "title": "Error: Weak Certificate Key",
+      "description": "The website's SSL certificate uses a weak cryptographic key, making the connection insecure.",
+      "solution": "This is a serious server security misconfiguration. The site administrator must issue a new certificate with a stronger key."
+    },
+    "fa": {
+      "title": "خطا: کلید گواهی‌نامه ضعیف است",
+      "description": "گواهی‌نامه SSL وب‌سایت از یک کلید رمزنگاری ضعیف استفاده می‌کند، که اتصال را ناامن می‌سازد.",
+      "solution": "این یک پیکربندی نادرست امنیتی جدی سرور است. مدیر سایت باید یک گواهی‌نامه جدید با یک کلید قوی‌تر صادر کند."
+    }
+  },
+  "ERR_BLOCKED_ENROLLMENT_CHECK_PENDING": {
+    "en": {
+      "title": "Error: Enrollment Check Pending",
+      "description": "A request was blocked because a device enrollment check for authentication is still pending.",
+      "solution": "This is often seen in enterprise environments. You may need to wait for the device enrollment process to complete."
+    },
+    "fa": {
+      "title": "خطا: بررسی ثبت‌نام در حال انتظار است",
+      "description": "یک درخواست مسدود شد زیرا یک بررسی ثبت‌نام دستگاه برای احراز هویت هنوز در حال انتظار است.",
+      "solution": "این اغلب در محیط‌های سازمانی دیده می‌شود. ممکن است لازم باشد منتظر بمانید تا فرآیند ثبت‌نام دستگاه تکمیل شود."
+    }
+  },
+  "InvalidCandidateType": {
+    "en": {
+      "title": "WebRTC Error: Invalid Candidate Type",
+      "description": "The ICE candidate type provided for establishing a connection is not supported.",
+      "solution": "This is a developer-side bug in the WebRTC implementation."
+    },
+    "fa": {
+      "title": "خطای WebRTC: نوع کاندید نامعتبر",
+      "description": "نوع کاندید ICE ارائه شده برای برقراری یک اتصال، پشتیبانی نمی‌شود.",
+      "solution": "این یک باگ سمت توسعه‌دهنده در پیاده‌سازی WebRTC است."
+    }
+  },
+  "RTCError: set-local-description-failed": {
+    "en": {
+      "title": "WebRTC Error: Set Local Description Failed",
+      "description": "The browser failed to apply a local Session Description Protocol (SDP) description.",
+      "solution": "This is a bug in the web application's signaling logic that must be fixed by developers."
+    },
+    "fa": {
+      "title": "خطای WebRTC: تنظیم توضیحات محلی ناموفق بود",
+      "description": "مرورگر در اعمال یک توضیحات پروتکل توصیف نشست (SDP) محلی شکست خورد.",
+      "solution": "این یک باگ در منطق سیگنالینگ اپلیکیشن وب است که باید توسط توسعه‌دهندگان برطرف شود."
+    }
+  },
+  "ERR_BLOCKED_BY_DELEGATION": {
+    "en": {
+      "title": "Error: Blocked by Delegation",
+      "description": "A frame in the page tried to access a feature that was not delegated to it by its parent frame.",
+      "solution": "This is a security feature related to iframe permissions that must be configured correctly by the developer."
+    },
+    "fa": {
+      "title": "خطا: توسط تفویض اختیار مسدود شد",
+      "description": "یک فریم در صفحه تلاش کرده به قابلیتی دسترسی پیدا کند که توسط فریم والد به آن تفویض نشده است.",
+      "solution": "این یک ویژگی امنیتی مربوط به مجوزهای iframe است که باید توسط توسعه‌دهنده به درستی پیکربندی شود."
+    }
+  },
+  "ERR_PROTOCOL_SWITCH_AS_EXTERNAL_PROTOCOL": {
+    "en": {
+      "title": "Error: Protocol Switch as External Protocol",
+      "description": "The browser prevented a protocol switch from being handled as an external protocol for security reasons.",
+      "solution": "This is a browser security measure to prevent unexpected application launches."
+    },
+    "fa": {
+      "title": "خطا: تغییر پروتکل به عنوان پروتکل خارجی",
+      "description": "مرورگر به دلایل امنیتی مانع از این شد که یک تغییر پروتکل به عنوان یک پروتکل خارجی مدیریت شود.",
+      "solution": "این یک اقدام امنیتی مرورگر برای جلوگیری از اجرای غیرمنتظره برنامه‌ها است."
+    }
+  },
+  "ERR_INVALID_ARGUMENT": {
+    "en": {
+      "title": "Error: Invalid Argument",
+      "description": "An invalid argument was passed to one of the browser's internal functions.",
+      "solution": "This is a low-level error, likely indicating a bug in the browser or an extension."
+    },
+    "fa": {
+      "title": "خطا: آرگومان نامعتبر",
+      "description": "یک آرگومان نامعتبر به یکی از توابع داخلی مرورگر ارسال شده است.",
+      "solution": "این یک خطای سطح پایین است که احتمالاً نشان‌دهنده یک باگ در مرورگر یا یک افزونه است."
+    }
+  },
+  "ERR_FILE_TOO_BIG": {
+    "en": {
+      "title": "Error: File Too Big",
+      "description": "The file you are trying to interact with (e.g., upload) exceeds the size limit supported by the browser or operating system.",
+      "solution": "Try using a smaller file or check if the website has specific file size limits."
+    },
+    "fa": {
+      "title": "خطا: فایل بیش از حد بزرگ است",
+      "description": "فایلی که در تلاش برای تعامل با آن هستید (مثلاً آپلود)، از محدودیت اندازه پشتیبانی‌شده توسط مرورگر یا سیستم‌عامل فراتر می‌رود.",
+      "solution": "سعی کنید از یک فایل کوچکتر استفاده کنید یا بررسی کنید که آیا وب‌سایت محدودیت‌های اندازه فایل خاصی دارد."
+    }
+  },
+  "ERR_V8_COMPILE_ERROR": {
+    "en": {
+      "title": "Error: V8 Compile Error",
+      "description": "A specific error occurred within the V8 JavaScript engine during the compilation phase.",
+      "solution": "This is a bug in the website's JavaScript code that the developers need to fix."
+    },
+    "fa": {
+      "title": "خطا: خطای کامپایل V8",
+      "description": "یک خطای مشخص در موتور جاوا اسکریپت V8 در مرحله کامپایل رخ داده است.",
+      "solution": "این یک باگ در کد جاوا اسکریپت وب‌سایت است که توسعه‌دهندگان باید آن را برطرف کنند."
+    }
+  },
+  "ERR_BLOCKED_BY_CONTENT_ADMINISTRATOR": {
+    "en": {
+      "title": "Error: Blocked by Content Administrator",
+      "description": "The request was blocked by a content administrator, such as through parental controls or corporate content filtering.",
+      "solution": "Access is restricted by a local or network-level policy. You may need to request an exception from the administrator."
+    },
+    "fa": {
+      "title": "خطا: توسط مدیر محتوا مسدود شد",
+      "description": "درخواست توسط یک مدیر محتوا، مانند کنترل‌های والدین یا فیلترینگ محتوای سازمانی، مسدود شده است.",
+      "solution": "دسترسی توسط یک سیاست محلی یا سطح شبکه محدود شده است. ممکن است لازم باشد از مدیر درخواست استثنا کنید."
+    }
+  },
+  "ERR_BLOCKED_BY_AUTOMATIC_PRESENTATION_CONTROLLER": {
+    "en": {
+      "title": "Error: Blocked by Presentation Controller",
+      "description": "A request was blocked by an automatic presentation controller, for example, when casting content to another screen.",
+      "solution": "This is a technical error related to screen sharing or content presentation APIs."
+    },
+    "fa": {
+      "title": "خطا: توسط کنترلر ارائه خودکار مسدود شد",
+      "description": "یک درخواست توسط یک کنترلر ارائه خودکار، به عنوان مثال، هنگام کست کردن محتوا به یک صفحه دیگر، مسدود شده است.",
+      "solution": "این یک خطای فنی مربوط به APIهای اشتراک‌گذاری صفحه یا ارائه محتوا است."
+    }
+  },
+  "ERR_BLOCKED_BY_RESPONSE": {
+    "en": {
+      "title": "Error: Blocked by Response",
+      "description": "The browser blocked the request because the response itself indicated it should be blocked (e.g., via a `X-Content-Type-Options: nosniff` header with an incorrect MIME type).",
+      "solution": "This is a security feature enforced by the browser based on server instructions. The server configuration needs to be fixed by the developer."
+    },
+    "fa": {
+      "title": "خطا: توسط پاسخ مسدود شد",
+      "description": "مرورگر درخواست را مسدود کرد زیرا پاسخ خود نشان می‌داد که باید مسدود شود (مثلاً از طریق هدر `X-Content-Type-Options: nosniff` با یک نوع MIME نادرست).",
+      "solution": "این یک ویژگی امنیتی است که توسط مرورگر بر اساس دستورالعمل‌های سرور اعمال می‌شود. پیکربندی سرور باید توسط توسعه‌دهنده برطرف شود."
+    }
+  },
+  "ERR_INVALID_URL_SCHEME": {
+    "en": {
+      "title": "Error: Invalid URL Scheme",
+      "description": "The URL scheme (protocol) is not valid or not allowed in the current context.",
+      "solution": "Check the URL for typos in the protocol part (e.g., `htttp://` instead of `http://`)."
+    },
+    "fa": {
+      "title": "خطا: طرح URL نامعتبر",
+      "description": "طرح URL (پروتکل) نامعتبر است یا در زمینه فعلی مجاز نیست.",
+      "solution": "URL را برای اشتباهات تایپی در بخش پروتکل بررسی کنید (مثلاً `htttp://` به جای `http://`)."
+    }
+  },
+  "[Violation] Added non-passive event listener...": {
+    "en": {
+      "title": "Performance Violation: Non-Passive Event Listener",
+      "description": "A non-passive event listener was added to a scroll-blocking event, which can make scrolling feel jerky and unresponsive.",
+      "solution": "This is a performance warning for developers. They should mark the event listener as 'passive' to improve scroll performance."
+    },
+    "fa": {
+      "title": "نقض عملکرد: شنونده رویداد غیرپسیو",
+      "description": "یک شنونده رویداد غیرپسیو به یک رویداد مسدودکننده اسکرول اضافه شد، که می‌تواند باعث شود اسکرول کردن کند و غیرپاسخگو به نظر برسد.",
+      "solution": "این یک هشدار عملکردی برای توسعه‌دهندگان است. آن‌ها باید شنونده رویداد را به عنوان 'passive' علامت‌گذاری کنند تا عملکرد اسکرول بهبود یابد."
+    }
+  },
+  "The 'SourceMap' file is missing...": {
+    "en": {
+      "title": "DevTools Warning: SourceMap Missing",
+      "description": "The browser's developer tools could not find a SourceMap file, which is used to debug minified or compiled code (like TypeScript or SCSS).",
+      "solution": "This is a notice for developers and does not affect the user experience."
+    },
+    "fa": {
+      "title": "هشدار DevTools: SourceMap یافت نشد",
+      "description": "ابزارهای توسعه‌دهنده مرورگر نتوانستند یک فایل SourceMap را پیدا کنند، که برای دیباگ کردن کد فشرده یا کامپایل شده (مانند TypeScript یا SCSS) استفاده می‌شود.",
+      "solution": "این یک تذکر برای توسعه‌دهندگان است و بر تجربه کاربری تأثیر نمی‌گذارد."
+    }
+  },
+  "The page was loaded over HTTPS, but requested an insecure favicon": {
+    "en": {
+      "title": "Mixed Content Warning: Insecure Favicon",
+      "description": "A secure page (HTTPS) requested an insecure favicon (HTTP), which is a type of mixed content.",
+      "solution": "The website administrator should update the link to their favicon to use HTTPS."
+    },
+    "fa": {
+      "title": "هشدار محتوای ترکیبی: فاوآیکون ناامن",
+      "description": "یک صفحه امن (HTTPS) یک فاوآیکون ناامن (HTTP) را درخواست کرد، که یک نوع محتوای ترکیبی است.",
+      "solution": "مدیر وب‌سایت باید لینک به فاوآیکون خود را برای استفاده از HTTPS به‌روز کند."
+    }
+  },
+  "Web Audio API: DOMException: The number of hardware contexts has been exceeded.": {
+    "en": {
+      "title": "Web Audio Error: Hardware Contexts Exceeded",
+      "description": "The page tried to create too many Web Audio API contexts, exceeding the browser's limit.",
+      "solution": "This is a bug in the webpage's code. Reloading the page might resolve it temporarily."
+    },
+    "fa": {
+      "title": "خطای Web Audio: از تعداد زمینه‌های سخت‌افزاری فراتر رفته است",
+      "description": "صفحه تلاش کرده است تعداد زیادی زمینه Web Audio API ایجاد کند و از حد مجاز مرورگر فراتر رفته است.",
+      "solution": "این یک باگ در کد صفحه وب است. بارگذاری مجدد صفحه ممکن است آن را به طور موقت برطرف کند."
+    }
+  },
+  "Payment Request API: DOMException: The payment method is not supported.": {
+    "en": {
+      "title": "Payment Error: Method Not Supported",
+      "description": "The browser or device does not support the requested payment method (e.g., Apple Pay on a Windows device).",
+      "solution": "You may need to use a different device or browser that supports the required payment method."
+    },
+    "fa": {
+      "title": "خطای پرداخت: روش پشتیبانی نمی‌شود",
+      "description": "مرورگر یا دستگاه از روش پرداخت درخواستی پشتیبانی نمی‌کند (مثلاً Apple Pay روی یک دستگاه ویندوز).",
+      "solution": "ممکن است لازم باشد از یک دستگاه یا مرورگر دیگر که از روش پرداخت مورد نیاز پشتیبانی می‌کند، استفاده کنید."
+    }
+  },
+  "Permissions API: TypeError: The request is not allowed.": {
+    "en": {
+      "title": "Permissions Error: Request Not Allowed",
+      "description": "A script tried to request a permission that is blocked by the user or a browser policy.",
+      "solution": "Check your browser's site settings to see if you have previously denied this permission for the website."
+    },
+    "fa": {
+      "title": "خطای مجوزها: درخواست مجاز نیست",
+      "description": "یک اسکریپت تلاش کرد مجوزی را درخواست کند که توسط کاربر یا یک سیاست مرورگر مسدود شده است.",
+      "solution": "تنظیمات سایت مرورگر خود را بررسی کنید تا ببینید آیا قبلاً این مجوز را برای وب‌سایت رد کرده‌اید."
+    }
+  },
+  "WebXR (VR/AR): DOMException: The specified session mode is not supported.": {
+    "en": {
+      "title": "WebXR Error: Session Mode Not Supported",
+      "description": "The device does not support the requested virtual reality (VR) or augmented reality (AR) session mode.",
+      "solution": "Your hardware or browser may not be compatible with the requested XR feature."
+    },
+    "fa": {
+      "title": "خطای WebXR: حالت نشست پشتیبانی نمی‌شود",
+      "description": "دستگاه از حالت نشست واقعیت مجازی (VR) یا واقعیت افزوده (AR) درخواستی پشتیبانی نمی‌کند.",
+      "solution": "سخت‌افزار یا مرورگر شما ممکن است با ویژگی XR درخواستی سازگار نباشد."
+    }
+  },
+  "ERR_CERT_END_DATE_TOO_LATE": {
+    "en": {
+      "title": "Error: Certificate End Date Too Late",
+      "description": "The expiration date of the website's SSL certificate is too far in the future, which violates browser policies.",
+      "solution": "This is a server-side certificate configuration issue that must be fixed by the site administrator."
+    },
+    "fa": {
+      "title": "خطا: تاریخ پایان گواهی‌نامه بیش از حد دیر است",
+      "description": "تاریخ انقضای گواهی‌نامه SSL وب‌سایت بیش از حد در آینده است، که سیاست‌های مرورگر را نقض می‌کند.",
+      "solution": "این یک مشکل پیکربندی گواهی‌نامه سمت سرور است که باید توسط مدیر سایت برطرف شود."
+    }
+  },
+  "ERR_HTTP2_PING_FAILED": {
+    "en": {
+      "title": "HTTP/2 Error: PING Failed",
+      "description": "An HTTP/2 PING frame, used to check if a connection is still alive, failed.",
+      "solution": "This indicates a potential network connectivity issue or a problem with the server. Refreshing the page may help."
+    },
+    "fa": {
+      "title": "خطای HTTP/2: PING ناموفق بود",
+      "description": "یک فریم PING در HTTP/2 که برای بررسی زنده بودن یک اتصال استفاده می‌شود، با شکست مواجه شد.",
+      "solution": "این نشان‌دهنده یک مشکل بالقوه اتصال شبکه یا مشکلی در سرور است. بارگذاری مجدد صفحه ممکن است کمک کند."
+    }
+  },
+  "ERR_QUIC_CERT_ROOT_NOT_KNOWN": {
+    "en": {
+      "title": "QUIC Error: Certificate Root Not Known",
+      "description": "The root certificate for the QUIC (HTTP/3) connection is not trusted by your device.",
+      "solution": "This is similar to a standard invalid certificate authority error, but specific to the QUIC protocol."
+    },
+    "fa": {
+      "title": "خطای QUIC: ریشه گواهی‌نامه ناشناخته است",
+      "description": "گواهی‌نامه ریشه برای اتصال QUIC (HTTP/3) توسط دستگاه شما مورد اعتماد نیست.",
+      "solution": "این شبیه به یک خطای مرجع صدور گواهی‌نامه نامعتبر استاندارد است، اما مختص پروتکل QUIC است."
+    }
+  },
+  "ERR_SCT_AUDITING_FAILURE": {
+    "en": {
+      "title": "Error: SCT Auditing Failure",
+      "description": "A failure occurred during the auditing process for Signed Certificate Timestamps (SCT).",
+      "solution": "This is a low-level browser security feature error. It may be temporary."
+    },
+    "fa": {
+      "title": "خطا: شکست در حسابرسی SCT",
+      "description": "یک شکست در فرآیند حسابرسی برای مهرهای زمانی گواهی‌نامه امضاشده (SCT) رخ داد.",
+      "solution": "این یک خطای ویژگی امنیتی سطح پایین مرورگر است. ممکن است موقتی باشد."
+    }
+  },
+  "ERR_CT_STH_PARSING_FAILED": {
+    "en": {
+      "title": "Error: CT STH Parsing Failed",
+      "description": "The browser failed to parse a Signed Tree Head (STH) for Certificate Transparency.",
+      "solution": "This is a technical error related to modern SSL certificate validation."
+    },
+    "fa": {
+      "title": "خطا: تجزیه CT STH ناموفق بود",
+      "description": "مرورگر در تجزیه یک سردرخت امضاشده (STH) برای شفافیت گواهی‌نامه شکست خورد.",
+      "solution": "این یک خطای فنی مربوط به اعتبارسنجی گواهی‌نامه SSL مدرن است."
+    }
+  },
+  "ERR_IO_PENDING": {
+    "en": {
+      "title": "Info: I/O Pending",
+      "description": "An Input/Output operation is not yet complete.",
+      "solution": "This is not an error, but an informational status for asynchronous operations. The application is waiting for the operation (e.g., reading a file) to finish."
+    },
+    "fa": {
+      "title": "اطلاعات: ورودی/خروجی در حال انتظار",
+      "description": "یک عملیات ورودی/خروجی هنوز تکمیل نشده است.",
+      "solution": "این یک خطا نیست، بلکه یک وضعیت اطلاعاتی برای عملیات‌های ناهمزمان است. اپلیکیشن در حال انتظار برای پایان یافتن عملیات (مثلاً خواندن یک فایل) است."
+    }
+  },
+  "ERR_V8_COMPILE_ERROR": {
+    "en": {
+      "title": "Error: V8 Compile Error",
+      "description": "A specific error occurred within the V8 JavaScript engine during the compilation phase.",
+      "solution": "This is a bug in the website's JavaScript code that the developers need to fix."
+    },
+    "fa": {
+      "title": "خطا: خطای کامپایل V8",
+      "description": "یک خطای مشخص در موتور جاوا اسکریپت V8 در مرحله کامپایل رخ داده است.",
+      "solution": "این یک باگ در کد جاوا اسکریپت وب‌سایت است که توسعه‌دهندگان باید آن را برطرف کنند."
     }
   }
 }
