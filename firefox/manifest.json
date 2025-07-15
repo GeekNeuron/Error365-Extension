@@ -23,8 +23,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "{addon@error365.com}"
-      "strict_min_version": "105.0"
+      "id": "{error365@geekneuron.com}"
     }
   }
 }
