@@ -4,12 +4,10 @@
 
 /* Dark theme variables are the default and only theme */
 :root {
-  --bg-color: #0d1117;
-  --container-bg: transparent;
   --text-color: #c9d1d9;
   --header-color: #c9d1d9;
   --error-color: #e94560;
-  --border-color: #30363d;
+  --border-color: #4a4a5e; /* رنگ جدید و ظریف‌تر برای خط‌چین */
   --details-bg: #161b22;
   --code-bg: #2c3a47;
   --code-color: #c9d1d9;
@@ -20,7 +18,12 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  
+  /* Wallpaper Background */
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Apply Vazirmatn font specifically for Persian UI */
@@ -28,17 +31,19 @@ body {
   font-family: 'Vazirmatn', sans-serif;
 }
 
+/* --- START: بخش اصلاح‌شده نهایی کانتینر --- */
 .container {
   padding: 15px;
-  background-color: var(--container-bg);
-  border-radius: 0;
-  border: 1px dashed var(--border-color);
+  background-color: transparent; /* پس‌زمینه کادر کاملاً شفاف شد */
+  border-radius: 0; /* حذف گوشه‌های گرد */
+  border: 1px dashed var(--border-color); /* حاشیه خط‌چین ریزتر شد */
   margin: 10px;
-  box-shadow: none;
-  backdrop-filter: none;
+  box-shadow: none; /* سایه حذف شد */
+  backdrop-filter: none; /* فیلتر بلور حذف شد */
   position: relative;
   z-index: 1;
 }
+/* --- END: بخش اصلاح‌شده --- */
 
 .top-bar {
   display: flex;
@@ -48,31 +53,25 @@ body {
   direction: ltr;
 }
 
-/* --- START: بخش اصلاح‌شده برای منوی زبان --- */
 .language-selector select {
-  /* حذف ظاهر پیش‌فرض مرورگر */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  /* استایل‌های سفارشی */
-  padding: 5px 30px 5px 10px; /* فضای بیشتر در سمت راست برای فلش جدید */
+  padding: 5px 8px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: var(--details-bg);
+  background-color: var(--details-bg); /* استفاده از یک رنگ تیره برای خوانایی */
   color: var(--text-color);
   font-size: 12px;
-  cursor: pointer;
   outline: none;
-
-  /* فلش سفارشی با استفاده از SVG */
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 11L2 5h12L8 11z' fill='%23c9d1d9'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 10px 10px;
+  cursor: pointer;
 }
-/* --- END: بخش اصلاح‌شده --- */
 
+/* --- START: تنها بخش اضافه‌شده --- */
+/* تلاش برای استایل‌دهی به گزینه‌های داخل منو */
+.language-selector select option {
+  background-color: var(--details-bg);
+  color: var(--text-color);
+  padding: 5px; /* این ممکن است در هیچ مرورگری اعمال نشود */
+}
+/* --- END: تنها بخش اضافه‌شده --- */
 
 .header {
   display: flex;
