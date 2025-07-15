@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element References ---
     const languageSelect = document.getElementById('language-select');
     const appTitleEl = document.getElementById('app-title');
     const errorTitleEl = document.getElementById('error-title');
@@ -8,15 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailsEl = document.getElementById('solution-details');
     const errorCodeEl = document.getElementById('error-code');
 
-    // --- State Variables ---
     let errorDatabase = {};
     let translations = {};
     let currentLang = 'en';
     let currentErrorCode = null;
 
-    // --- Functions ---
-
-    // 1. Load language file
     async function loadLanguage(lang) {
         try {
             const response = await fetch(`lang/${lang}.json`);
@@ -24,11 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
             currentLang = lang;
         } catch (e) {
             console.error(`Error loading language: ${lang}`, e);
-            if (lang !== 'en') await loadLanguage('en'); // Fallback to English
+            if (lang !== 'en') await loadLanguage('en');
         }
     }
 
-    // 2. Translate static UI parts
     function translateUI() {
         document.documentElement.lang = currentLang;
         document.documentElement.dir = (currentLang === 'fa') ? 'rtl' : 'ltr';
@@ -36,9 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         solutionTitleEl.textContent = translations.solutionTitle || 'Suggested Solution';
     }
 
-    // 3. Display error details
     function displayErrorDetails(errorCode) {
-        currentErrorCode = errorCode; // Update current error state
+        currentErrorCode = errorCode;
         const errorData = errorCode ? errorDatabase[errorCode] : null;
         const localizedError = errorData ? (errorData[currentLang] || errorData['en']) : null;
 
@@ -59,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Main initialization logic
     async function initialize() {
-        // Load error database first
         try {
             const response = await fetch('errors.json');
             errorDatabase = await response.json();
@@ -72,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Get saved settings
         const settings = await browser.storage.sync.get(['selectedLanguage']);
         currentLang = settings.selectedLanguage || 'en';
         languageSelect.value = currentLang;
@@ -80,28 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
         await loadLanguage(currentLang);
         translateUI();
 
-        // Check storage for an error when the popup opens
         const result = await browser.storage.local.get('lastErrorCode');
         displayErrorDetails(result.lastErrorCode);
     }
 
-    // --- Event Listeners ---
-
-    // Listen for language changes
     languageSelect.addEventListener('change', async () => {
         const newLang = languageSelect.value;
         await browser.storage.sync.set({ selectedLanguage: newLang });
         await loadLanguage(newLang);
         translateUI();
-        displayErrorDetails(currentErrorCode); // Re-render the current error with the new language
+        displayErrorDetails(currentErrorCode);
     });
 
-    // Listen for messages from the background script
     browser.runtime.onMessage.addListener((message) => {
         if (message.type === "ERROR_DETECTED") {
             displayErrorDetails(message.code);
         }
-        return true; // Keep the message channel open for async responses if needed
+        return true;
     });
 
     initialize();
