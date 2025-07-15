@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Element References
     const languageSelect = document.getElementById('language-select');
     const appTitleEl = document.getElementById('app-title');
     const errorTitleEl = document.getElementById('error-title');
@@ -7,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailsEl = document.getElementById('solution-details');
     const errorCodeEl = document.getElementById('error-code');
 
+    // State Variables
     let errorDatabase = {};
     let translations = {};
     let currentLang = 'en';
     let currentErrorCode = null;
 
+    // --- Functions ---
     async function loadLanguage(lang) {
         try {
             const response = await fetch(`lang/${lang}.json`);
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function initialize() {
+        // 1. Load the error database
         try {
             const response = await fetch('errors.json');
             errorDatabase = await response.json();
@@ -63,35 +67,33 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // 2. Load language and translate UI
         const settings = await browser.storage.sync.get(['selectedLanguage']);
         currentLang = settings.selectedLanguage || 'en';
         languageSelect.value = currentLang;
-
         await loadLanguage(currentLang);
         translateUI();
 
+        // 3. Get the error from storage, display it, THEN clear it.
         const result = await browser.storage.local.get('lastErrorCode');
-        if (result.lastErrorCode) {
+        if (result && result.lastErrorCode) {
             displayErrorDetails(result.lastErrorCode);
+            // CRITICAL FIX: Clear the error only AFTER it has been successfully read.
             await browser.storage.local.remove('lastErrorCode');
         } else {
             displayErrorDetails(null);
         }
     }
 
+    // --- Event Listeners ---
     languageSelect.addEventListener('change', async () => {
         const newLang = languageSelect.value;
         await browser.storage.sync.set({ selectedLanguage: newLang });
         await loadLanguage(newLang);
         translateUI();
-        displayErrorDetails(currentErrorCode);
+        displayErrorDetails(currentErrorCode); // Re-render the current error with the new language
     });
 
-    browser.runtime.onMessage.addListener((message) => {
-        if (message.type === "ERROR_DETECTED") {
-            displayErrorDetails(message.code);
-        }
-    });
-
+    // Start the popup
     initialize();
 });
