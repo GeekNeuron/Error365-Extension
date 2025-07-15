@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
 
-    // Element references
     const appTitleEl = document.getElementById('app-title');
     const errorTitleEl = document.getElementById('error-title');
     const descriptionEl = document.getElementById('error-description');
@@ -12,10 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let errorDatabase = {};
     let translations = {};
-    let currentLang = 'en'; // Default base language
+    let currentLang = 'en';
     let lastErrorCode = null;
 
-    // 1. Load both error and language JSON files
     async function loadData() {
         try {
             const errorResponse = await fetch('errors.json');
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. Function to fetch and set the language file
     async function loadLanguage(lang) {
         try {
             const langResponse = await fetch(`lang/${lang}.json`);
@@ -35,24 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
             currentLang = lang;
         } catch (error) {
             console.error(`Error365: Could not load language file for ${lang}`, error);
-            // Fallback to English if the language file fails
             if (currentLang !== 'en') {
                 await loadLanguage('en');
             }
         }
     }
 
-    // 3. Function to apply translations to the UI
     function translateUI() {
         document.documentElement.lang = currentLang;
         document.documentElement.dir = (currentLang === 'fa') ? 'rtl' : 'ltr';
 
         appTitleEl.textContent = translations.appName || 'Error365';
         solutionTitleEl.textContent = translations.solutionTitle || 'Suggested Solution';
-        // The footer text is now static in the HTML, so it doesn't need translation here.
     }
 
-    // 4. Main function to display error details
     function displayErrorDetails(errorCode) {
         errorCodeEl.textContent = '';
         errorCodeEl.style.display = 'none';
@@ -77,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // 5. Initialization function
     async function initializePopup() {
         const settings = await chrome.storage.sync.get(['selectedLanguage']);
         currentLang = settings.selectedLanguage || 'en';
@@ -96,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 6. Language change event listener
     languageSelect.addEventListener('change', async (event) => {
         const newLang = event.target.value;
         await chrome.storage.sync.set({ selectedLanguage: newLang });
@@ -105,6 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
         displayErrorDetails(lastErrorCode);
     });
 
-    // Run initialization
     initializePopup();
 });
