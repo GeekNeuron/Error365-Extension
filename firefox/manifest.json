@@ -27,3 +27,11 @@
     }
   }
 }
+
+
+There was an error during the temporary add-on installation.
+Error details
+
+Extension is invalid
+
+Reading manifest: Error processing browser_specific_settings.gecko.id: Value "{error365@geekneuron.com}" must either: match the pattern /^\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}$/i, or match the pattern /^[a-z0-9-._]*@[a-z0-9-._]+$/i
