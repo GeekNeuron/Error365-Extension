@@ -88,6 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    browser.runtime.onMessage.addListener((message) => {
+        if (message.type === "ERROR_SET") {
+            lastErrorCode = message.code;
+            displayErrorDetails(lastErrorCode);
+        }
+    });
+
     languageSelect.addEventListener('change', async (event) => {
         const newLang = event.target.value;
         await browser.storage.sync.set({ selectedLanguage: newLang });
