@@ -1,40 +1,56 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    // --- Element References ---
+document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
+
     const appTitleEl = document.getElementById('app-title');
     const errorTitleEl = document.getElementById('error-title');
     const descriptionEl = document.getElementById('error-description');
     const solutionTitleEl = document.querySelector('#solution-details summary');
+    const solutionEl = document.getElementById('error-solution');
     const detailsEl = document.getElementById('solution-details');
     const errorCodeEl = document.getElementById('error-code');
 
-    // --- State Variables ---
     let errorDatabase = {};
     let translations = {};
     let currentLang = 'en';
-    let currentErrorCode = null;
+    let lastErrorCode = null;
 
-    // --- Functions ---
+    async function loadData() {
+        try {
+            const errorResponse = await fetch('errors.json');
+            errorDatabase = await errorResponse.json();
+            
+            await loadLanguage(currentLang);
+        } catch (error) {
+            console.error("Error365: Could not load initial data", error);
+        }
+    }
+
     async function loadLanguage(lang) {
         try {
-            const response = await fetch(`lang/${lang}.json`);
-            translations = await response.json();
+            const langResponse = await fetch(`lang/${lang}.json`);
+            translations = await langResponse.json();
             currentLang = lang;
-        } catch (e) {
-            console.error(`Error loading language: ${lang}`, e);
-            if (lang !== 'en') await loadLanguage('en');
+        } catch (error) {
+            console.error(`Error365: Could not load language file for ${lang}`, error);
+            if (currentLang !== 'en') {
+                await loadLanguage('en');
+            }
         }
     }
 
     function translateUI() {
         document.documentElement.lang = currentLang;
         document.documentElement.dir = (currentLang === 'fa') ? 'rtl' : 'ltr';
+
         appTitleEl.textContent = translations.appName || 'Error365';
         solutionTitleEl.textContent = translations.solutionTitle || 'Suggested Solution';
     }
 
     function displayErrorDetails(errorCode) {
-        currentErrorCode = errorCode;
+        errorCodeEl.textContent = '';
+        errorCodeEl.style.display = 'none';
+        detailsEl.classList.add('hidden');
+
         const errorData = errorCode ? errorDatabase[errorCode] : null;
         const localizedError = errorData ? (errorData[currentLang] || errorData['en']) : null;
 
@@ -43,57 +59,42 @@ document.addEventListener('DOMContentLoaded', async () => {
             descriptionEl.textContent = localizedError.description;
             errorCodeEl.textContent = errorCode;
             errorCodeEl.style.display = 'inline-block';
-            detailsEl.classList.toggle('hidden', !localizedError.solution);
+
             if (localizedError.solution) {
-                document.getElementById('error-solution').innerText = localizedError.solution;
+                solutionEl.innerText = localizedError.solution;
+                detailsEl.classList.remove('hidden');
             }
         } else {
             errorTitleEl.textContent = translations.errorDetected || 'No Error Detected';
-            descriptionEl.textContent = translations.errorDescriptionDefault || 'No detectable errors.';
-            errorCodeEl.style.display = 'none';
-            detailsEl.classList.add('hidden');
+            descriptionEl.textContent = translations.errorDescriptionDefault || 'No detectable errors on the current page.';
         }
     }
-
-    async function initialize() {
-        // 1. Load databases
-        try {
-            const errorResponse = await fetch('errors.json');
-            errorDatabase = await errorResponse.json();
-        } catch (e) {
-            console.error("Failed to load errors.json", e);
-            errorTitleEl.textContent = "Critical Error";
-            descriptionEl.textContent = "Could not load the error database.";
-            return;
-        }
-
-        // 2. Load language settings
+    
+    async function initializePopup() {
         const settings = await browser.storage.sync.get(['selectedLanguage']);
         currentLang = settings.selectedLanguage || 'en';
         languageSelect.value = currentLang;
-        await loadLanguage(currentLang);
+        
+        await loadData();
         translateUI();
 
-        // 3. Get current tab and check its specific error from storage
-        const [currentTab] = await browser.tabs.query({ active: true, currentWindow: true });
-        if (currentTab) {
-            const tabId = currentTab.id.toString();
-            const result = await browser.storage.local.get(tabId);
-            displayErrorDetails(result[tabId]);
+        const errorResult = await browser.storage.local.get(['lastErrorCode']);
+        lastErrorCode = errorResult.lastErrorCode || null;
+        if (lastErrorCode) {
+            displayErrorDetails(lastErrorCode);
+            browser.storage.local.remove('lastErrorCode');
         } else {
             displayErrorDetails(null);
         }
     }
 
-    // --- Event Listeners ---
-    languageSelect.addEventListener('change', async () => {
-        const newLang = languageSelect.value;
+    languageSelect.addEventListener('change', async (event) => {
+        const newLang = event.target.value;
         await browser.storage.sync.set({ selectedLanguage: newLang });
         await loadLanguage(newLang);
         translateUI();
-        displayErrorDetails(currentErrorCode); 
+        displayErrorDetails(lastErrorCode);
     });
 
-    // Start the popup
-    initialize();
+    initializePopup();
 });
