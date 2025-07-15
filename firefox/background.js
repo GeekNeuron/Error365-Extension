@@ -1,30 +1,53 @@
-// A centralized function to handle detected errors
-async function handleError(errorCode, tabId) {
-  try {
-    // Step 1: Save the error code to local storage and wait for it to complete.
-    await browser.storage.local.set({ lastErrorCode: errorCode });
+// از یک متغیر ساده برای نگهداری خطای هر تب استفاده می‌کنیم
+let lastErrorByTab = {};
 
-    // Step 2: Set the badge on the icon and wait.
-    await browser.action.setBadgeText({ tabId: tabId, text: "!" });
-    await browser.action.setBadgeBackgroundColor({ tabId: tabId, color: "#D32F2F" });
-
-  } catch (e) {
-    console.error("Error365: Failed to handle error:", e);
-  }
+// تابع برای ثبت خطا در متغیر
+function handleError(errorCode, tabId) {
+    lastErrorByTab[tabId] = errorCode;
+    browser.action.setBadgeText({ tabId: tabId, text: "!" });
+    browser.action.setBadgeBackgroundColor({ tabId: tabId, color: "#D32F2F" });
 }
 
-// Listener for navigation errors
-browser.webNavigation.onErrorOccurred.addListener((details) => {
-  if (details.frameId === 0) {
-    handleError(details.error, details.tabId);
-  }
+// شنونده برای پیام‌های ارسالی از پاپ‌آپ
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === "GET_ERROR" && message.tabId) {
+        // پاسخ را با کد خطای ذخیره‌شده برای آن تب ارسال کن
+        sendResponse({ code: lastErrorByTab[message.tabId] });
+    }
+    // برای پاسخ‌های ناهمزمان باز نگه داشته می‌شود
+    return true; 
 });
 
-// Listener for HTTP status codes
-browser.webNavigation.onCompleted.addListener(async (details) => {
-  if (details.frameId === 0) {
-    if (details.statusCode >= 400) {
-      handleError(details.statusCode.toString(), details.tabId);
+// شنونده برای خطاهای ناوبری
+browser.webNavigation.onErrorOccurred.addListener((details) => {
+    if (details.frameId === 0) {
+        handleError(details.error, details.tabId);
     }
-  }
+});
+
+// شنونده برای کدهای وضعیت HTTP
+browser.webNavigation.onCompleted.addListener((details) => {
+    if (details.frameId === 0) {
+        if (details.statusCode >= 400) {
+            handleError(details.statusCode.toString(), details.tabId);
+        }
+    }
+});
+
+// وقتی یک تب با موفقیت به‌روز می‌شود، خطا را از حافظه پاک کن
+browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === 'complete' && tab.url) {
+        // فقط اگر خطایی برای این تب ثبت شده باشد، آن را پاک کن
+        if (lastErrorByTab[tabId]) {
+            delete lastErrorByTab[tabId];
+            browser.action.setBadgeText({ tabId: tabId, text: "" });
+        }
+    }
+});
+
+// وقتی یک تب بسته می‌شود، اطلاعات آن را پاک کن
+browser.tabs.onRemoved.addListener((tabId) => {
+    if (lastErrorByTab[tabId]) {
+        delete lastErrorByTab[tabId];
+    }
 });
