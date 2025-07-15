@@ -2,14 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
-/* Dark theme variables are now the default and only theme */
+/* Dark theme variables are the default and only theme */
 :root {
-  --container-bg: rgba(22, 27, 34, 0.9); /* Semi-transparent dark color */
   --text-color: #c9d1d9;
   --header-color: #c9d1d9;
   --error-color: #e94560;
-  --border-color: #30363d;
-  --details-bg: #0d1117;
+  --border-color: #4a4a5e; /* رنگ جدید و ظریف‌تر برای خط‌چین */
+  --details-bg: #161b22;
   --code-bg: #2c3a47;
   --code-color: #c9d1d9;
 }
@@ -32,31 +31,33 @@ body {
   font-family: 'Vazirmatn', sans-serif;
 }
 
+/* --- START: بخش اصلاح‌شده نهایی کانتینر --- */
 .container {
   padding: 15px;
-  background-color: var(--container-bg);
-  border-radius: 12px; /* Rounded corners */
-  border: 2px dashed var(--border-color); /* Dashed border */
+  background-color: transparent; /* پس‌زمینه کادر کاملاً شفاف شد */
+  border-radius: 12px;
+  border: 1px dashed var(--border-color); /* حاشیه خط‌چین ریزتر شد */
   margin: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px); /* Glass effect for readability */
+  box-shadow: none; /* سایه حذف شد */
+  backdrop-filter: none; /* فیلتر بلور حذف شد */
   position: relative;
   z-index: 1;
 }
+/* --- END: بخش اصلاح‌شده --- */
 
 .top-bar {
   display: flex;
-  justify-content: flex-end; /* Pushes language selector to the right */
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 10px;
-  direction: ltr; /* Locks layout */
+  direction: ltr;
 }
 
 .language-selector select {
   padding: 5px 8px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #161b22;
+  background-color: var(--details-bg); /* استفاده از یک رنگ تیره برای خوانایی */
   color: var(--text-color);
   font-size: 12px;
   outline: none;
@@ -67,13 +68,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  direction: ltr; /* Locks visual order of logo and title */
+  direction: ltr;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
-/* Ensures Farsi text itself remains RTL */
 :lang(fa) .header h1 {
   direction: rtl;
 }
