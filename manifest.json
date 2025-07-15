@@ -9,7 +9,7 @@
     "tabs"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
   "action": {
     "default_popup": "popup.html",
@@ -21,12 +21,9 @@
     "48": "assets/icons/logo48.png",
     "128": "assets/icons/logo128.png"
   },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "errors.json"
-      ],
-      "matches": ["<all_urls>"]
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{your-addon-id@example.com}"
     }
-  ]
+  }
 }
