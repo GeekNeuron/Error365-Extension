@@ -32,3 +32,5 @@
     }
   }
 }
+
+Background event page was not terminated on idle because a DevTools toolbox is attached to the extension. _generated_background_page.html
