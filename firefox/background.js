@@ -1,21 +1,29 @@
-browser.webNavigation.onErrorOccurred.addListener((details) => {
+// Listener for navigation errors (e.g., no internet connection)
+browser.webNavigation.onErrorOccurred.addListener(async (details) => {
+  // Ensure the listener only acts on the main frame of a tab
   if (details.frameId === 0) {
-    browser.storage.local.set({ lastErrorCode: details.error });
+    // Use 'await' to ensure the save operation completes before the script becomes inactive
+    await browser.storage.local.set({ lastErrorCode: details.error });
 
-    browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
-    browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
+    // Also await badge updates to ensure they are applied
+    await browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
+    await browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
   }
 });
 
-browser.webNavigation.onCompleted.addListener((details) => {
+// Listener for HTTP status codes (e.g., 404, 500)
+browser.webNavigation.onCompleted.addListener(async (details) => {
+  // Ensure the listener only acts on the main frame of a tab
   if (details.frameId === 0) {
     if (details.statusCode >= 400) {
-      browser.storage.local.set({ lastErrorCode: details.statusCode.toString() });
+      // Use 'await' to ensure the save operation completes
+      await browser.storage.local.set({ lastErrorCode: details.statusCode.toString() });
 
-      browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
-      browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
+      await browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
+      await browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
     } else {
-      browser.action.setBadgeText({ tabId: details.tabId, text: "" });
+      // Clear the badge if the page loads successfully
+      await browser.action.setBadgeText({ tabId: details.tabId, text: "" });
     }
   }
 });
