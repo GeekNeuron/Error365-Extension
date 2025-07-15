@@ -1,77 +1,66 @@
-# Error365 - Extension
+# Error365 - Your Personal Web Error Dictionary
 
-Error365 is a lightweight and intuitive Chrome extension designed to instantly detect and explain browser errors. It helps users understand what went wrong during their web navigation by providing clear, concise information and potential solutions directly in their browser.
+Error365 is a lightweight and intuitive browser extension that acts as your personal guide to the cryptic world of web errors. Instead of copy-pasting codes like `net::ERR_CERT_AUTHORITY_INVALID` into a search engine, Error365 instantly detects the error and shows you a simple, human-readable explanation directly in your browser.
 
-The extension features a clean, dark-mode-only interface, supports multiple languages, and is built to be as unobtrusive as possible, alerting you only when a detectable error occurs.
-
----
-## Key Features
-
-- **Automatic Error Detection**: Instantly identifies common HTTP errors (like 404, 503) and network errors (e.g., `net::ERR_INTERNET_DISCONNECTED`) in the background.
-- **Informative Popup**: Displays the error code, a simple-to-understand title, and a detailed description of the problem.
-- **Actionable Solutions**: Provides a collapsible "Suggested Solution" section with steps to help users resolve common issues.
-- **Multilingual Support**: A user-friendly dropdown menu allows you to switch the interface language on the fly. Language settings are saved for a consistent experience.
-- **Clean, Modern UI**: A permanent dark theme with a sharp, minimalist design ensures readability and a pleasant user experience.
-- **External JSON Database**: All error definitions are managed in an external `errors.json` file, making the extension easy to update and scale.
+Designed with a clean, minimalist, dark-only interface, it helps users and developers alike to quickly diagnose and understand issues, saving time and frustration.
 
 ---
-## Installation
 
-Since this is an unpacked extension, it needs to be loaded into Chrome manually.
+## ✨ Key Features
 
-1.  **Download or Clone:** Make sure you have the complete project folder, `Error365-Extension`, on your local machine.
-2.  **Open Chrome Extensions:** Open Google Chrome, navigate to `chrome://extensions`, or click the puzzle piece icon in the toolbar and select "Manage Extensions."
-3.  **Enable Developer Mode:** In the top-right corner of the extensions page, toggle the **Developer mode** switch to the "on" position.
+- **Automatic Error Detection**: Instantly identifies common HTTP errors (e.g., 404, 503) and network errors (e.g., `net::ERR_INTERNET_DISCONNECTED`) in the background.
+- **Human-Readable Explanations**: Translates complex error codes into simple, understandable descriptions and provides actionable solutions.
+- **Multilingual UI**: Supports multiple languages with a user-friendly dropdown menu. Your language preference is saved and synced.
+- **Permanent Dark Theme**: A beautifully crafted dark theme is the default and only mode, ensuring a consistent and eye-friendly experience.
+- **Minimalist & Focused**: No clutter. The UI is designed to give you the information you need quickly and efficiently. The core functionality is focused, and unnecessary features have been removed.
+- **Privacy-Focused**: The extension runs entirely locally. It does not collect or transmit any of your Browse data.
+
+---
+
+## 🚀 Installation
+
+As this is an unpacked extension, it needs to be loaded into your browser manually.
+
+1.  **Download:** Make sure you have the complete project folder (`Error365-Extension`) on your local machine.
+2.  **Open Extensions Page:**
+    - For Chrome, navigate to `chrome://extensions`.
+    - For Firefox, navigate to `about:debugging#/runtime/this-firefox`.
+3.  **Enable Developer Mode:**
+    - **Chrome:** In the top-right corner, toggle the **Developer mode** switch on.
+    - **Firefox:** Click the **"This Firefox"** button and then **"Load Temporary Add-on..."**.
 4.  **Load the Extension:**
-    - Click the **"Load unpacked"** button that appears on the top-left.
-    - In the file selection dialog, navigate to and select the entire `Error365-Extension` folder.
-    - Click "Select Folder."
-5.  **Done!** The Error365 extension icon should now appear in your browser's toolbar.
+    - **Chrome:** Click the **"Load unpacked"** button and select the entire `Error365-Extension` folder.
+    - **Firefox:** Click the **"Load Temporary Add-on..."** button and select the `manifest.json` file inside your `Error365-Extension/firefox` folder.
+5.  **Done!** The Error365 icon will now appear in your browser's toolbar.
 
 ---
-## How to Use
 
-Using Error365 is designed to be completely automatic.
+## 💡 How to Use
 
-1.  **Browse the Web**: Simply use your browser as you normally would.
-2.  **Error Detection**: When you land on a page with a detectable error (e.g., a "404 Not Found" page or if your internet disconnects), the Error365 icon in your toolbar will display a small red exclamation mark (`!`).
-3.  **View Error Details**: Click the Error365 icon to open the popup. The popup will automatically display:
-    - The detected **error code** (e.g., `404`).
-    - The **title** and **description** of the error in your selected language.
-    - A **"Suggested Solution"** section if a solution is available.
-4.  **Change Settings**:
-    - Use the **dropdown menu** in the top-right corner to change the display language.
-    - The popup will automatically clear the error information once you navigate to a new, healthy page.
+1.  **Browse Freely**: Use your browser as you normally would.
+2.  **Get Notified**: When you encounter a detectable error, the Error365 icon will display a small red exclamation mark (`!`).
+3.  **View Details**: Click the icon to open the popup. It will automatically display:
+    - The detected **Error Code**.
+    - The **Title** and **Description** of the error in your selected language.
+    - A collapsible **"Suggested Solution"** section if a solution is available.
+4.  **Change Language**: Use the dropdown menu in the popup to switch the display language at any time.
 
 ---
-## Project Structure
 
-The project is organized as follows:
+## ☕ Support The Project
 
-```
-Error365-Extension/
-│
-├── manifest.json
-├── errors.json
-├── background.js
-│
-├── popup.html
-├── popup.css
-├── popup.js
-│
-├── icons/
-│   ├── logo16.png
-│   ├── logo48.png
-│   └── logo128.png
-│
-└── lang/
-    ├── en.json
-    └── fa.json
-```
+If you find Error365 useful, please consider supporting its development. Your support helps keep the project maintained, updated, and ad-free.
 
-- **`manifest.json`**: The core configuration file for the extension.
-- **`errors.json`**: The database containing all error definitions and translations.
-- **`background.js`**: The service worker that listens for browser events and detects errors.
-- **`popup.*`**: The set of files that create and manage the user-facing popup window.
-- **`icons/`**: Contains the extension's logos.
-- **`lang/`**: Contains the translation files for the user interface.
+- [**Buy Me a Coffee**](https://www.buymeacoffee.com/GeekNeuron)
+- [**Patreon**](https://www.patreon.com/GeekNeuron)
+- **BTC**: `your-btc-address-here`
+
+---
+
+## 🤝 Contributing
+
+Found a bug, have a suggestion for a new feature, or want to add a translation for an error? We'd love to hear from you! Please feel free to open an issue or pull request on our [GitHub repository](https://github.com/GeekNeuron/Error365-Extension).
+
+---
+
+Created with ❤️ by GeekNeuron
