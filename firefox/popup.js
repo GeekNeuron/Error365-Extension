@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lastErrorCode = errorResult.lastErrorCode || null;
         if (lastErrorCode) {
             displayErrorDetails(lastErrorCode);
-            browser.storage.local.remove('lastErrorCode');
         } else {
             displayErrorDetails(null);
         }
