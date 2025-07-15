@@ -1,25 +1,27 @@
-browser.webNavigation.onErrorOccurred.addListener(async (details) => {
-  if (details.frameId === 0) {
-    const errorCode = details.error;
+async function handleError(errorCode, tabId) {
+  try {
     await browser.storage.local.set({ lastErrorCode: errorCode });
 
-    browser.runtime.sendMessage({ type: "ERROR_SET", code: errorCode });
+    await browser.action.setBadgeText({ tabId: tabId, text: "!" });
+    await browser.action.setBadgeBackgroundColor({ tabId: tabId, color: "#D32F2F" });
 
-    await browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
-    await browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
+    browser.runtime.sendMessage({ type: "ERROR_DETECTED", code: errorCode });
+
+  } catch (e) {
+    console.error("Error365: Failed to handle error:", e);
+  }
+}
+
+browser.webNavigation.onErrorOccurred.addListener((details) => {
+  if (details.frameId === 0) {
+    handleError(details.error, details.tabId);
   }
 });
 
 browser.webNavigation.onCompleted.addListener(async (details) => {
   if (details.frameId === 0) {
     if (details.statusCode >= 400) {
-      const errorCode = details.statusCode.toString();
-      await browser.storage.local.set({ lastErrorCode: errorCode });
-
-      browser.runtime.sendMessage({ type: "ERROR_SET", code: errorCode });
-
-      await browser.action.setBadgeText({ tabId: details.tabId, text: "!" });
-      await browser.action.setBadgeBackgroundColor({ tabId: details.tabId, color: "#D32F2F" });
+      handleError(details.statusCode.toString(), details.tabId);
     } else {
       await browser.storage.local.remove('lastErrorCode');
       await browser.action.setBadgeText({ tabId: details.tabId, text: "" });
