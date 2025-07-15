@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
 
     // Element references
     const appTitleEl = document.getElementById('app-title');
@@ -16,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let errorDatabase = {};
     let translations = {};
     let currentLang = 'en'; // Default base language
-    let currentTheme = 'light';
     let lastErrorCode = null;
 
     // 1. Load both error and language JSON files
@@ -53,23 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         appTitleEl.textContent = translations.appName || 'Error365';
         solutionTitleEl.textContent = translations.solutionTitle || 'Suggested Solution';
+        // The footer text is now static in the HTML, so it doesn't need translation here.
     }
 
-    // 4. Function to apply the selected theme
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-theme');
-            sunIcon.classList.add('hidden');
-            moonIcon.classList.remove('hidden');
-        } else {
-            document.body.classList.remove('dark-theme');
-            sunIcon.classList.remove('hidden');
-            moonIcon.classList.add('hidden');
-        }
-        currentTheme = theme;
-    }
-
-    // 5. Main function to display error details
+    // 4. Main function to display error details
     function displayErrorDetails(errorCode) {
         errorCodeEl.textContent = '';
         errorCodeEl.style.display = 'none';
@@ -94,15 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // 6. Initialization function
+    // 5. Initialization function
     async function initializePopup() {
-        const settings = await chrome.storage.sync.get(['selectedLanguage', 'selectedTheme']);
+        const settings = await chrome.storage.sync.get(['selectedLanguage']);
         currentLang = settings.selectedLanguage || 'en';
         languageSelect.value = currentLang;
         
         await loadData();
         translateUI();
-        applyTheme(settings.selectedTheme || 'light');
 
         const errorResult = await chrome.storage.local.get(['lastErrorCode']);
         lastErrorCode = errorResult.lastErrorCode || null;
@@ -114,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 7. Event Listeners
+    // 6. Language change event listener
     languageSelect.addEventListener('change', async (event) => {
         const newLang = event.target.value;
         await chrome.storage.sync.set({ selectedLanguage: newLang });
@@ -123,11 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayErrorDetails(lastErrorCode);
     });
 
-    themeToggle.addEventListener('click', () => {
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        chrome.storage.sync.set({ selectedTheme: newTheme });
-        applyTheme(newTheme);
-    });
-
+    // Run initialization
     initializePopup();
 });
