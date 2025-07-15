@@ -1043,16 +1043,16 @@
       "solution": "این یک نشانگر شکست عمومی است. کد HTTP خاص (مثلاً ۴۰۴، ۵۰۳) دلیل واقعی شکست را ارائه می‌دهد."
     }
   },
-  "ERR_SSL_PINNED_KEY_NOT_IN_CERT_CHAIN": {
+"ERR_SSL_PINNED_KEY_NOT_IN_CERT_CHAIN": {
     "en": {
-      "title": "Error: Pinned Key Not in Certificate Chain",
-      "description": "A security error related to HPKP (HTTP Public Key Pinning). The server's certificate chain does not contain a public key that the browser was expecting.",
-      "solution": "This is a serious security warning. It could indicate a misconfiguration or a man-in-the-middle attack. Do not proceed."
+      "title": "Deprecated: HPKP Key Pinning Error",
+      "description": "This error relates to the deprecated HTTP Public Key Pinning (HPKP) security feature. It means the server's certificate chain did not contain a public key that the browser was expecting or had 'pinned'.",
+      "solution": "This feature is no longer supported by modern browsers due to the high risk of making a site inaccessible. This is a server-side misconfiguration that should be removed by the website administrator. As a user, there is nothing you can do."
     },
     "fa": {
-      "title": "خطا: کلید پین‌شده در زنجیره گواهی‌نامه نیست",
-      "description": "یک خطای امنیتی مربوط به HPKP (پین کردن کلید عمومی HTTP). زنجیره گواهی‌نامه سرور حاوی یک کلید عمومی که مرورگر انتظار آن را داشته، نیست.",
-      "solution": "این یک هشدار امنیتی جدی است. می‌تواند نشان‌دهنده یک پیکربندی نادرست یا یک حمله مرد میانی باشد. ادامه ندهید."
+      "title": "منسوخ شده: خطای پین کردن کلید HPKP",
+      "description": "این خطا مربوط به ویژگی امنیتی منسوخ شده 'پین کردن کلید عمومی HTTP' یا HPKP است. به این معنی است که زنجیره گواهی‌نامه سرور، حاوی کلید عمومی که مرورگر انتظار آن را داشته یا «پین» کرده بود، نیست.",
+      "solution": "این ویژگی به دلیل ریسک بالای از دسترس خارج شدن سایت، دیگر توسط مرورگرهای مدرن پشتیبانی نمی‌شود. این یک پیکربندی نادرست سمت سرور است که باید توسط مدیر وب‌سایت حذف شود. شما به عنوان کاربر، کاری نمی‌توانید انجام دهید."
     }
   },
   "HTTP/2 Stream Error: REFUSED_STREAM": {
