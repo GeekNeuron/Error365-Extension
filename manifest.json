@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Error365",
-  "version": "1.2",
+  "version": "1.5",
   "description": "Identifies and explains browser errors in simple language.",
   "permissions": [
     "webNavigation",
@@ -14,8 +14,7 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "assets/icons/logo16.png",
-
+      "16": "assets/icons/logo16.png"
     }
   },
   "icons": {
