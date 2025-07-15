@@ -1,34 +1,35 @@
 {
-  "manifest_version": 3,
-  "name": "Error365",
-  "version": "1.5",
-  "description": "Identifies and explains browser errors in simple language.",
-  "permissions": [
-    "webNavigation",
-    "storage",
-    "tabs"
-  ],
+  "manifest_version": 3,
+  "name": "Error365",
+  "version": "1.5",
+  "description": "Identifies and explains browser errors in simple language.",
+  "permissions": [
+    "webNavigation",
+    "storage",
+    "tabs",
+    "webRequest"
+  ],
 
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "assets/icons/logo16.png"
-    }
-  },
-  "icons": {
-    "48": "assets/icons/logo48.png",
-    "128": "assets/icons/logo128.png"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "error365@geekneuron.com"
-    }
-  }
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/logo16.png"
+    }
+  },
+  "icons": {
+    "48": "assets/icons/logo48.png",
+    "128": "assets/icons/logo128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "error365@geekneuron.com"
+    }
+  }
 }
