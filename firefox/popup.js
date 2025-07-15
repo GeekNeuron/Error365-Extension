@@ -71,7 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
         translateUI();
 
         const result = await browser.storage.local.get('lastErrorCode');
-        displayErrorDetails(result.lastErrorCode);
+        if (result.lastErrorCode) {
+            displayErrorDetails(result.lastErrorCode);
+            // **CRITICAL FIX: Clear the error AFTER it has been read and displayed.**
+            await browser.storage.local.remove('lastErrorCode');
+        } else {
+            displayErrorDetails(null);
+        }
     }
 
     languageSelect.addEventListener('change', async () => {
@@ -82,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         displayErrorDetails(currentErrorCode);
     });
 
+    // The message listener is now a fallback, but we keep it for robustness.
     browser.runtime.onMessage.addListener((message) => {
         if (message.type === "ERROR_DETECTED") {
             displayErrorDetails(message.code);
         }
-        return true;
     });
 
     initialize();
