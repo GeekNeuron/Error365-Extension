@@ -27,7 +27,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "all_errors.html",
         "errors.json"
       ],
       "matches": ["<all_urls>"]
